@@ -1,0 +1,149 @@
+<html>
+<header>
+    <div id='imagem' (click)="gotoTelaPrincipal()">
+        <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
+    </div>
+    <h1>BONATTI IMÓVEIS</h1>
+    <h2 id="usuario-header">USUÁRIO: Juninho</h2>
+</header>
+<div id="pos-header">
+    <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
+    <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
+    <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
+    <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+</div>
+<main>
+    <div class="titulo">Imóveis: listar</div>
+    <div class="postitulo">
+        <b>
+            <div>Imóveis -> </div>
+        </b>
+        <a (click)="gotoGerenciaCliente()">Incluir</a>
+        <a (click)="gotoListaClientes()">Listar</a>
+    </div>
+    <div class="responsavel espacamento">
+        <b>            
+            RESPONSÁVEL
+        </b>
+        <hr>
+        <div id="container-secundario">
+            <div class="titulo-secundario">
+                Proprietário Responsável
+                <br>
+                <select name="" id="" class="lateral">
+                    <option value="imovel">imovel</option>
+                    <option value="imovel">imovel</option>
+                    <option value="imovel">imovel</option>
+                    <option value="imovel">imovel</option>
+                    <option value="imovel">imovel</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Corretor Responsável
+                <br>
+                <select name="" id="" class="lateral">
+                    <option value="imovel">imovel</option>
+                    <option value="imovel">asdfas</option>
+                    <option value="imovel">imovel</option>
+                    <option value="imovel">imovel</option>
+                    <option value="imovel">imovel</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="responsavel espacamento">
+        <b>
+            INFORMAÇÕES
+        </b>
+        <hr>
+        <div id="container-secundario">
+            <div class="titulo-secundario">
+                Código referência
+                <br>
+                <input type="text" class="codigo">
+            </div>
+            <div class="titulo-secundario">
+                Finalidade
+                <br>
+                <select name="" id="" class="lateral">
+                    <option value="imovel">Venda</option>
+                    <option value="imovel">Aluguel</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Tipo do Imóvel
+                <br>
+                <select name="" id="" class="lateral">
+                    <option value="imovel">Casa</option>
+                    <option value="imovel">Sobrado</option>
+                    <option value="imovel">Apartamento</option>
+                    <option value="imovel">Geminado</option>
+                    <option value="imovel">Sobrado Geminado</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+    <div class="responsavel espacamento">
+        <b>
+            LOCALIZAÇÃO
+        </b>
+        
+        <hr>
+        <div id="container-secundario">
+            <div class="titulo-secundario">
+                Cidade
+                <br>
+                <input type="text" class="input" />
+            </div>
+            <div class="titulo-secundario">
+                Bairro
+                <br>
+                <input type="text" class="input" />
+            </div>
+            <div class="titulo-secundario">
+                Logradouro
+                <br>
+                <input type="text" class="input" />
+            </div>
+            <div class="titulo-secundario">
+                Número
+                <br>
+                <input type="number" class="input" />
+            </div>
+            <div class="titulo-secundario">
+                Complemento
+                <br>
+                <input type="text" class="input" />
+            </div>
+        </div>
+        <div id='container-secundario'>
+            <div class="titulo-secundario">
+                Região
+                <br>
+                <input type="number" class="input" />
+            </div>
+            <div class="titulo-secundario">
+                Estado
+                <br>
+                <input type="number" class="input" />
+            </div>
+            <div class="titulo-secundario">
+                Zona
+                <br>
+                <input type="number" class="input" />
+            </div>
+        </div>
+    </div>
+    <div class="responsavel espacamento">
+    <b>
+        DESCRIÇÃO DO IMÓVEL
+    </b>
+        <hr>
+        <div class="conteudo-secundario"></div>
+        <textarea id="texto-grandao" type="text"></textarea>
+    </div>
+    <button>Cadastrar Imóvel</button>
+</main>
+
+</html>

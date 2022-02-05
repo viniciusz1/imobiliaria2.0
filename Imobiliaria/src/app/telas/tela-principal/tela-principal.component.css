@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400&family=Roboto:ital,wght@0,300;1,100&display=swap');
+.espacamento{
+    margin: 10px 10px
+}
+*{
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    
+}
+html{
+    background-color: #ededed;
+}
+header{
+    display: flex;
+    align-items: center;
+    background-color: #3dd12f;
+    width: 100vw;
+    height: 13vh;
+    position: relative;
+
+}
+#imagem{
+    height: 70px
+}
+.imagem{
+    height: 100%;
+}
+h1{
+    color: white;
+    font-family: monospace;
+}
+#usuario-header{
+    position: absolute;
+    right: 90px;
+    color: white;
+    font-family: monospace;
+}
+.codigo{
+    width: 70%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+.input{
+    width: 90%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+a{  
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #3dd12f;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 10px;
+    margin-left: 5px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);}
+.encontrados{
+    margin: 10px
+}
+#boleto{
+    margin: 16px 0;
+}
+.bottom{
+    position: relative;
+    bottom: 0
+}
+#pos-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:8vh;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 4px;
+}
+.imoveis-header{
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    color: black;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    border: solid 1px #dbdbdb;
+    cursor: pointer;
+}
+.arrumar{
+    font-size: 14px;
+}
+.apresentacao{
+    width: 100%;
+    display: flex;
+}
+.grid{
+    margin: 10px;
+}
+.absolute{
+    position: absolute;
+    bottom: 12%;
+}
+hr{
+    position: absolute;
+    width: 92%;
+}
+#corretor{
+    position: relative;
+    height: 200px;
+    width: 50%;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    background-color: rgb(255, 255, 255);
+    padding-left: 15px;
+}
+#anotacoes{    
+    height: 200px;
+    width: 50%;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    background-color: rgb(255, 255, 255);
+}
+textarea{
+    width: 95%;
+    height: 80%;
+}
+.blocos{
+    display: flex;
+    width: 100%;
+}
+.bloco-info{
+    width: 25%;
+    height: 100px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(255, 255, 255)
+}
+.quadrados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% ;
+}
+.quadrado{
+    width: 30%;
+    height: 280px;
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    border: solid 1px rgb(255, 255, 255)
+}  
+.green{
+    background-color: #3dd12f;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+background-color: yellow;
+}
+footer{
+    background-color: rgb(228, 25, 25);
+    width: 100vw;
+    height: 200px;
+}

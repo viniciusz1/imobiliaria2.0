@@ -1,0 +1,28 @@
+<html>
+    <header>
+        <div id='imagem' (click)="gotoTelaPrincipal()">
+            <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
+        </div>
+        <h1>BONATTI IMÓVEIS</h1>
+        <h2 id="usuario-header">USUÁRIO: Juninho</h2>
+    </header>
+    <div id="pos-header">
+        <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
+        <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
+        <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
+        <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+    </div>
+<main>
+    <div class="titulo">Imóveis: listar</div>
+    <div class="postitulo">
+        <b>
+            <div>Imóveis -> </div>
+        </b>
+        <a (click)="gotoGerenciaCliente()">Incluir</a>
+        <a (click)="gotoListaClientes()">Listar</a>
+    </div>
+    <div class="encontrados">Imóveis encontrados:0</div>
+    <div class="imovel"></div>
+</main>
+
+</html>
