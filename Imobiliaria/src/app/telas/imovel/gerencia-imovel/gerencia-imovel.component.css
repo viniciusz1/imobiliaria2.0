@@ -40,11 +40,24 @@ h1{
     border: 1px solid grey;
     border-radius: 4px;
 }
+.trinta{
+    width: 56%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
 .input{
     width: 90%;
     padding: 8px;
     border: 1px solid grey;
     border-radius: 4px;
+}
+.input100{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+
 }
 #pos-header{
     display: flex;
@@ -120,6 +133,12 @@ hr{
 .titulo-secundario{
     width: 50%;
     font-size: 12px;
+}
+.titulo-terciario{
+    padding-right: 40px;
+    width: 300px;
+    font-size: 12px;
+    
 }
 .imovel{
     margin: 10px;

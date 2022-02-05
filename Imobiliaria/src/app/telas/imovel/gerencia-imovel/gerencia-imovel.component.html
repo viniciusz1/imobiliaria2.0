@@ -18,11 +18,11 @@
         <b>
             <div>Imóveis -> </div>
         </b>
-        <a (click)="gotoGerenciaCliente()">Incluir</a>
-        <a (click)="gotoListaClientes()">Listar</a>
+        <a (click)="gotoGerenciaImovel()">Incluir</a>
+        <a (click)="gotoListaImoveis()">Listar</a>
     </div>
     <div class="responsavel espacamento">
-        <b>            
+        <b>
             RESPONSÁVEL
         </b>
         <hr>
@@ -53,9 +53,14 @@
     </div>
     <div class="responsavel espacamento">
         <b>
-            INFORMAÇÕES
+            INFORMAÇÕESF
         </b>
         <hr>
+        <div class="titulo-secundario">
+            Valor do Imóvel
+            <br>
+            <input type="text" class="codigo trinta">
+        </div>
         <div id="container-secundario">
             <div class="titulo-secundario">
                 Código referência
@@ -88,57 +93,205 @@
         <b>
             LOCALIZAÇÃO
         </b>
-        
+
         <hr>
         <div id="container-secundario">
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Cidade
                 <br>
-                <input type="text" class="input" />
+                <input type="text" class="input100" />
             </div>
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Bairro
                 <br>
-                <input type="text" class="input" />
+                <input type="text" class="input100" />
             </div>
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Logradouro
                 <br>
-                <input type="text" class="input" />
+                <input type="text" class="input100" />
             </div>
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Número
                 <br>
-                <input type="number" class="input" />
+                <input type="number" class="input100" />
             </div>
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Complemento
                 <br>
-                <input type="text" class="input" />
+                <input type="text" class="input100" />
             </div>
         </div>
         <div id='container-secundario'>
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Região
                 <br>
-                <input type="number" class="input" />
+                <input type="text" class="input100" />
             </div>
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Estado
                 <br>
-                <input type="number" class="input" />
+                <input type="text" class="input100" />
             </div>
-            <div class="titulo-secundario">
+            <div class="titulo-terciario">
                 Zona
                 <br>
-                <input type="number" class="input" />
+                <input type="text" class="input100" />
+            </div>
+            <div class="titulo-terciario"></div>
+            <div class="titulo-terciario"></div>
+        </div>
+    </div>
+    <div class="responsavel espacamento">
+        <b>
+            CARACTERÍSTICAS
+        </b>
+
+        <hr>
+        <div id="container-secundario">
+            <div class="titulo-secundario">
+                Dormitórios
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Suítes
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Banheiros
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Vagas de Garagem
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Lavanderia
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
+            </div>
+
+            <div class="titulo-secundario">
+                Sacada
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Churrasqueira
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
+            </div>
+            <div class="titulo-secundario">
+                Área de Festas
+                <br>
+                <select name="" id="" class="lateral">
+                    <option></option>
+                    <option value="imovel">1</option>
+                    <option value="imovel">2</option>
+                    <option value="imovel">3</option>
+                    <option value="imovel">4</option>
+                    <option value="imovel">5</option>
+                    <option value="imovel">6</option>
+                    <option value="imovel">7</option>
+                    <option value="imovel">8</option>
+                    <option value="imovel">9</option>
+                    <option value="imovel">10</option>
+                </select>
             </div>
         </div>
     </div>
     <div class="responsavel espacamento">
-    <b>
-        DESCRIÇÃO DO IMÓVEL
-    </b>
+        <b>
+            DESCRIÇÃO DO IMÓVEL
+        </b>
         <hr>
         <div class="conteudo-secundario"></div>
         <textarea id="texto-grandao" type="text"></textarea>

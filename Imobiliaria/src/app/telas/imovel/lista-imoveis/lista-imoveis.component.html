@@ -1,28 +1,78 @@
 <html>
-    <header>
-        <div id='imagem' (click)="gotoTelaPrincipal()">
-            <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
-        </div>
-        <h1>BONATTI IMÓVEIS</h1>
-        <h2 id="usuario-header">USUÁRIO: Juninho</h2>
-    </header>
-    <div id="pos-header">
-        <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
-        <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
-        <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
-        <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+<header>
+    <div id='imagem' (click)="gotoTelaPrincipal()">
+        <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
     </div>
+    <h1>BONATTI IMÓVEIS</h1>
+    <h2 id="usuario-header">USUÁRIO: Juninho</h2>
+</header>
+<div id="pos-header">
+    <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
+    <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
+    <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
+    <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+</div>
 <main>
     <div class="titulo">Imóveis: listar</div>
     <div class="postitulo">
         <b>
             <div>Imóveis -> </div>
         </b>
-        <a (click)="gotoGerenciaCliente()">Incluir</a>
-        <a (click)="gotoListaClientes()">Listar</a>
+        <a (click)="gotoGerenciaImovel()">Incluir</a>
+        <a (click)="gotoListaImoveis()">Listar</a>
     </div>
     <div class="encontrados">Imóveis encontrados:0</div>
-    <div class="imovel"></div>
+    <div class="imoveis">
+        <div class="imovel">
+            <a (click)="abrirModal()"> Detalhes</a>
+        </div>
+    </div>
+    <div class="fundo" *ngIf="modal == 1" (click)="abrirModal()">
+        <div id="modal">
+                <div class="parte-cima">
+                    <div class="img"></div>
+                    <div class="informacoes-imovel">
+                        <div class="primeiro-imovel">
+                            <div class="">
+                                <h2>TITULO</h2>
+                                <div>REGIÃO:Sul</div>
+                                <div>ESTADO:Santa Catarina</div>
+                                <div>CIDADE:Jaraguá do SUl</div>
+                                <div>RUA: Venâncio da SIlva Porto</div>
+                            </div>
+                            <div class="espacamento">
+                                <div>VALOR DO IMÓVEL: 21983.00R$</div>
+                            </div>
+                            <div class="espacamento-cima">
+                                <div class=''>PROPRIETÁRIO: Jubileu</div>
+                            </div>
+                            <div class="">
+                                <div>CORRETOR RESPONSÁVEL</div>
+                            </div>
+                            <div class="espacamento-cima">
+                                <div>CODIGO: 123</div>
+                            </div>
+                        </div>          
+                        <div class="">
+                            <h2 class="esconde">L</h2>
+                            <div>DORMITÓRIOS: 1</div>
+                            <div>SUÍTES</div>
+                            <div>BANHEIROS</div>
+                            <div>VAGAS DE GARAGEM</div>
+                            <div>SACADA</div>
+                            <div>CHURRASQUEIRA</div>
+                            <div>ÁREA DE FESTA</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="espacamento-cima">
+                    
+                    Descrição do Imóvel:
+                </div>
+                <div class="descricao borda"></div>
+            
+        </div>
+    </div>
 </main>
 
 </html>

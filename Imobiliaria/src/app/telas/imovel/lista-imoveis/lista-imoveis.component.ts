@@ -24,6 +24,16 @@ export class ListaImoveisComponent implements OnInit {
   gotoTelaPrincipal(){
     this.router.navigate(['/tela-principal'])
   }
+  modal = 0
+  abrirModal(){
+    console.log('salve')
+    if(this.modal==1){
+      this.modal=0;
+    }else{
+      this.modal=1;
+    }
+
+  }
   ngOnInit(): void {
   }
 
