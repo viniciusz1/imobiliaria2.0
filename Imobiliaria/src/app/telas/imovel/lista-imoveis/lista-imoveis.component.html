@@ -24,7 +24,21 @@
     <div class="encontrados">Imóveis encontrados:0</div>
     <div class="imoveis">
         <div class="imovel">
-            <a (click)="abrirModal()"> Detalhes</a>
+            <div class="div-imagem">
+            </div>
+            <div style="padding-left: 10px;">
+                <div class="espacamento-baixo">
+                    TITULO DO IMOVEL
+                </div>
+                <div>
+                    VALOR: 50000.00
+                </div>
+            </div>
+            <div class="tres-botao">
+                <div class="botoes-lateral" (click)="abrirModal()"> Detalhes</div>
+                <div class="botoes-lateral" (click)="gotoGerenciaImovel()"> Editar</div>
+                <div class="red" (click)="abrirModal()"> Remover</div>
+            </div>
         </div>
     </div>
     <div class="fundo" *ngIf="modal == 1" (click)="abrirModal()">
