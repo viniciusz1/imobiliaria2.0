@@ -298,5 +298,15 @@
     </div>
     <button>Cadastrar Imóvel</button>
 </main>
+<footer>
+    <img *ngIf="teste == 1" [src]="imageURL" alt="">
+    <form action="">
+        <div>
+          <i *ngIf="teste == 0999999" class="fas fa-image"></i>
+          <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
+          <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+        </div>
+      </form>
+</footer>
 
 </html>

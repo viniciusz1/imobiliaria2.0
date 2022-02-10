@@ -18,6 +18,19 @@ header{
     position: relative;
 
 }
+.responsavel{
+    padding: 20px 20px;
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+
+    
+}
+#container-secundario{
+    display: flex;
+    padding-top: 10px;
+}
 #imagem{
     height: 70px
 }
@@ -56,6 +69,12 @@ h1{
     margin-bottom: 10px;
     padding: 4px;
 }
+.trinta{
+    width: 90%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
 .imoveis-header{
     padding: 10px;
     margin: 0 10px;
@@ -72,6 +91,10 @@ h1{
     margin-right: 10px;
     padding: 20px;
     background-color: #e7e7e7
+}
+.titulo-secundario{
+    width: 50%;
+    font-size: 12px;
 }
 .postitulo{
     display: flex;

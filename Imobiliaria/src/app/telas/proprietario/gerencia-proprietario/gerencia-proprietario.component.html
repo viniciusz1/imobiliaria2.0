@@ -12,17 +12,54 @@
         <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
         <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
     </div>
-<main>
-    <div class="titulo">Clientes: listar</div>
-    <div class="postitulo">
-        <b>
-            <div>Clientes -> </div>
-        </b>
-        <a (click)="gotoGerenciaCliente()">Incluir</a>
-        <a (click)="gotoListaClientes()">Listar</a>
-    </div>
-    <div class="encontrados">Imóveis encontrados:0</div>
-    <div class="imovel"></div>
-</main>
+    <main>
+        <div class="titulo">Imóveis: listar</div>
+        <div class="postitulo">
+            <b>
+                <div>Imóveis -> </div>
+            </b>
+            <a (click)="gotoGerenciaImovel()">Incluir</a>
+            <a (click)="gotoListaImoveis()">Listar</a>
+        </div>
+       
+        <div class="responsavel espacamento">
+            <b>
+                INFORMAÇÕES
+            </b>
+            <hr>
+            <div class="titulo-secundario">
+                Nome do Proprietário
+                <br>
+                <input type="text" class="codigo trinta">
+            </div>
+            <div id="container-secundario">
+                <div class="titulo-secundario">
+                    CPF
+                    <br>
+                    <input type="text" class="codigo trinta">
+                </div>
+                <div class="titulo-secundario">
+                    Email
+                    <br>
+                    <input type="text" class="codigo trinta">
+                </div>
+                <div class="titulo-secundario">
+                    Data de nascimento
+                    <br>
+                    <input type="text" class="codigo trinta">
+                </div>
+                <div class="titulo-secundario">
+                    Data de nascimento
+                    <br>
+                    <input type="text" class="codigo trinta">
+                </div>
+    
+            </div>
+        </div>
+        
+
+       
+        <button>Cadastrar Imóvel</button>
+    </main>
 
 </html>
