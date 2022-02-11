@@ -152,3 +152,17 @@ hr{
 input{
     outline: none;
 }
+#div-final{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#botao-final{
+    padding: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    background-color: #3dd12f;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

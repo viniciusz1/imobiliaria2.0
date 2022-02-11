@@ -13,10 +13,13 @@ export class TelaLoginComponent implements OnInit {
     private router: Router,
     private usuarioService: UsuarioService
   ) { }
-  logar(){
-
-
-  this.router.navigate(['/tela-principal'])
+  
+  username = ""
+  pass = ""
+    logar(){
+    let list = {user: this.username, pass: this.pass}
+    console.log(list.pass, list.user)
+    this.router.navigate(["/tela-principal"])
   }
   ngOnInit(): void {
     this.usuarioService.buscarUsuarios()

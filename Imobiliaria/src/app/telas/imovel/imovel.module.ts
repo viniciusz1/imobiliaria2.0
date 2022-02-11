@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListaImoveisComponent } from './lista-imoveis/lista-imoveis.component';
 import { GerenciaImovelComponent } from './gerencia-imovel/gerencia-imovel.component';
 import { Routes, RouterModule } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: 'gerencia-imovel',
@@ -19,7 +19,8 @@ const routes: Routes = [
   declarations: [ListaImoveisComponent, GerenciaImovelComponent],
   imports: [
     RouterModule.forRoot(routes),
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ImovelModule { }

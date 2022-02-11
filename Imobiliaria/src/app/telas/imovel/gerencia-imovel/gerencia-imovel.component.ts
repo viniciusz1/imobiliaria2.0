@@ -24,6 +24,58 @@ export class GerenciaImovelComponent implements OnInit {
   gotoTelaPrincipal(){
     this.router.navigate(['/tela-principal'])
   }
+
+proprietario="";
+corretor ="";
+valorImovel="";
+codigoImovel= "";
+finalidadeImovel="";
+tipoImovel="";
+cidadeImovel="";
+bairroImovel="";
+logradouroImovel="";
+numeroImovel="";
+complementoImovel="";
+regiaoImovel="";
+estadoImovel="";
+zonaImovel="";
+dormitoriosImovel="";
+suitesImovel="";
+banheirosImovel="";
+vagasImovel="";
+lavanderiaImovel="";
+sacadaImovel="";
+churrasImovel="";
+festasImovel="";
+descricaoImovel="";
+
+onAddCidade(){ // Função que foi chamada
+  console.log("proprietario", this.proprietario); // Imprimiu o valor no Console log.
+  console.log('corretor', this.corretor);
+  console.log('valorImovel', this.valorImovel);
+  console.log('codigoImovel', this.codigoImovel);
+  console.log('finalidadeImovel', this.finalidadeImovel);
+  console.log('tipoImovel', this.tipoImovel);
+  console.log('cidadeImovel', this.cidadeImovel);
+  console.log('bairroImovel', this.bairroImovel);
+  console.log('logradouroImovel', this.logradouroImovel);
+  console.log('numeroImovel', this.numeroImovel);
+  console.log('complementoImovel', this.complementoImovel);
+  console.log('regiaoImovel', this.regiaoImovel);
+  console.log('estadoImovel', this.estadoImovel);
+  console.log('zonaImovel', this.zonaImovel);
+  console.log('dormitoriosImovel', this.dormitoriosImovel);
+  console.log('suitesImovel', this.suitesImovel);
+  console.log('banheirosImovel', this.banheirosImovel);
+  console.log('vagasImovel', this.vagasImovel);
+  console.log('sacadaImovel', this.sacadaImovel);
+  console.log('churrasImovel', this.churrasImovel);
+  console.log('festasImovel', this.festasImovel);
+  console.log('descricaoImovel', this.descricaoImovel);
+}
+
+
+
   ngOnInit(): void {
   }
   imageURL 

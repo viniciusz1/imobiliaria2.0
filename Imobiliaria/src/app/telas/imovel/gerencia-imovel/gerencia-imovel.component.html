@@ -30,60 +30,60 @@
             <div class="titulo-secundario">
                 Proprietário Responsável
                 <br>
-                <select name="" id="" class="lateral">
-                    <option value="imovel">imovel</option>
-                    <option value="imovel">imovel</option>
-                    <option value="imovel">imovel</option>
-                    <option value="imovel">imovel</option>
-                    <option value="imovel">imovel</option>
-                </select>
+                <select class="lateral form-control" type="number" [(ngModel)]="proprietario" (ngModelChange)="onAddCidade()" >
+                    <option>a</option>
+                    <option>b</option>
+                    <option>v</option>
+                    <option>f</option>
+                    <option>t</option>
+                  </select>
             </div>
             <div class="titulo-secundario">
                 Corretor Responsável
                 <br>
-                <select name="" id="" class="lateral">
-                    <option value="imovel">imovel</option>
-                    <option value="imovel">asdfas</option>
-                    <option value="imovel">imovel</option>
-                    <option value="imovel">imovel</option>
-                    <option value="imovel">imovel</option>
+                <select name="" id="" class="lateral"  [(ngModel)]="corretor" (ngModelChange)="onAddCidade()" >
+                    <option>imovel</option>
+                    <option>asdfas</option>
+                    <option>imovel</option>
+                    <option>imovel</option>
+                    <option>imovel</option>
                 </select>
             </div>
         </div>
     </div>
     <div class="responsavel espacamento">
         <b>
-            INFORMAÇÕESF
+            INFORMAÇÕES
         </b>
         <hr>
         <div class="titulo-secundario">
             Valor do Imóvel
             <br>
-            <input type="text" class="codigo trinta">
+            <input [(ngModel)]="valorImovel" type="text" class="codigo trinta">
         </div>
         <div id="container-secundario">
             <div class="titulo-secundario">
                 Código referência
                 <br>
-                <input type="text" class="codigo">
+                <input [(ngModel)]="codigoImovel" type="text" class="codigo">
             </div>
             <div class="titulo-secundario">
                 Finalidade
                 <br>
-                <select name="" id="" class="lateral">
-                    <option value="imovel">Venda</option>
-                    <option value="imovel">Aluguel</option>
+                <select [(ngModel)]="finalidadeImovel" name="" id="" class="lateral">
+                    <option>Venda</option>
+                    <option>Aluguel</option>
                 </select>
             </div>
             <div class="titulo-secundario">
                 Tipo do Imóvel
                 <br>
-                <select name="" id="" class="lateral">
-                    <option value="imovel">Casa</option>
-                    <option value="imovel">Sobrado</option>
-                    <option value="imovel">Apartamento</option>
-                    <option value="imovel">Geminado</option>
-                    <option value="imovel">Sobrado Geminado</option>
+                <select [(ngModel)]="tipoImovel" name="" id="" class="lateral">
+                    <option>Casa</option>
+                    <option>Sobrado</option>
+                    <option>Apartamento</option>
+                    <option>Geminado</option>
+                    <option>Sobrado Geminado</option>
                 </select>
             </div>
 
@@ -99,44 +99,44 @@
             <div class="titulo-terciario">
                 Cidade
                 <br>
-                <input type="text" class="input100" />
+                <input [(ngModel)]="cidadeImovel" type="text" class="input100" />
             </div>
             <div class="titulo-terciario">
                 Bairro
                 <br>
-                <input type="text" class="input100" />
+                <input [(ngModel)]="bairroImovel" type="text" class="input100" />
             </div>
             <div class="titulo-terciario">
                 Logradouro
                 <br>
-                <input type="text" class="input100" />
+                <input [(ngModel)]="logradouroImovel" type="text" class="input100" />
             </div>
             <div class="titulo-terciario">
                 Número
                 <br>
-                <input type="number" class="input100" />
+                <input [(ngModel)]="numeroImovel" type="number" class="input100" />
             </div>
             <div class="titulo-terciario">
                 Complemento
                 <br>
-                <input type="text" class="input100" />
+                <input [(ngModel)]="complementoImovel" type="text" class="input100" />
             </div>
         </div>
         <div id='container-secundario'>
             <div class="titulo-terciario">
                 Região
                 <br>
-                <input type="text" class="input100" />
+                <input [(ngModel)]="regiaoImovel" type="text" class="input100" />
             </div>
             <div class="titulo-terciario">
                 Estado
                 <br>
-                <input type="text" class="input100" />
+                <input [(ngModel)]="estadoImovel" type="text" class="input100" />
             </div>
             <div class="titulo-terciario">
                 Zona
                 <br>
-                <input type="text" class="input100" />
+                <input [(ngModel)]="zonaImovel" type="text" class="input100" />
             </div>
             <div class="titulo-terciario"></div>
             <div class="titulo-terciario"></div>
@@ -152,138 +152,138 @@
             <div class="titulo-secundario">
                 Dormitórios
                 <br>
-                <select name="" id="" class="lateral">
+                <select [(ngModel)]="dormitoriosImovel" name="" id="" class="lateral">
                     <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
             <div class="titulo-secundario">
                 Suítes
                 <br>
-                <select name="" id="" class="lateral">
+                <select [(ngModel)]="suitesImovel" name="" id="" class="lateral">
                     <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
             <div class="titulo-secundario">
                 Banheiros
                 <br>
-                <select name="" id="" class="lateral">
+                <select [(ngModel)]="banheirosImovel" name="" id="" class="lateral">
                     <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
             <div class="titulo-secundario">
                 Vagas de Garagem
                 <br>
-                <select name="" id="" class="lateral">
+                <select [(ngModel)]="vagasImovel" name="" id="" class="lateral">
                     <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
             <div class="titulo-secundario">
                 Lavanderia
                 <br>
-                <select name="" id="" class="lateral">
+                <select [(ngModel)]="lavanderiaImovel" name="" id="" class="lateral">
                     <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
 
             <div class="titulo-secundario">
                 Sacada
                 <br>
-                <select name="" id="" class="lateral">
+                <select [(ngModel)]="sacadaImovel" name="" id="" class="lateral">
                     <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
             <div class="titulo-secundario">
                 Churrasqueira
                 <br>
-                <select name="" id="" class="lateral">
-                    <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                <select [(ngModel)]="churrasImovel" name="" id="" class="lateral">
+                    
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
             <div class="titulo-secundario">
                 Área de Festas
                 <br>
-                <select name="" id="" class="lateral">
+                <select [(ngModel)]="festasImovel" name="" id="" class="lateral">
                     <option></option>
-                    <option value="imovel">1</option>
-                    <option value="imovel">2</option>
-                    <option value="imovel">3</option>
-                    <option value="imovel">4</option>
-                    <option value="imovel">5</option>
-                    <option value="imovel">6</option>
-                    <option value="imovel">7</option>
-                    <option value="imovel">8</option>
-                    <option value="imovel">9</option>
-                    <option value="imovel">10</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                 </select>
             </div>
         </div>
@@ -294,9 +294,11 @@
         </b>
         <hr>
         <div class="conteudo-secundario"></div>
-        <textarea id="texto-grandao" type="text"></textarea>
+        <textarea [(ngModel)]="descricaoImovel" id="texto-grandao" type="text"></textarea>
     </div>
-    <button>Cadastrar Imóvel</button>
+    <div id="div-final"> 
+        <button id="botao-final">Cadastrar Imóvel</button>
+    </div>
 </main>
 <footer>
     <img *ngIf="teste == 1" [src]="imageURL" alt="">
