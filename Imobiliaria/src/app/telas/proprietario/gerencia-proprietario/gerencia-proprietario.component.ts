@@ -9,19 +9,43 @@ import { Router } from '@angular/router';
 export class GerenciaProprietarioComponent implements OnInit {
 
   constructor(private router: Router) { }
-  gotoGerenciaImovel(){
+  nomeCliente = ""
+  cpfCliente = ""
+  emailCliente = ""
+  dataCliente = ""
+  list=[]
+
+  teste() {
+    let objeto = {
+      nome: this.nomeCliente,
+      cpf: this.cpfCliente,
+      email: this.emailCliente,
+      data: this.dataCliente
+    }
+    this.list.push(objeto)
+    console.log(this.list)
+    localStorage.setItem("lista",JSON.stringify(this.list))
+  }
+
+
+
+
+
+
+
+  gotoGerenciaImovel() {
     this.router.navigate(['/gerencia-imovel'])
   }
-  gotoListaImoveis(){
+  gotoListaImoveis() {
     this.router.navigate(['/lista-imoveis'])
   }
-  gotoGerenciaCliente(){
+  gotoGerenciaCliente() {
     this.router.navigate(['/gerencia-proprietario'])
   }
-  gotoListaClientes(){
+  gotoListaClientes() {
     this.router.navigate(['/lista-proprietarios'])
   }
-  gotoTelaPrincipal(){
+  gotoTelaPrincipal() {
     this.router.navigate(['/tela-principal'])
   }
   ngOnInit(): void {

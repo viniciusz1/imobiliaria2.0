@@ -10,6 +10,8 @@ export class ListaProprietariosComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  listasClientes = JSON.parse(localStorage.getItem('lista'))
+  
   gotoGerenciaImovel(){
     this.router.navigate(['/gerencia-imovel'])
   }
@@ -26,6 +28,7 @@ export class ListaProprietariosComponent implements OnInit {
     this.router.navigate(['/tela-principal'])
   }
   ngOnInit(): void {
+    console.log(this.listasClientes)
   }
 
 }
