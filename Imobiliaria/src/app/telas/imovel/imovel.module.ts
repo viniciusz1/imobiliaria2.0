@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
-    path: 'gerencia-imovel',
+    path: 'gerencia-imovel/:id',
     component: GerenciaImovelComponent,
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class ImovelModule { }

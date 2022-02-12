@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-gerencia-proprietario',
   templateUrl: './gerencia-proprietario.component.html',
@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
 })
 export class GerenciaProprietarioComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
   nomeCliente = ""
   cpfCliente = ""
   emailCliente = ""
@@ -34,13 +37,13 @@ export class GerenciaProprietarioComponent implements OnInit {
 
 
   gotoGerenciaImovel() {
-    this.router.navigate(['/gerencia-imovel'])
+    this.router.navigate(['/gerencia-imovel/novo'])
   }
   gotoListaImoveis() {
     this.router.navigate(['/lista-imoveis'])
   }
   gotoGerenciaCliente() {
-    this.router.navigate(['/gerencia-proprietario'])
+    this.router.navigate(['/gerencia-proprietario/novo'])
   }
   gotoListaClientes() {
     this.router.navigate(['/lista-proprietarios'])

@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
-    path: 'gerencia-proprietario',
+    path: 'gerencia-proprietario/:id',
     component: GerenciaProprietarioComponent,
   },
   {

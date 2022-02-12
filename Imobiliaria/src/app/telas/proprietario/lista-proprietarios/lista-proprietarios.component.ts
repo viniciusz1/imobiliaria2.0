@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-proprietarios',
@@ -8,18 +8,23 @@ import { Router } from '@angular/router';
 })
 export class ListaProprietariosComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+    ) {
+      const id = this.route.snapshot.paramMap.get('id');
+   }
+ 
   listasClientes = JSON.parse(localStorage.getItem('lista'))
   
   gotoGerenciaImovel(){
-    this.router.navigate(['/gerencia-imovel'])
+    this.router.navigate(['/gerencia-imovel/novo'])
   }
   gotoListaImoveis(){
     this.router.navigate(['/lista-imoveis'])
   }
   gotoGerenciaCliente(){
-    this.router.navigate(['/gerencia-proprietario'])
+    this.router.navigate(['/gerencia-proprietario/novo'])
   }
   gotoListaClientes(){
     this.router.navigate(['/lista-proprietarios'])
