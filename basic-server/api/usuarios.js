@@ -3,14 +3,14 @@
 //         console.log(dados, resposta);
 
        
-//     database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`)
-//         .then(result => {
-//             console.log('result:', result);
-//         resposta({user: result[0]})
-//     }).catch(erro => {
-//         resposta({erro: 'Erro ao buscar os usuários!'})
-//     });
-// })
+// //     database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`)
+// //         .then(result => {
+// //             console.log('result:', result);
+// //         resposta({user: result[0]})
+// //     }).catch(erro => {
+// //         resposta({erro: 'Erro ao buscar os usuários!'})
+// //     });
+// // })
 
 inserirRota('/buscar_usuario',
     function (dados, resposta) {

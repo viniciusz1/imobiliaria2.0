@@ -20,4 +20,17 @@ export class UsuarioService {
     })
   }
 
+  buscarcliente(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/buscar_cliente', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
 }

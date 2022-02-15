@@ -1,6 +1,3 @@
-
-
-
 // database(`CREATE TABLE IF NOT EXISTS TESTE (
 //     ID INTEGER PRIMARY KEY AUTOINCREMENT,
 //     NOME varchar(30),
