@@ -69,6 +69,7 @@ h1{
     margin-bottom: 10px;
     padding: 4px;
 }
+
 .trinta{
     width: 90%;
     padding: 8px;
@@ -115,4 +116,19 @@ a{
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);}
 .encontrados{
     margin: 10px
+}
+#div-final{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#botao-final{
+    padding: 20px;
+    border: black solid 1px;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    background-color: #3dd12f;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }

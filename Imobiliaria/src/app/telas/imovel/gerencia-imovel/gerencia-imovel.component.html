@@ -296,19 +296,26 @@
         <div class="conteudo-secundario"></div>
         <textarea [(ngModel)]="descricaoImovel" id="texto-grandao" type="text"></textarea>
     </div>
-    <div id="div-final"> 
-        <button id="botao-final">Cadastrar Imóvel</button>
-    </div>
+    
 </main>
-<footer>
-    <img *ngIf="teste == 1" [src]="imageURL" alt="">
+<div class="responsavel espacamento">
+    <b>
+        IMAGEM PRINCIPAL
+    </b>
+    <hr>
+<div class="centralizar">
+    <img *ngIf="teste == 1" [src]="imageURL" alt="" width="300px" height="250px">
     <form action="">
         <div>
           <i *ngIf="teste == 0999999" class="fas fa-image"></i>
-          <label *ngIf="teste != 1" for="arquivo">Upload NFT</label>
-          <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+          <label *ngIf="teste != 1" for="arquivo"></label>
+          <input *ngIf="imageURL == null" type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
         </div>
       </form>
-</footer>
+</div>
+</div>
+<div id="div-final"> 
+    <button id="botao-final">Cadastrar Imóvel</button>
+</div>
 
 </html>

@@ -60,7 +60,7 @@ input::placeholder{
     align-items: center;
     justify-content: center;
     padding-bottom: 4px;
-    border-bottom: 1px black solid;
+    border-bottom: 1px #ffffff solid;
 }
 .divbutton{
     display: flex;
@@ -70,8 +70,10 @@ input::placeholder{
 button{
     margin-top: 30px;
     padding: 12px 25px;
+    background: transparent;
     border-radius: 20px;
-    color: black;
+    color: #ffffff;
+    border: white solid 2px;
 }
 .senha{
     font-size: 13px;
