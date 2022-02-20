@@ -1,61 +1,84 @@
 <html>
-    <header>
-        <div id='imagem' (click)="gotoTelaPrincipal()">
-            <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
-        </div>
-        <h1>BONATTI IMÓVEIS</h1>
-        <h2 id="usuario-header">USUÁRIO: Juninho</h2>
-    </header>
-    <div id="pos-header">
-        <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
-        <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
-        <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
-        <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+<header>
+    <div id='imagem' (click)="gotoTelaPrincipal()">
+        <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
     </div>
-    <main>
-        <div class="titulo">Imóveis: listar</div>
-        <div class="postitulo">
-            <b>
-                <div>Imóveis -> </div>
-            </b>
-            <a (click)="gotoGerenciaImovel()">Incluir</a>
-            <a (click)="gotoListaImoveis()">Listar</a>
+    <h1>BONATTI IMÓVEIS</h1>
+    <h2 id="usuario-header">USUÁRIO: Juninho</h2>
+</header>
+<div id="pos-header">
+    <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
+    <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
+    <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
+    <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+</div>
+<main>
+    <div class="titulo">Imóveis: listar</div>
+    <div class="postitulo">
+        <b>
+            <div>Imóveis -> </div>
+        </b>
+        <a (click)="gotoGerenciaImovel()">Incluir</a>
+        <a (click)="gotoListaImoveis()">Listar</a>
+    </div>
+
+    <div class="responsavel espacamento">
+        <b (click)="teste()">
+            INFORMAÇÕES
+        </b>
+        <hr>
+        <div id="container-secundario">
+        <div class="titulo-secundario">
+            Nome do Proprietário
+            <br>
+            <input [(ngModel)]="nomeCliente" type="text" class="codigo trinta">
         </div>
-       
-        <div class="responsavel espacamento">
-            <b (click)="teste()">
-                INFORMAÇÕES
-            </b>
-            <hr>
+        <div class="titulo-secundario">
+            Telefone
+            <br>
+            <input [(ngModel)]="telefoneCliente" type="text" class="codigo trinta">
+        </div>
+    </div>
+        <div id="container-secundario">
             <div class="titulo-secundario">
-                Nome do Proprietário
+                CPF
                 <br>
-                <input [(ngModel)]="nomeCliente" type="text" class="codigo trinta">
+                <input [(ngModel)]="cpfCliente" type="text" class="codigo trinta">
             </div>
-            <div id="container-secundario">
-                <div class="titulo-secundario">
-                    CPF
-                    <br>
-                    <input [(ngModel)]="cpfCliente" type="text" class="codigo trinta">
-                </div>
-                <div class="titulo-secundario">
-                    Email
-                    <br>
-                    <input [(ngModel)]="emailCliente" type="text" class="codigo trinta">
-                </div>
-                <div class="titulo-secundario">
-                    Data de nascimento
-                    <br>
-                    <input [(ngModel)]="dataCliente" type="text" class="codigo trinta">
-                </div>
-    
+            <div class="titulo-secundario">
+                Email
+                <br>
+                <input [(ngModel)]="emailCliente" type="text" class="codigo trinta">
+            </div>
+            <div class="titulo-secundario">
+                Data de nascimento
+                <br>
+                <input [(ngModel)]="dataCliente" type="text" class="codigo trinta">
             </div>
         </div>
-        
+    </div>
 
-       <div id="div-final">
-           <button id="botao-final" (click)="cadastraCliente()">Cadastrar Cliente</button>
-       </div>
-    </main>
 
+
+</main>
+<div class="responsavel espacamento">
+    <b>
+        IMAGEM PRINCIPAL
+    </b>
+    <hr>
+    <div class="centralizar">
+        <img *ngIf="teste == 1" [src]="imageURL" alt="" width="300px" height="250px">
+        <form action="">
+            <div>
+                <i *ngIf="teste == 0999999" class="fas fa-image"></i>
+                <label *ngIf="teste != 1" for="arquivo"></label>
+                <input *ngIf="imageURL == null" type="file" name="arquivo" id="arquivo"
+                    (change)="mostrarImagem($event)">
+            </div>
+        </form>
+    </div>
+</div>
+<div id="div-final">
+    <button id="botao-final" (click)="cadastraCliente()">Cadastrar Cliente</button>
+</div>
 </html>

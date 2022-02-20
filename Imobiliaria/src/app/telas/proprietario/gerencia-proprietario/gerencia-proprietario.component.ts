@@ -18,33 +18,40 @@ export class GerenciaProprietarioComponent implements OnInit {
   cpfCliente = ""
   emailCliente = ""
   dataCliente = ""
+  telefoneCliente = ""
   list=[]
 
   cadastraCliente(){    
-    if(!(this.nomeCliente && this.cpfCliente && this.emailCliente && this.dataCliente)){
+    if(!(this.nomeCliente && this.cpfCliente && this.emailCliente && this.dataCliente && this.telefoneCliente)){
       alert('Preencha todos os campos')
     }else{
-      this.usuarioService.inserircliente(this.nomeCliente, this.cpfCliente, this.emailCliente, this.dataCliente)
-      this.gotoListaClientes();
+      this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente,this.imageURL)
+      // console.log(this.imageURL)
+      // this.gotoListaClientes();
     }
   }
 
   
+  imageURL 
+  teste
+  openModal
 
-  teste() {
-    let objeto = {
-      nome: this.nomeCliente,
-      cpf: this.cpfCliente,
-      email: this.emailCliente,
-      data: this.dataCliente
+  mostrarImagem(event){
+    const file = new FileReader
+    file.onload = (e) => {
+      this.imageURL = e.target.result;
     }
-    this.list.push(objeto)
-    console.log(this.list)
-    localStorage.setItem("lista",JSON.stringify(this.list))
+    this.teste = 1
+    file.readAsDataURL(event.target.files[0])
   }
 
-
-
+  clickBotao(){
+    var item = document.createElement('li');
+    var image = document.createElement('img');
+    image.src = this.imageURL;
+    console.log(item)
+    item.appendChild(image);
+  }
 
 
 

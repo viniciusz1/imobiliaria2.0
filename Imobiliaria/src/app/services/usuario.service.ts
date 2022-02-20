@@ -34,13 +34,13 @@ export class UsuarioService {
     })
   }
 
-  inserircliente(nome, cpf, email, data){
+  inserircliente(nome, telefone, cpf, email, data, imagem){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_cliente', {
         method: 'POST',
         body: JSON.stringify(
           {
-            nome, cpf, email, data
+            nome, telefone, cpf, email, data, imagem
           }
         ),
         headers: {

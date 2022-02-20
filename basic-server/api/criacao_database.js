@@ -34,9 +34,11 @@ database(`INSERT INTO USER VALUES(
 
 database(`CREATE TABLE IF NOT EXISTS INFORMACOES (
     NOME varchar(45) not null,
+    TELEFONE varchar(15) not null,
     CPF INTEGER PRIMARY KEY,
     EMAIL varchar(100),
-    DATA varchar(20)
+    DATA varchar(20),
+    IMAGEM varchar(99999999)
     
     )`).then(result => {
     console.log('Tabela informacoes criada com sucesso');

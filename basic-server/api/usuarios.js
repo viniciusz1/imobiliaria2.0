@@ -45,24 +45,28 @@ function inserir(dados, resposta) {
     database(`INSERT INTO INFORMACOES 
     (
         NOME, 
+        TELEFONE,
         CPF,
         EMAIL,
-        DATA
+        DATA,
+        IMAGEM
         )
         VALUES
         (
         "${dados.nome}", 
+        "${dados.telefone}", 
         "${dados.cpf}",
         "${dados.email}",
-        "${dados.data}"
+        "${dados.data}",
+        "${dados.imagem}"
         )`)
         .then(result => {
-        console.log('Usuario inserido com sucesso!')
-        resposta({message: 'Usuario inserido com sucesso'})
+        console.log('CLiete inserido com sucesso!')
+        resposta({message: 'CLiete inserido com sucesso'})
     }).catch(erro => {
-        console.log('Usuario NÃO FOI inserido com sucesso!')
+        console.log('CLiete NÃO FOI inserido com sucesso!')
         console.log(erro)
-        resposta({message: 'Usuario NÃO FOI inserido com sucesso"'})
+        resposta({message: 'Cliente NÃO FOI inserido com sucesso"'})
     });
 })
 
