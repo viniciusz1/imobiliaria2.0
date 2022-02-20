@@ -58,9 +58,10 @@ function inserir(dados, resposta) {
         )`)
         .then(result => {
         console.log('Usuario inserido com sucesso!')
-        resposta({message: 'Usuario inserido com sucesso"'})
+        resposta({message: 'Usuario inserido com sucesso'})
     }).catch(erro => {
         console.log('Usuario NÃO FOI inserido com sucesso!')
+        console.log(erro)
         resposta({message: 'Usuario NÃO FOI inserido com sucesso"'})
     });
 })

@@ -20,15 +20,13 @@ export class GerenciaProprietarioComponent implements OnInit {
   dataCliente = ""
   list=[]
 
-  logar(){    
-    this.usuarioService.inserircliente(this.nomeCliente, this.cpfCliente, this.emailCliente, this.dataCliente)
-    .then(resultado => (
-      console.log(resultado)
-    )      
-      
-    ).catch(erro => {
-      console.log("ERRO AO BUSCAR USUÁRIO:", erro)
-    })
+  cadastraCliente(){    
+    if(!(this.nomeCliente && this.cpfCliente && this.emailCliente && this.dataCliente)){
+      alert('Preencha todos os campos')
+    }else{
+      this.usuarioService.inserircliente(this.nomeCliente, this.cpfCliente, this.emailCliente, this.dataCliente)
+      this.gotoListaClientes();
+    }
   }
 
   
