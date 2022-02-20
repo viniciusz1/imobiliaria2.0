@@ -25,37 +25,45 @@ inserirRota('/buscar_usuario',
     });
 })
 
-// inserirRota('/criar_usuario',
-// function name(dados, resposta) {
-//     console.log(dados)
+inserirRota('/buscar_informacoes',
+    function (dados, resposta) {
+        console.log(dados, resposta);
 
-//     if(!dados.nome){
-//         return resposta({erro: 'É necessário preencher o nome'})
-//     }
-//     if(!dados.nickname){
-//         return resposta({erro: 'É necessário preencher o nome'})
-//     }
-//     if(!dados.password){
-//         return resposta({erro: 'É necessário preencher senha '})
-//     }
-//     database(`INSERT INTO USER 
-//     (
-//         NOME, 
-//         PASSWORD
-//         )
-//         VALUES
-//         (
-//         "${dados.nome}", 
-//         "${dados.password}"
-//         )`)
-//         .then(result => {
-//         console.log('Usuario inserido com sucesso!')
-//         resposta({message: 'Usuario inserido com sucesso"'})
-//     }).catch(erro => {
-//         console.log('Usuario NÃO FOI inserido com sucesso!')
-//         resposta({message: 'Usuario NÃO FOI inserido com sucesso"'})
-//     });
-// })
+       
+    database(`SELECT * FROM INFORMACOES`)
+        .then(result => {
+        resposta( result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
+
+
+inserirRota('/inserir_cliente',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`INSERT INTO INFORMACOES 
+    (
+        NOME, 
+        CPF,
+        EMAIL,
+        DATA
+        )
+        VALUES
+        (
+        "${dados.nome}", 
+        "${dados.cpf}",
+        "${dados.email}",
+        "${dados.data}"
+        )`)
+        .then(result => {
+        console.log('Usuario inserido com sucesso!')
+        resposta({message: 'Usuario inserido com sucesso"'})
+    }).catch(erro => {
+        console.log('Usuario NÃO FOI inserido com sucesso!')
+        resposta({message: 'Usuario NÃO FOI inserido com sucesso"'})
+    });
+})
 
 // inserirRota('/criar_usuario', 
 // function name(dados, resposta) {
