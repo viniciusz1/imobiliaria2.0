@@ -11,6 +11,7 @@ export class TelaPrincipalComponent implements OnInit {
   constructor(
     private router: Router
   ) { }
+  user = localStorage.getItem('USER')
   gotoGerenciaImovel(){
     this.router.navigate(['/gerencia-imovel'])
   }
@@ -30,6 +31,7 @@ console(){
   console.log('salbe')
 }
   ngOnInit(): void {
+    console.log(this.user)
   }
 
 }
