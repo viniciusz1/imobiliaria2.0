@@ -48,8 +48,7 @@ function inserir(dados, resposta) {
         TELEFONE,
         CPF,
         EMAIL,
-        DATA,
-        IMAGEM
+        DATA
         )
         VALUES
         (
@@ -57,8 +56,7 @@ function inserir(dados, resposta) {
         "${dados.telefone}", 
         "${dados.cpf}",
         "${dados.email}",
-        "${dados.data}",
-        "${dados.imagem}"
+        "${dados.data}"
         )`)
         .then(result => {
         console.log('CLiete inserido com sucesso!')

@@ -13,10 +13,61 @@ database(`CREATE TABLE IF NOT EXISTS USER (
     NOME varchar(30),
     PASSWORD varchar(30)
     )`).then(result => {
-    console.log('TABELA CRIADA')
+    console.log('TABELA USER CRIADA')
 }).catch(erro => {
-    console.log('TABELA DEU ERRO')
+    console.log('TABELA DEU ERRO USER')
 });
+
+database(`CREATE TABLE IF NOT EXISTS INFOIMOVEL (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    VALOR_IMOVEL varchar(30),
+    FINALIDADE varchar(30),
+    TIPO_IMOVEL varchar(30)
+    )`).then(result => {
+    console.log('TABELA CRIADA INFOIMOVEL')
+}).catch(erro => {
+    console.log('TABELA DEU ERRO INFOIMOVEL')
+});
+
+database(`CREATE TABLE IF NOT EXISTS CLIENTE (
+    CODIGO INTEGER PRIMARY KEY AUTOINCREMENT,
+    NOME varchar(30),
+    TELEFONE varchar(30),
+    CPF varchar(30),
+    EMAIL varchar(30),
+    DATA_NASCIMENTO varchar(30)
+    )`).then(result => {
+    console.log('TABELA CRIADA CLIENTE')
+}).catch(erro => {
+    console.log('TABELA DEU ERRO CLIENTE')
+});
+
+database(`CREATE TABLE IF NOT EXISTS CARACTERISTICAS (
+    CODIGO INTEGER PRIMARY KEY AUTOINCREMENT,
+    DORMITORIOS varchar(30),
+    SUITES varchar(30),
+    BANHEIROS varchar(30),
+    VAGAS_GARAGEM varchar(30),
+    LAVANDERIA varchar(30),
+    SACADA varchar(30),
+    CHURRASQUEIRA varchar(30),
+    AREA_FESTAS varchar(30)
+    )`).then(result => {
+    console.log('TABELA CRIADA CARACTERISTICAS')
+}).catch(erro => {
+    console.log('TABELA DEU ERRO CARACTERISTICAS')
+});
+
+database(`CREATE TABLE IF NOT EXISTS RESPONSAVEL (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    PROPRIETARIO varchar(30),
+    CORRETOR varchar(30)
+    )`).then(result => {
+    console.log('TABELA CRIADA RESPONSAVEL')
+}).catch(erro => {
+    console.log('TABELA DEU ERRO RESPONSAVEL')
+});
+
 
 database(`INSERT INTO USER VALUES(
     null,
@@ -37,9 +88,7 @@ database(`CREATE TABLE IF NOT EXISTS INFORMACOES (
     TELEFONE varchar(15) not null,
     CPF INTEGER PRIMARY KEY,
     EMAIL varchar(100),
-    DATA varchar(20),
-    IMAGEM varchar(99999999)
-    
+    DATA varchar(20)    
     )`).then(result => {
     console.log('Tabela informacoes criada com sucesso');
 }).catch(erro => {

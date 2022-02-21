@@ -31,29 +31,29 @@
         <div class="titulo-secundario">
             Nome do Proprietário
             <br>
-            <input [(ngModel)]="nomeCliente" type="text" class="codigo trinta">
+            <input [(ngModel)]="nomeCliente" type="text"  maxlength="45"class="codigo trinta">
         </div>
         <div class="titulo-secundario">
             Telefone
             <br>
-            <input [(ngModel)]="telefoneCliente" type="text" class="codigo trinta">
+            <input [(ngModel)]="telefoneCliente" type="number" maxlength="9" class="codigo trinta">
         </div>
     </div>
         <div id="container-secundario">
             <div class="titulo-secundario">
                 CPF
                 <br>
-                <input [(ngModel)]="cpfCliente" type="text" class="codigo trinta">
+                <input [(ngModel)]="cpfCliente" type="text" maxlength="11"class="codigo trinta">
             </div>
             <div class="titulo-secundario">
                 Email
                 <br>
-                <input [(ngModel)]="emailCliente" type="text" class="codigo trinta">
+                <input [(ngModel)]="emailCliente" type="email" class="codigo trinta">
             </div>
             <div class="titulo-secundario">
                 Data de nascimento
                 <br>
-                <input [(ngModel)]="dataCliente" type="text" class="codigo trinta">
+                <input [(ngModel)]="dataCliente" type="date" class="codigo trinta">
             </div>
         </div>
     </div>

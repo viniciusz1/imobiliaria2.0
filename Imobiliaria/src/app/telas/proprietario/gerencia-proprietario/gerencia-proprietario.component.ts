@@ -25,9 +25,8 @@ export class GerenciaProprietarioComponent implements OnInit {
     if(!(this.nomeCliente && this.cpfCliente && this.emailCliente && this.dataCliente && this.telefoneCliente)){
       alert('Preencha todos os campos')
     }else{
-      this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente,this.imageURL)
-      // console.log(this.imageURL)
-      // this.gotoListaClientes();
+      this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente)
+      this.gotoListaClientes();
     }
   }
 
