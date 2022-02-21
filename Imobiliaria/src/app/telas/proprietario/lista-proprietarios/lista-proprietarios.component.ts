@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-lista-proprietarios',
@@ -10,13 +11,17 @@ export class ListaProprietariosComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private usuarioService: UsuarioService
     ) {
       const id = this.route.snapshot.paramMap.get('id');
    }
  
   listasClientes = JSON.parse(localStorage.getItem('lista'))
-  
+
+
+
+
   gotoGerenciaImovel(){
     this.router.navigate(['/gerencia-imovel/novo'])
   }
@@ -32,8 +37,33 @@ export class ListaProprietariosComponent implements OnInit {
   gotoTelaPrincipal(){
     this.router.navigate(['/tela-principal'])
   }
+  
+  lista=[]
+  objeto={}
   ngOnInit(): void {
-    console.log(this.listasClientes)
+    this.usuarioService.buscarClientes()
+    .then((resultado: Cliente[])=> {
+      for(let i = 0; i < resultado.length; i++){
+        this.objeto = {
+          nome: resultado[i].NOME,
+          cpf: resultado[i].CPF,
+          email: resultado[i].EMAIL,
+          data: resultado[i].DATA
+        }
+        this.lista.push(this.objeto)
+      }
+    }).catch(erro => {
+      console.log("ERRO AO BUSCAR USUÁRIO:", erro)
+    })
   }
+}
+
+
+interface Cliente {
+
+  NOME: string;
+  CPF: string;
+  EMAIL: string;
+  DATA: number;
 
 }

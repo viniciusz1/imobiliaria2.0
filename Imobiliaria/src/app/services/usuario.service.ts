@@ -7,6 +7,20 @@ export class UsuarioService {
 
   constructor() { }
 
+  buscarClientes(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/buscar_informacoes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
+
   buscarUsuarios(){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/buscar_usuario', {
@@ -20,16 +34,25 @@ export class UsuarioService {
     })
   }
 
-  buscarcliente(){
+  inserircliente(nome, telefone, cpf, email, data){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/buscar_cliente', {
+      fetch('/api/inserir_cliente', {
         method: 'POST',
+        body: JSON.stringify(
+          {
+            nome, telefone, cpf, email, data,
+          }
+        ),
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(resultado => resultado.json())
-      .then(resolvido => resolve(resolvido))
-      .catch(rejeitado);
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
     })
   }
 

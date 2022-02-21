@@ -102,11 +102,5 @@ onAddCidade(){ // Função que foi chamada
     image.src = this.imageURL;
     console.log(item)
     item.appendChild(image);
-    document.getElementById("SavedNFT").appendChild(item);
-    image.id = 'imagemSalva'
-
-
-
-    this.openModal = 2;
   }
 }
