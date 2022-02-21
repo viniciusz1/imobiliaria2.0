@@ -29,19 +29,6 @@ database(`CREATE TABLE IF NOT EXISTS INFOIMOVEL (
     console.log('TABELA DEU ERRO INFOIMOVEL')
 });
 
-database(`CREATE TABLE IF NOT EXISTS CLIENTE (
-    CODIGO INTEGER PRIMARY KEY AUTOINCREMENT,
-    NOME varchar(30),
-    TELEFONE char(11),
-    CPF char(11),
-    EMAIL varchar(100),
-    DATA_NASCIMENTO varchar(30)
-    )`).then(result => {
-    console.log('TABELA CRIADA CLIENTE')
-}).catch(erro => {
-    console.log('TABELA DEU ERRO CLIENTE')
-});
-
 database(`CREATE TABLE IF NOT EXISTS CARACTERISTICAS (
     CODIGO INTEGER PRIMARY KEY AUTOINCREMENT,
     DORMITORIOS varchar(30),
@@ -106,7 +93,7 @@ database(`INSERT INTO USER VALUES(
 
 
 
-
+// CLIENTES
 database(`CREATE TABLE IF NOT EXISTS INFORMACOES (
     NOME varchar(45) not null,
     TELEFONE varchar(15) not null,
