@@ -12,6 +12,35 @@
 // //     });
 // // })
 
+inserirRota('/inserir_cliente',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`INSERT INTO CLIENTE 
+    (
+        NOME, 
+        TELEFONE,
+        CPF,
+        EMAIL,
+        DATA
+        )
+        VALUES
+        (
+        "${dados.nome}", 
+        "${dados.telefone}", 
+        "${dados.cpf}",
+        "${dados.email}",
+        "${dados.data}"
+        )`)
+        .then(result => {
+        console.log('CLiete inserido com sucesso!')
+        resposta({message: 'CLiete inserido com sucesso'})
+    }).catch(erro => {
+        console.log('CLiete NÃO FOI inserido com sucesso!')
+        console.log(erro)
+        resposta({message: 'Cliente NÃO FOI inserido com sucesso"'})
+    });
+})
+
 inserirRota('/buscar_usuario',
     function (dados, resposta) {
         console.log(dados, resposta);

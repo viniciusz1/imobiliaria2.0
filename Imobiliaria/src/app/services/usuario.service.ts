@@ -56,4 +56,90 @@ export class UsuarioService {
     })
   }
 
+  inserirResponsavel(proprietario, corretor){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_responsavel', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            proprietario, corretor
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+  inserirInfoimovel(id, valorImovel, finalidade, tipoImovel){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_responsavel', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+          id, valorImovel, finalidade, tipoImovel  
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+  inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_responsavel', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            bairro, logradouro, numero, complemento, regiao, estado, zona  
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+  inserirCaracteristicas(dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_responsavel', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas  
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
 }

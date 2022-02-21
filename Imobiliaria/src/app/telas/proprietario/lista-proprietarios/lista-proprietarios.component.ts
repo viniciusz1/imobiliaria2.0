@@ -46,10 +46,12 @@ export class ListaProprietariosComponent implements OnInit {
       for(let i = 0; i < resultado.length; i++){
         this.objeto = {
           nome: resultado[i].NOME,
+          telefone: resultado[i].TELEFONE,
           cpf: resultado[i].CPF,
           email: resultado[i].EMAIL,
           data: resultado[i].DATA
         }
+        console.log(this.lista)
         this.lista.push(this.objeto)
       }
     }).catch(erro => {
@@ -62,6 +64,7 @@ export class ListaProprietariosComponent implements OnInit {
 interface Cliente {
 
   NOME: string;
+  TELEFONE: number;
   CPF: string;
   EMAIL: string;
   DATA: number;

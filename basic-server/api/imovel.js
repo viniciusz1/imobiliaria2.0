@@ -10,10 +10,10 @@ function inserir(dados, resposta) {
         )
         VALUES
         (
-        "${dados.nome}", 
-        "${dados.telefone}", 
-        "${dados.cpf}",
-        "${dados.email}"
+        "${dados.id}", 
+        "${dados.valorImovel}", 
+        "${dados.finalidade}",
+        "${dados.tipoImovel}"
         )`)
         .then(result => {
         console.log('CLiete inserido com sucesso!')
@@ -30,7 +30,6 @@ function inserir(dados, resposta) {
     console.log(dados)
     database(`INSERT INTO CARACTERISTICAS 
     (
-        CODIGO, 
         DORMITORIOS,
         SUITES,
         BANHEIROS,
@@ -67,10 +66,8 @@ function inserir(dados, resposta) {
         )
         VALUES
         (
-        "${dados.nome}", 
-        "${dados.telefone}", 
-        "${dados.cpf}",
-        "${dados.email}"
+        "${dados.proprietario}",
+        "${dados.corretor}"
         )`)
         .then(result => {
         console.log('CLiete inserido com sucesso!')
@@ -87,7 +84,6 @@ function inserir(dados, resposta) {
     console.log(dados)
     database(`INSERT INTO LOCALIZACAO 
     (
-        CODIGO,
         BAIRRO,
         LOGRADOURO,
         NUMERO,
@@ -98,10 +94,13 @@ function inserir(dados, resposta) {
         )
         VALUES
         (
-        "${dados.nome}", 
-        "${dados.telefone}", 
-        "${dados.cpf}",
-        "${dados.email}"
+        "${dados.bairro}", 
+        "${dados.logradouro}", 
+        "${dados.numero}",
+        "${dados.complemento}",
+        "${dados.regiao}",
+        "${dados.estado}",
+        "${dados.zona}"
         )`)
         .then(result => {
         console.log('CLiete inserido com sucesso!')

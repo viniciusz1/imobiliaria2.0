@@ -22,7 +22,7 @@
         <a (click)="gotoListaImoveis()">Listar</a>
     </div>
     <div class="responsavel espacamento">
-        <b>
+        <b (click)="cadastraResponsavel()">
             RESPONSÁVEL
         </b>
         <hr>
@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="responsavel espacamento">
-        <b>
+        <b (click)='cadastraInfoimovel()'>
             INFORMAÇÕES
         </b>
         <hr>
@@ -89,7 +89,7 @@
 
         </div>
     </div>
-    <div class="responsavel espacamento">
+    <div class="responsavel espacamento" (click)="cadastraLocalizacao()">
         <b>
             LOCALIZAÇÃO
         </b>
@@ -143,7 +143,7 @@
         </div>
     </div>
     <div class="responsavel espacamento">
-        <b>
+        <b (click)="cadastraCaracteristicas()">
             CARACTERÍSTICAS
         </b>
 

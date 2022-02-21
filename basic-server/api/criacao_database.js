@@ -20,7 +20,7 @@ database(`CREATE TABLE IF NOT EXISTS USER (
 
 database(`CREATE TABLE IF NOT EXISTS INFOIMOVEL (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    VALOR_IMOVEL varchar(30),
+    VALOR_IMOVEL double,
     FINALIDADE varchar(30),
     TIPO_IMOVEL varchar(30)
     )`).then(result => {
@@ -94,7 +94,7 @@ database(`INSERT INTO USER VALUES(
 
 
 // CLIENTES
-database(`CREATE TABLE IF NOT EXISTS INFORMACOES (
+database(`CREATE TABLE IF NOT EXISTS CLIENTE (
     NOME varchar(45) not null,
     TELEFONE varchar(15) not null,
     CPF INTEGER PRIMARY KEY,

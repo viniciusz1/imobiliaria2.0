@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-gerencia-imovel',
   templateUrl: './gerencia-imovel.component.html',
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class GerenciaImovelComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private usuarioService: UsuarioService) { }
   gotoGerenciaImovel(){
     this.router.navigate(['/gerencia-imovel/novo'])
   }
@@ -48,6 +49,19 @@ sacadaImovel="";
 churrasImovel="";
 festasImovel="";
 descricaoImovel="";
+
+cadastraResponsavel(){
+    this.usuarioService.inserirResponsavel(this.proprietario, this.corretor)
+}
+cadastraInfoimovel(){
+  this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel)
+}
+cadastraLocalizacao(){
+  this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel)
+}
+cadastraCaracteristicas(){
+  this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel)
+}
 
 onAddCidade(){ // Função que foi chamada
   console.log("proprietario", this.proprietario); // Imprimiu o valor no Console log.
