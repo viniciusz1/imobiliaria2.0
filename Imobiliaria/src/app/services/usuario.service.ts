@@ -9,7 +9,7 @@ export class UsuarioService {
 
   buscarClientes(){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/buscar_informacoes', {
+      fetch('/api/buscar_clientes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -19,7 +19,18 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-
+  buscarInfoimovel(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/buscar_infoimovel', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
 
   buscarUsuarios(){
     return new Promise((resolve, rejeitado) => {

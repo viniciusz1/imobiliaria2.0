@@ -25,6 +25,19 @@ function inserir(dados, resposta) {
     });
 })
 
+inserirRota('/buscar_infoimovel',
+    function (dados, resposta) {
+        console.log(dados, resposta);
+
+       
+    database(`SELECT * FROM INFOIMOVEL`)
+        .then(result => {
+        resposta( result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
+
 inserirRota('/inserir_caracteristicas',
 function inserir(dados, resposta) {
     console.log(dados)

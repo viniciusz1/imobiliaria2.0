@@ -41,12 +41,12 @@ function inserir(dados, resposta) {
     });
 })
 
-inserirRota('/buscar_usuario',
+inserirRota('/buscar_clientes',
     function (dados, resposta) {
         console.log(dados, resposta);
 
        
-    database(`SELECT * FROM USER`)
+    database(`SELECT * FROM CLIENTE`)
         .then(result => {
         resposta( result)
     }).catch(erro => {

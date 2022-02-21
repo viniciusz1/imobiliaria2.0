@@ -89,7 +89,12 @@ onAddCidade(){ // Função que foi chamada
 }
 
 
-
+  jogaDB(){
+    this.cadastraResponsavel()
+    this.cadastraInfoimovel()
+    this.cadastraLocalizacao()
+    this.cadastraCaracteristicas()
+  } 
   ngOnInit(): void {
   }
   imageURL 
