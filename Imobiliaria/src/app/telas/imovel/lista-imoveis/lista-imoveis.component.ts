@@ -45,10 +45,10 @@ export class ListaImoveisComponent implements OnInit {
       (resultado: Imovel[])=> {
       for(let i = 0; i < resultado.length; i++){
         this.objeto = {
-          nome: resultado[i].VALOR_IMOVEL,
-          telefone: resultado[i].CODIGO_REFERENCIA,
-          cpf: resultado[i].FINALIDADE,
-          email: resultado[i].TIPO_IMOVEL,
+          valor: resultado[i].VALOR_IMOVEL,
+          codigoReferencia: resultado[i].CODIGO_REFERENCIA,
+          finalidade: resultado[i].FINALIDADE,
+          tipoImovel: resultado[i].TIPO_IMOVEL,
         }
         console.log(this.lista)
         this.lista.push(this.objeto)
