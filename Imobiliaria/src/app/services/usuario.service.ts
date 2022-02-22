@@ -90,7 +90,7 @@ export class UsuarioService {
   }
   inserirInfoimovel(id, valorImovel, finalidade, tipoImovel){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/inserir_responsavel', {
+      fetch('/api/inserir_infoimovel', {
         method: 'POST',
         body: JSON.stringify(
           {
@@ -112,7 +112,7 @@ export class UsuarioService {
 
   inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/inserir_responsavel', {
+      fetch('/api/inserir_localizacao', {
         method: 'POST',
         body: JSON.stringify(
           {
@@ -134,7 +134,7 @@ export class UsuarioService {
 
   inserirCaracteristicas(dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/inserir_responsavel', {
+      fetch('/api/inserir_caracteristicas', {
         method: 'POST',
         body: JSON.stringify(
           {

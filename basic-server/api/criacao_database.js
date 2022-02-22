@@ -19,8 +19,8 @@ database(`CREATE TABLE IF NOT EXISTS USER (
 });
 
 database(`CREATE TABLE IF NOT EXISTS INFOIMOVEL (
-    CODIGO_REFERENCIA integer,
-    VALOR_IMOVEL double,
+    CODIGO_REFERENCIA int,
+    VALOR_IMOVEL int,
     FINALIDADE varchar(30),
     TIPO_IMOVEL varchar(30)
     )`).then(result => {

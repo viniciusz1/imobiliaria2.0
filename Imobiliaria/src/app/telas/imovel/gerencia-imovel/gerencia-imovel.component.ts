@@ -50,19 +50,6 @@ churrasImovel="";
 festasImovel="";
 descricaoImovel="";
 
-cadastraResponsavel(){
-    this.usuarioService.inserirResponsavel(this.proprietario, this.corretor)
-}
-cadastraInfoimovel(){
-  this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel)
-}
-cadastraLocalizacao(){
-  this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel)
-}
-cadastraCaracteristicas(){
-  this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel)
-}
-
 onAddCidade(){ // Função que foi chamada
   console.log("proprietario", this.proprietario); // Imprimiu o valor no Console log.
   console.log('corretor', this.corretor);
@@ -90,10 +77,11 @@ onAddCidade(){ // Função que foi chamada
 
 
   jogaDB(){
-    this.cadastraResponsavel()
-    this.cadastraInfoimovel()
-    this.cadastraLocalizacao()
-    this.cadastraCaracteristicas()
+    
+  this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel),
+  this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel),
+  this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel),
+  this.usuarioService.inserirResponsavel(this.proprietario, this.corretor)
   } 
   ngOnInit(): void {
   }

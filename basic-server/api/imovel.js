@@ -3,7 +3,7 @@ function inserir(dados, resposta) {
     console.log(dados)
     database(`INSERT INTO INFOIMOVEL 
     (
-        ID, 
+        CODIGO_REFERENCIA, 
         VALOR_IMOVEL,
         FINALIDADE,
         TIPO_IMOVEL
@@ -16,12 +16,12 @@ function inserir(dados, resposta) {
         "${dados.tipoImovel}"
         )`)
         .then(result => {
-        console.log('CLiete inserido com sucesso!')
-        resposta({message: 'CLiete inserido com sucesso'})
+        console.log('infoimovel inserido com sucesso!')
+        resposta({message: 'infoimovel inserido com sucesso'})
     }).catch(erro => {
-        console.log('CLiete NÃO FOI inserido com sucesso!')
+        console.log('infoimovel NÃO FOI inserido com sucesso!')
         console.log(erro)
-        resposta({message: 'Cliente NÃO FOI inserido com sucesso"'})
+        resposta({message: 'infoimovel NÃO FOI inserido com sucesso"'})
     });
 })
 
@@ -32,7 +32,7 @@ inserirRota('/buscar_infoimovel',
        
     database(`SELECT * FROM INFOIMOVEL`)
         .then(result => {
-        resposta( result)
+    resposta(result)
     }).catch(erro => {
         resposta({erro: 'Erro ao buscar os usuários'})
     });
@@ -54,18 +54,22 @@ function inserir(dados, resposta) {
         )
         VALUES
         (
-        "${dados.nome}", 
-        "${dados.telefone}", 
-        "${dados.cpf}",
-        "${dados.email}"
+        "${dados.dormitorios}", 
+        "${dados.suites}", 
+        "${dados.banheiros}",
+        "${dados.vagasGaragem}",
+        "${dados.lavanderia}",
+        "${dados.sacada}",
+        "${dados.churrasqueira}",
+        "${dados.areaFestas}"
         )`)
         .then(result => {
-        console.log('CLiete inserido com sucesso!')
-        resposta({message: 'CLiete inserido com sucesso'})
+        console.log('caracteristicas inserido com sucesso!')
+        resposta({message: 'caracteristicas inserido com sucesso'})
     }).catch(erro => {
-        console.log('CLiete NÃO FOI inserido com sucesso!')
+        console.log('caracteristicas NÃO FOI inserido com sucesso!')
         console.log(erro)
-        resposta({message: 'Cliente NÃO FOI inserido com sucesso"'})
+        resposta({message: 'caracteristicas  NÃO FOI inserido com sucesso"'})
     });
 })
 
@@ -83,12 +87,12 @@ function inserir(dados, resposta) {
         "${dados.corretor}"
         )`)
         .then(result => {
-        console.log('CLiete inserido com sucesso!')
-        resposta({message: 'CLiete inserido com sucesso'})
+        console.log('responsavel inserido com sucesso!')
+        resposta({message: 'responsavel inserido com sucesso'})
     }).catch(erro => {
-        console.log('CLiete NÃO FOI inserido com sucesso!')
+        console.log('responsavel NÃO FOI inserido com sucesso!')
         console.log(erro)
-        resposta({message: 'Cliente NÃO FOI inserido com sucesso"'})
+        resposta({message: 'responsavel NÃO FOI inserido com sucesso"'})
     });
 })
 
@@ -116,12 +120,12 @@ function inserir(dados, resposta) {
         "${dados.zona}"
         )`)
         .then(result => {
-        console.log('CLiete inserido com sucesso!')
-        resposta({message: 'CLiete inserido com sucesso'})
+        console.log('localizacao inserido com sucesso!')
+        resposta({message: 'localizacao inserido com sucesso'})
     }).catch(erro => {
-        console.log('CLiete NÃO FOI inserido com sucesso!')
+        console.log('localizacao NÃO FOI inserido com sucesso!')
         console.log(erro)
-        resposta({message: 'Cliente NÃO FOI inserido com sucesso"'})
+        resposta({message: 'localizacao NÃO FOI inserido com sucesso"'})
     });
 })
 
