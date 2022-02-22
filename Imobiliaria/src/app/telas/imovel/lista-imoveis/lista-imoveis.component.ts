@@ -39,20 +39,21 @@ export class ListaImoveisComponent implements OnInit {
   lista=[]
   objeto={}
   ngOnInit(): void {
+    
     this.usuarioService.buscarInfoimovel()
     .then(
-    //   (resultado: Cliente[])=> {
-    //   for(let i = 0; i < resultado.length; i++){
-    //     this.objeto = {
-    //       nome: resultado[i].VALOR_IMOVEL,
-    //       telefone: resultado[i].CODIGO_IMOVEL,
-    //       cpf: resultado[i].FINALIDADE_IMOVEL,
-    //       email: resultado[i].TIPO_IMOVEL,
-    //     }
-    //     console.log(this.lista)
-    //     this.lista.push(this.objeto)
-    //   }
-    // }
+      (resultado: Imovel[])=> {
+      for(let i = 0; i < resultado.length; i++){
+        this.objeto = {
+          nome: resultado[i].VALOR_IMOVEL,
+          telefone: resultado[i].CODIGO_REFERENCIA,
+          cpf: resultado[i].FINALIDADE,
+          email: resultado[i].TIPO_IMOVEL,
+        }
+        console.log(this.lista)
+        this.lista.push(this.objeto)
+      }
+    },
     resultado => console.log(resultado)
     ).catch(erro => {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
@@ -61,11 +62,10 @@ export class ListaImoveisComponent implements OnInit {
 }
 
 
-interface Cliente {
-
+interface Imovel {
+  CODIGO_REFERENCIA
   VALOR_IMOVEL: string;
-  CODIGO_IMOVEL: number;
-  FINALIDADE_IMOVEL: string;
+  FINALIDADE: string;
   TIPO_IMOVEL: string;
 
 }
