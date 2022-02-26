@@ -42,7 +42,7 @@ export class ListaImoveisComponent implements OnInit {
     
     this.usuarioService.buscarInfoimovel()
     .then(
-      (resultado: Imovel[])=> {
+      (resultado: infoImovel[])=> {
       for(let i = 0; i < resultado.length; i++){
         this.objeto = {
           valor: resultado[i].VALOR_IMOVEL,
@@ -50,22 +50,60 @@ export class ListaImoveisComponent implements OnInit {
           finalidade: resultado[i].FINALIDADE,
           tipoImovel: resultado[i].TIPO_IMOVEL,
         }
-        console.log(this.lista)
         this.lista.push(this.objeto)
       }
     },
     resultado => console.log(resultado)
     ).catch(erro => {
-      console.log("ERRO AO BUSCAR USUÁRIO:", erro)
+      console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
     })
+
+    this.usuarioService.buscarCaracteristicas()
+    .then(
+      (resultado: caracteristicas[])=> {
+      for(let i = 0; i < resultado.length; i++){
+        this.objeto = {
+          codigo: resultado[i].CODIGO,
+          dormitorios: resultado[i].DORMITORIOS,
+          suites: resultado[i].SUITES,
+          vagas: resultado[i].VAGAS_GARAGEM,
+          lavanderia: resultado[i].LAVANDERIA,
+          sacada: resultado[i].SACADA,
+          churrasqueira: resultado[i].CHURRASQUEIRA,
+          festas: resultado[i].AREA_FESTAS,
+          inforimovelCodigo: resultado[i].INFOIMOVEL_CODIGO_REFERENCIA,
+        }
+        this.lista.push(this.objeto)
+        
+        console.log(this.lista)
+      }
+    },
+    resultado => console.log(resultado)
+    ).catch(erro => {
+      console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
+    })
+
   }
 }
 
 
-interface Imovel {
-  CODIGO_REFERENCIA
+interface infoImovel {
+  CODIGO_REFERENCIA: string;
   VALOR_IMOVEL: string;
   FINALIDADE: string;
   TIPO_IMOVEL: string;
+
+}
+interface caracteristicas{
+  CODIGO: string;
+  DORMITORIOS: string;
+  SUITES: string;
+  BANHEIROS: string;
+  VAGAS_GARAGEM: string;
+  LAVANDERIA: string;
+  SACADA: string;
+  CHURRASQUEIRA : string;
+  AREA_FESTAS: string;
+  INFOIMOVEL_CODIGO_REFERENCIA: string;
 
 }

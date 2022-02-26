@@ -52,9 +52,9 @@ database(`CREATE TABLE IF NOT EXISTS RESPONSAVEL (
     USER_ID INTEGER,
     PROPRIETARIO varchar(30),
     CORRETOR varchar(30),
-    CLIENTE_NOME_CLIENTE INTEGER,
+    CLIENTE_CPF INTEGER,
     FOREIGN KEY(USER_ID) REFERENCES USER(ID),
-    FOREIGN KEY(CLIENTE_NOME_CLIENTE) REFERENCES CLIENTE(NOME_CLIENTE)
+    FOREIGN KEY(CLIENTE_CPF) REFERENCES CLIENTE(CPF)
     )`).then(result => {
     console.log('TABELA CRIADA RESPONSAVEL')
 }).catch(erro => {
@@ -84,10 +84,10 @@ database(`INSERT INTO USER VALUES(
     null,
     'vinicius',
     '123'
-),(null, 'thiago', '123')`).then(result => {
+)`).then(result => {
     console.log('insert CRIADA')
 }).catch(erro => {
-    console.log('TABELA DEU ERRO')
+    console.log('inserção deu erro')
 });
 
 

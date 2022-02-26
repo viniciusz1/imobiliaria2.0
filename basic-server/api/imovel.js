@@ -37,6 +37,18 @@ inserirRota('/buscar_infoimovel',
         resposta({erro: 'Erro ao buscar os usuários'})
     });
 })
+inserirRota('/buscar_caracteristicas',
+    function (dados, resposta) {
+        console.log(dados, resposta);
+
+       
+    database(`SELECT * FROM CARACTERISTICAS`)
+        .then(result => {
+    resposta(result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
 
 inserirRota('/inserir_caracteristicas',
 function inserir(dados, resposta) {
@@ -50,18 +62,20 @@ function inserir(dados, resposta) {
         LAVANDERIA,
         SACADA,
         CHURRASQUEIRA,
-        AREA_FESTAS
+        AREA_FESTAS,
+        INFOIMOVEL_CODIGO_REFERENCIA
         )
         VALUES
         (
         "${dados.dormitorios}", 
         "${dados.suites}", 
         "${dados.banheiros}",
-        "${dados.vagasGaragem}",
+        "${dados.vagas}",
         "${dados.lavanderia}",
         "${dados.sacada}",
         "${dados.churrasqueira}",
-        "${dados.areaFestas}"
+        "${dados.festas}",
+        "${dados.codigo}"
         )`)
         .then(result => {
         console.log('caracteristicas inserido com sucesso!')
@@ -78,11 +92,13 @@ function inserir(dados, resposta) {
     console.log(dados)
     database(`INSERT INTO RESPONSAVEL 
     (
+        USER_ID,
         PROPRIETARIO,
         CORRETOR
         )
         VALUES
         (
+        "${dados.user}",
         "${dados.proprietario}",
         "${dados.corretor}"
         )`)
@@ -107,7 +123,8 @@ function inserir(dados, resposta) {
         COMPLEMENTO,
         REGIAO,
         ESTADO,
-        ZONA
+        ZONA,
+        INFOIMOVEL_CODIGO_REFERENCIA
         )
         VALUES
         (
@@ -117,7 +134,9 @@ function inserir(dados, resposta) {
         "${dados.complemento}",
         "${dados.regiao}",
         "${dados.estado}",
-        "${dados.zona}"
+        "${dados.zona}",
+        "${dados.codigo}"
+
         )`)
         .then(result => {
         console.log('localizacao inserido com sucesso!')

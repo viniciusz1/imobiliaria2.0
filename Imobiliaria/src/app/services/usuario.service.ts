@@ -31,6 +31,18 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
+  buscarCaracteristicas(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/buscar_caracteristicas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
 
   buscarUsuarios(){
     return new Promise((resolve, rejeitado) => {
@@ -67,13 +79,13 @@ export class UsuarioService {
     })
   }
 
-  inserirResponsavel(proprietario, corretor){
+  inserirResponsavel(userId, proprietario, corretor){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_responsavel', {
         method: 'POST',
         body: JSON.stringify(
           {
-            proprietario, corretor
+            userId, proprietario, corretor
           }
         ),
         headers: {
@@ -110,13 +122,13 @@ export class UsuarioService {
     })
   }
 
-  inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona){
+  inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_localizacao', {
         method: 'POST',
         body: JSON.stringify(
           {
-            bairro, logradouro, numero, complemento, regiao, estado, zona  
+            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo  
           }
         ),
         headers: {
@@ -132,13 +144,13 @@ export class UsuarioService {
     })
   }
 
-  inserirCaracteristicas(dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas){
+  inserirCaracteristicas(dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas, codigo){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_caracteristicas', {
         method: 'POST',
         body: JSON.stringify(
           {
-            dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas  
+            dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas, codigo
           }
         ),
         headers: {
