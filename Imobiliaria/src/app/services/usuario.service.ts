@@ -43,7 +43,18 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-
+  buscarLocalizacao(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/buscar_localizacao', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
   buscarUsuarios(){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/buscar_usuario', {

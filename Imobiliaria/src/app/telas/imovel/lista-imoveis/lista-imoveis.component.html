@@ -23,70 +23,68 @@
     </div>
     <div class="encontrados">Imóveis encontrados:0</div>
     <div class="imoveis">
-        <div class="imovel"  *ngFor="let lista of lista">
+        <div class="imovel"  *ngFor="let lista of lista; let i = index">
             <div class="div-imagem">
             </div>
             <div style="padding-left: 10px;">
                 <div class="espacamento-baixo">
-                    {{lista.codigoReferencia}}
-                    {{lista.valor}}
-                    {{lista.finalidade}}
-                    {{lista.tipoImovel}}
                 </div>
             </div>
             <div class="tres-botao">
-                <div class="botoes-lateral" (click)="abrirModal()"> Detalhes</div>
+                <div class="botoes-lateral" (click)="abrirModal(i)"> Detalhes</div>
                 <div class="botoes-lateral" (click)="gotoGerenciaImovel()"> Editar</div>
                 <div class="red" (click)="abrirModal()"> Remover</div>
             </div>
-        </div>
-    </div>
-    <div class="fundo" *ngIf="modal == 1" (click)="abrirModal()">
-        <div id="modal">
-                <div class="parte-cima">
-                    <div class="img"></div>
-                    <div class="informacoes-imovel">
-                        <div class="primeiro-imovel">
-                            <div class="">
-                                <h2>TITULO</h2>
-                                <div>REGIÃO:Sul</div>
-                                <div>ESTADO:Santa Catarina</div>
-                                <div>CIDADE:Jaraguá do SUl</div>
-                                <div>RUA: Venâncio da SIlva Porto</div>
-                            </div>
-                            <div class="espacamento">
-                                <div>VALOR DO IMÓVEL: 21983.00R$</div>
-                            </div>
-                            <div class="espacamento-cima">
-                                <div class=''>PROPRIETÁRIO: Jubileu</div>
-                            </div>
-                            <div class="">
-                                <div>CORRETOR RESPONSÁVEL</div>
-                            </div>
-                            <div class="espacamento-cima">
-                                <div>CODIGO: 123</div>
-                            </div>
-                        </div>          
-                        <div class="">
-                            <h2 class="esconde">L</h2>
-                            <div>DORMITÓRIOS: 1</div>
-                            <div>SUÍTES</div>
-                            <div>BANHEIROS</div>
-                            <div>VAGAS DE GARAGEM</div>
-                            <div>SACADA</div>
-                            <div>CHURRASQUEIRA</div>
-                            <div>ÁREA DE FESTA</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="espacamento-cima">
-                    
-                    Descrição do Imóvel:
-                </div>
-                <div class="descricao borda"></div>
             
         </div>
+        <div class="fundo" *ngIf="modal == 1" (click)="abrirModal(i)">
+            <div id="modal">
+                    <div class="parte-cima">
+                        <div class="img"></div>
+                        <div class="informacoes-imovel">
+                            <div class="primeiro-imovel">
+                                <div class="">
+                                    <h2>TITULO</h2>
+                                    <div>REGIÃO:{{lista[indice].localizacao.regiao}}</div>
+                                    <div>ESTADO:{{lista[indice].localizacao.estado}}</div>
+                                    <div>CIDADE:{{lista[indice].localizacao.estado}}</div>
+                                    <div>BAIRRO: {{lista[indice].localizacao.bairro}}</div>
+                                </div>
+                                <div class="espacamento">
+                                    <div>VALOR DO IMÓVEL: {{lista[indice].infoImovel.valor}}/</div>
+                                </div>
+                                <div class="espacamento-cima">
+                                    <div class=''>PROPRIETÁRIO: Jubileu</div>
+                                </div>
+                                <div class="">
+                                    <div>CORRETOR RESPONSÁVEL</div>
+                                </div>
+                                <div class="espacamento-cima">
+                                    <div>CODIGO: 123</div>
+                                </div>
+                            </div>          
+                            <div class="">
+                                <h2 class="esconde">L</h2>
+                                <div>DORMITÓRIOS: 1</div>
+                                <div>SUÍTES</div>
+                                <div>BANHEIROS</div>
+                                <div>VAGAS DE GARAGEM</div>
+                                <div>SACADA</div>
+                                <div>CHURRASQUEIRA</div>
+                                <div>ÁREA DE FESTA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="espacamento-cima">
+                        
+                        Descrição do Imóvel:
+                    </div>
+                    <div class="descricao borda"></div>
+                
+            </div>
+        </div>
     </div>
+    
 </main>
 
 </html>

@@ -27,8 +27,9 @@ export class ListaImoveisComponent implements OnInit {
     this.router.navigate(['/tela-principal'])
   }
   modal = 0
-  abrirModal(){
-    console.log('salve')
+  indice = 0
+  abrirModal(i){
+    this.indice = i
     if(this.modal==1){
       this.modal=0;
     }else{
@@ -38,31 +39,33 @@ export class ListaImoveisComponent implements OnInit {
   }
   lista=[]
   objeto={}
+  infoImovel={}
+  caracteristicas={}
+  localizacao={}
   ngOnInit(): void {
-    
+    for(let i = 0; i < 3; i++){
     this.usuarioService.buscarInfoimovel()
     .then(
       (resultado: infoImovel[])=> {
-      for(let i = 0; i < resultado.length; i++){
-        this.objeto = {
+     
+        this.infoImovel = {
           valor: resultado[i].VALOR_IMOVEL,
           codigoReferencia: resultado[i].CODIGO_REFERENCIA,
           finalidade: resultado[i].FINALIDADE,
           tipoImovel: resultado[i].TIPO_IMOVEL,
-        }
-        this.lista.push(this.objeto)
+        
       }
     },
     resultado => console.log(resultado)
     ).catch(erro => {
       console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
     })
-
+   
     this.usuarioService.buscarCaracteristicas()
     .then(
       (resultado: caracteristicas[])=> {
-      for(let i = 0; i < resultado.length; i++){
-        this.objeto = {
+        
+        this.caracteristicas = {
           codigo: resultado[i].CODIGO,
           dormitorios: resultado[i].DORMITORIOS,
           suites: resultado[i].SUITES,
@@ -71,11 +74,8 @@ export class ListaImoveisComponent implements OnInit {
           sacada: resultado[i].SACADA,
           churrasqueira: resultado[i].CHURRASQUEIRA,
           festas: resultado[i].AREA_FESTAS,
-          inforimovelCodigo: resultado[i].INFOIMOVEL_CODIGO_REFERENCIA,
-        }
-        this.lista.push(this.objeto)
+          infoimovelCodigo: resultado[i].INFOIMOVEL_CODIGO_REFERENCIA,
         
-        console.log(this.lista)
       }
     },
     resultado => console.log(resultado)
@@ -83,15 +83,69 @@ export class ListaImoveisComponent implements OnInit {
       console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
     })
 
-  }
-}
 
+    this.usuarioService.buscarLocalizacao()
+    .then(
+      (resultado: localizacao[])=> {
+        
+        this.localizacao = {
+          codigo: resultado[i].CODIGO,
+          bairro: resultado[i].BAIRRO,
+          logradouro: resultado[i].LOGRADOURO,
+          numero: resultado[i].NUMERO,
+          complemento: resultado[i].COMPLEMENTO,
+          regiao: resultado[i].REGIAO,
+          estado: resultado[i].ESTADO,
+          zona: resultado[i].ZONA,
+          infoimovelCodigo: resultado[i].INFOIMOVEL_CODIGO_REFERENCIA,
+        
+      }
+      
+      this.objeto = {
+        localizacao : this.localizacao,
+        caracteristicas: this.caracteristicas,
+        infoImovel: this.infoImovel
+      }
+      this.lista.push(this.objeto)
+      console.log('oi')
+      console.log(this.lista)
+    },
+    resultado => console.log(resultado)
+    ).catch(erro => {
+      console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
+    })
+  }
+
+
+  }
+
+
+
+
+  
+}
+interface responsavel {
+  PROPRIETARIO: string;
+  CORRETOR: string;
+}
 
 interface infoImovel {
   CODIGO_REFERENCIA: string;
   VALOR_IMOVEL: string;
   FINALIDADE: string;
   TIPO_IMOVEL: string;
+
+}
+interface localizacao {
+  CODIGO : string;
+  BAIRRO : string;
+  LOGRADOURO: string;
+  NUMERO : string;
+  COMPLEMENTO : string;
+  REGIAO: string;
+  ESTADO : string;
+  ZONA: string;
+  INFOIMOVEL_CODIGO_REFERENCIA: string;
 
 }
 interface caracteristicas{

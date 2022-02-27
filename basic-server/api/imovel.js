@@ -49,6 +49,18 @@ inserirRota('/buscar_caracteristicas',
         resposta({erro: 'Erro ao buscar os usuários'})
     });
 })
+inserirRota('/buscar_localizacao',
+    function (dados, resposta) {
+        console.log(dados, resposta);
+
+       
+    database(`SELECT * FROM LOCALIZACAO`)
+        .then(result => {
+    resposta(result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
 
 inserirRota('/inserir_caracteristicas',
 function inserir(dados, resposta) {
