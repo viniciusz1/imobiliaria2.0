@@ -6,14 +6,16 @@ function inserir(dados, resposta) {
         CODIGO_REFERENCIA, 
         VALOR_IMOVEL,
         FINALIDADE,
-        TIPO_IMOVEL
+        TIPO_IMOVEL,
+        DESCRICAO
         )
         VALUES
         (
         "${dados.id}", 
         "${dados.valorImovel}", 
         "${dados.finalidade}",
-        "${dados.tipoImovel}"
+        "${dados.tipoImovel}",
+        "${dados.descricao}"
         )`)
         .then(result => {
         console.log('infoimovel inserido com sucesso!')
@@ -25,42 +27,6 @@ function inserir(dados, resposta) {
     });
 })
 
-inserirRota('/buscar_infoimovel',
-    function (dados, resposta) {
-        console.log(dados, resposta);
-
-       
-    database(`SELECT * FROM INFOIMOVEL`)
-        .then(result => {
-    resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
-inserirRota('/buscar_caracteristicas',
-    function (dados, resposta) {
-        console.log(dados, resposta);
-
-       
-    database(`SELECT * FROM CARACTERISTICAS`)
-        .then(result => {
-    resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
-inserirRota('/buscar_localizacao',
-    function (dados, resposta) {
-        console.log(dados, resposta);
-
-       
-    database(`SELECT * FROM LOCALIZACAO`)
-        .then(result => {
-    resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
 
 inserirRota('/inserir_caracteristicas',
 function inserir(dados, resposta) {
@@ -104,13 +70,13 @@ function inserir(dados, resposta) {
     console.log(dados)
     database(`INSERT INTO RESPONSAVEL 
     (
-        USER_ID,
+        INFOIMOVEL_CODIGO_REFERENCIA,
         PROPRIETARIO,
         CORRETOR
         )
         VALUES
         (
-        "${dados.user}",
+        "${dados.infoimovelCodigo}",
         "${dados.proprietario}",
         "${dados.corretor}"
         )`)
@@ -136,7 +102,8 @@ function inserir(dados, resposta) {
         REGIAO,
         ESTADO,
         ZONA,
-        INFOIMOVEL_CODIGO_REFERENCIA
+        INFOIMOVEL_CODIGO_REFERENCIA,
+        CIDADE
         )
         VALUES
         (
@@ -147,7 +114,8 @@ function inserir(dados, resposta) {
         "${dados.regiao}",
         "${dados.estado}",
         "${dados.zona}",
-        "${dados.codigo}"
+        "${dados.codigo}",
+        "${dados.cidade}"
 
         )`)
         .then(result => {
@@ -163,3 +131,40 @@ function inserir(dados, resposta) {
 
 
 
+
+// inserirRota('/buscar_infoimovel',
+//     function (dados, resposta) {
+//         console.log(dados, resposta);
+
+       
+//     database(`SELECT * FROM INFOIMOVEL`)
+//         .then(result => {
+//     resposta(result)
+//     }).catch(erro => {
+//         resposta({erro: 'Erro ao buscar os usuários'})
+//     });
+// })
+// inserirRota('/buscar_caracteristicas',
+//     function (dados, resposta) {
+//         console.log(dados, resposta);
+
+       
+//     database(`SELECT * FROM CARACTERISTICAS`)
+//         .then(result => {
+//     resposta(result)
+//     }).catch(erro => {
+//         resposta({erro: 'Erro ao buscar os usuários'})
+//     });
+// })
+// inserirRota('/buscar_localizacao',
+//     function (dados, resposta) {
+//         console.log(dados, resposta);
+
+       
+//     database(`SELECT * FROM LOCALIZACAO`)
+//         .then(result => {
+//     resposta(result)
+//     }).catch(erro => {
+//         resposta({erro: 'Erro ao buscar os usuários'})
+//     });
+// })

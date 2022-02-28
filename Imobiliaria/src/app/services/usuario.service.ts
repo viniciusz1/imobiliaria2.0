@@ -7,54 +7,6 @@ export class UsuarioService {
 
   constructor() { }
 
-  buscarClientes(){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/buscar_clientes', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(resultado => resultado.json())
-      .then(resolvido => resolve(resolvido))
-      .catch(rejeitado);
-    })
-  }
-  buscarInfoimovel(){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/buscar_infoimovel', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(resultado => resultado.json())
-      .then(resolvido => resolve(resolvido))
-      .catch(rejeitado);
-    })
-  }
-  buscarCaracteristicas(){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/buscar_caracteristicas', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(resultado => resultado.json())
-      .then(resolvido => resolve(resolvido))
-      .catch(rejeitado);
-    })
-  }
-  buscarLocalizacao(){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/buscar_localizacao', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(resultado => resultado.json())
-      .then(resolvido => resolve(resolvido))
-      .catch(rejeitado);
-    })
-  }
   buscarUsuarios(){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/buscar_usuario', {
@@ -67,6 +19,21 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
+
+
+  buscarClientes(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/buscar_clientes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
 
   inserircliente(nome, telefone, cpf, email, data){
     return new Promise((resolve, rejeitado) => {
@@ -90,13 +57,13 @@ export class UsuarioService {
     })
   }
 
-  inserirResponsavel(userId, proprietario, corretor){
+  inserirResponsavel(infoimovelCodigo, proprietario, corretor){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_responsavel', {
         method: 'POST',
         body: JSON.stringify(
           {
-            userId, proprietario, corretor
+            infoimovelCodigo, proprietario, corretor
           }
         ),
         headers: {
@@ -111,13 +78,13 @@ export class UsuarioService {
     })
     })
   }
-  inserirInfoimovel(id, valorImovel, finalidade, tipoImovel){
+  inserirInfoimovel(id, valorImovel, finalidade, tipoImovel, descricao){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_infoimovel', {
         method: 'POST',
         body: JSON.stringify(
           {
-          id, valorImovel, finalidade, tipoImovel  
+          id, valorImovel, finalidade, tipoImovel, descricao
           }
         ),
         headers: {
@@ -132,14 +99,47 @@ export class UsuarioService {
     })
     })
   }
+ 
+  testando(){
+      return new Promise((resolve, rejeitado) => {
+        fetch('/api/testando', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(resultado => resultado.json())
+        .then(resolvido => resolve(resolvido))
+        .catch(rejeitado);
+      })
+    }
 
-  inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo){
+    
+  // testando(){
+  //   return new Promise((resolve, rejeitado) => {
+  //     fetch('/api/testando', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       }
+  //     }).then(function (result) {
+  //       console.log(result)
+  //       return result.json();
+  //   }).then(function (dados){
+  //      console.log(dados);
+  //   }).catch(function(erro) {
+  //       console.log(erro);
+  //   })
+  //   })
+  // }
+
+
+  inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_localizacao', {
         method: 'POST',
         body: JSON.stringify(
           {
-            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo  
+            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade  
           }
         ),
         headers: {
@@ -177,3 +177,43 @@ export class UsuarioService {
     })
   }
 }
+
+
+
+  // buscarInfoimovel(){
+  //   return new Promise((resolve, rejeitado) => {
+  //     fetch('/api/buscar_infoimovel', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       }
+  //     }).then(resultado => resultado.json())
+  //     .then(resolvido => resolve(resolvido))
+  //     .catch(rejeitado);
+  //   })
+  // }
+  // buscarCaracteristicas(){
+  //   return new Promise((resolve, rejeitado) => {
+  //     fetch('/api/buscar_caracteristicas', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       }
+  //     }).then(resultado => resultado.json())
+  //     .then(resolvido => resolve(resolvido))
+  //     .catch(rejeitado);
+  //   })
+  // }
+  // buscarLocalizacao(){
+  //   return new Promise((resolve, rejeitado) => {
+  //     fetch('/api/buscar_localizacao', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       }
+  //     }).then(resultado => resultado.json())
+  //     .then(resolvido => resolve(resolvido))
+  //     .catch(rejeitado);
+  //   })
+  // }
+  

@@ -79,10 +79,10 @@ id = 0
 
   jogaDB(){
     
-  this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel),
-  this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel),
+  this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel),
+  this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel),
   this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.codigoImovel),
-  this.usuarioService.inserirResponsavel(this.id, this.proprietario, this.corretor)
+  this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
   this.id = this.id + 1
   } 
   ngOnInit(): void {

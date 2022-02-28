@@ -27,6 +27,9 @@
             <div class="div-imagem">
             </div>
             <div style="padding-left: 10px;">
+                {{lista.valor}}
+                {{lista.tipoImovel}}
+                {{lista.codigoReferencia}}
                 <div class="espacamento-baixo">
                 </div>
             </div>
@@ -45,33 +48,34 @@
                             <div class="primeiro-imovel">
                                 <div class="">
                                     <h2>TITULO</h2>
-                                    <div>REGIÃO:{{lista[indice].localizacao.regiao}}</div>
-                                    <div>ESTADO:{{lista[indice].localizacao.estado}}</div>
-                                    <div>CIDADE:{{lista[indice].localizacao.estado}}</div>
-                                    <div>BAIRRO: {{lista[indice].localizacao.bairro}}</div>
+                                    <div>REGIÃO:{{lista[indice].regiao}}</div>
+                                    <div>ESTADO:{{lista[indice].estado}}</div>
+                                    <div>CIDADE:{{lista[indice].cidade}}</div>
+                                    <div>BAIRRO: {{lista[indice].bairro}}</div>
                                 </div>
                                 <div class="espacamento">
-                                    <div>VALOR DO IMÓVEL: {{lista[indice].infoImovel.valor}}/</div>
+                                    <div>VALOR DO IMÓVEL: {{lista[indice].valor}}/</div>
                                 </div>
                                 <div class="espacamento-cima">
-                                    <div class=''>PROPRIETÁRIO: Jubileu</div>
+                                    <div class=''>PROPRIETÁRIO:{{lista[indice].proprietario}}</div>
                                 </div>
                                 <div class="">
-                                    <div>CORRETOR RESPONSÁVEL</div>
+                                    <div>CORRETOR RESPONSÁVEL:{{lista[indice].corretor}}</div>
                                 </div>
                                 <div class="espacamento-cima">
-                                    <div>CODIGO: 123</div>
+                                    <div>CODIGO: {{lista[indice].codigoReferencia}}</div>
                                 </div>
                             </div>          
                             <div class="">
                                 <h2 class="esconde">L</h2>
-                                <div>DORMITÓRIOS: 1</div>
-                                <div>SUÍTES</div>
-                                <div>BANHEIROS</div>
-                                <div>VAGAS DE GARAGEM</div>
-                                <div>SACADA</div>
-                                <div>CHURRASQUEIRA</div>
-                                <div>ÁREA DE FESTA</div>
+                                <div>DORMITÓRIOS: {{lista[indice].dormitorios}}</div>
+                                <div>SUÍTES:  {{lista[indice].suites}}</div>
+                                <div>BANHEIROS: {{lista[indice].banheiros}}</div>
+
+                                <div>VAGAS DE GARAGEM:  {{lista[indice].vagas}}</div>
+                                <div>SACADA:  {{lista[indice].sacada}}</div>
+                                <div>CHURRASQUEIRA:  {{lista[indice].churrasqueira}}</div>
+                                <div>ÁREA DE FESTA:  {{lista[indice].festas}}</div>
                             </div>
                         </div>
                     </div>
@@ -79,7 +83,11 @@
                         
                         Descrição do Imóvel:
                     </div>
-                    <div class="descricao borda"></div>
+                    
+                    <div class="descricao borda">
+                        
+                        {{lista[indice].descricao}}
+                    </div>
                 
             </div>
         </div>

@@ -53,6 +53,35 @@ inserirRota('/buscar_clientes',
         resposta({erro: 'Erro ao buscar os usuários'})
     });
 })
+inserirRota('/buscar_usuario',
+    function (dados, resposta) {
+        console.log(dados, resposta);
+
+       
+    database(`SELECT * FROM USER`)
+        .then(result => {
+        resposta( result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
+
+inserirRota('/testando',
+    function (dados, resposta) {
+        console.log(dados, resposta);
+
+       
+    database(`SELECT INFOIMOVEL.*, CARACTERISTICAS.*, LOCALIZACAO.*, RESPONSAVEL.* FROM INFOIMOVEL
+    INNER JOIN CARACTERISTICAS ON CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA = INFOIMOVEL.CODIGO_REFERENCIA
+    INNER JOIN LOCALIZACAO ON LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA = CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA
+    INNER JOIN RESPONSAVEL ON RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA = LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA`)
+        .then(result => {
+        resposta(result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
+
 
 inserirRota('/criar_usuario',
 function name(dados, resposta) {
