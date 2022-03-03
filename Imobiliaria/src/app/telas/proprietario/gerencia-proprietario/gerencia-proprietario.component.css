@@ -12,7 +12,7 @@ html{
 header{
     display: flex;
     align-items: center;
-    background-color: #3dd12f;
+    background-color: #434597;
     width: 100vw;
     height: 13vh;
     position: relative;
@@ -114,7 +114,7 @@ h1{
     border-radius: 5px;
 }
 a{
-    background-color: #3dd12f;
+    background-color: #434597;
     color: white;
     font-size: 15px;
     font-weight: bold;
@@ -136,7 +136,7 @@ a{
     border-radius: 5px;
     color: white;
     font-size: 15px;
-    background-color: #3dd12f;
+    background-color: #434597;
     margin-top: 40px;
     margin-bottom: 40px;
 }

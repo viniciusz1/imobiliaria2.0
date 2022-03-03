@@ -43,10 +43,10 @@ export class ListaImoveisComponent implements OnInit {
   //saodifjsadiop
   ngOnInit(): void {
 
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < 8; i++){
     this.usuarioService.testando()
     .then(
-    //    resultado => console.log(resultado),
+      //  resultado => console.log(resultado),
       (resultado: infoImovel[])=> {
         this.infoImovel = {
           descricao: resultado[i].DESCRICAO,
