@@ -20,7 +20,7 @@ html{
 header{
     display: flex;
     align-items: center;
-    background-color: #3dd12f;
+    background-color: #434597;
     width: 100vw;
     height: 13vh;
     position: relative;
@@ -58,7 +58,7 @@ h1{
 a{  
     cursor: pointer;
     text-decoration: none;
-    background-color: #3dd12f;
+    background-color: #434597;
     color: white;
     font-size: 15px;
     font-weight: bold;
@@ -118,14 +118,14 @@ hr{
     position: relative;
     height: 200px;
     width: 50%;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    box-shadow: grey -1px 2px 8px -2px;
     background-color: rgb(255, 255, 255);
     padding-left: 15px;
 }
 #anotacoes{    
     height: 180px;
     width: 50%;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    box-shadow: grey -1px 2px 8px -2px;
     background-color: rgb(255, 255, 255); 
 }
 textarea{
@@ -153,11 +153,11 @@ textarea{
     width: 30%;
     height: 280px;
     background-color: white;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    box-shadow: grey -1px 2px 8px -2px;
     border: solid 1px rgb(255, 255, 255)
 }  
 .green{
-    background-color: #3dd12f;
+    background-color: #434597;
 }
 .blue{
     background-color: blue;
