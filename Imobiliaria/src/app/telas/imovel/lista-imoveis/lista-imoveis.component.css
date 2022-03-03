@@ -82,7 +82,7 @@ h1{
     padding: 20px;    
     color: white;
     background-color: #434597;
-    box-shadow: grey 4px 0px 13px -1px;
+    box-shadow: grey 3px 3px 13px -1px;
     border-radius: 5px;
 }
 .postitulo{
@@ -92,7 +92,7 @@ h1{
     padding: 15px;
     background: white;
     border-radius: 5px;
-    box-shadow: grey 4px 0px 13px -1px;
+    box-shadow: grey 3px -1px 13px -1px;
 }
 a{
     cursor: pointer;
@@ -105,10 +105,8 @@ a{
     margin-left: 5px;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);}
 .encontrados{
-    margin: 10px
-}
-.encontrados{
-    margin: 10px
+    margin-bottom: 18px;
+    margin-left: 26px;
 }
 .imovel{
     position: relative;
@@ -190,9 +188,7 @@ a{
     margin: 2px;
     margin-right: 10px;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);}
-.encontrados{
-    margin: 10px
-}
+
 .botoes-lateral{
     cursor: pointer;
     background-color: #434597;
@@ -204,11 +200,9 @@ a{
     margin: 2px;
     margin-right: 10px;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);}
-.encontrados{
-    margin: 10px
-}
+
 .img{
-    background-color: blue;
+    background-color: rgb(49, 49, 51);
     width: 300px;
     height: 300px;
 }

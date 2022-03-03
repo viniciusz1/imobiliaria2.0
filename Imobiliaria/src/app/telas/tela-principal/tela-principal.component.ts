@@ -31,7 +31,6 @@ console(){
   console.log('salbe')
 }
   ngOnInit(): void {
-    console.log(this.user)
   }
 
 }
