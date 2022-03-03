@@ -82,6 +82,8 @@ h1{
     padding: 20px;    
     color: white;
     background-color: #434597;
+    box-shadow: grey 4px 0px 13px -1px;
+    border-radius: 5px;
 }
 .postitulo{
     display: flex;
@@ -90,6 +92,7 @@ h1{
     padding: 15px;
     background: white;
     border-radius: 5px;
+    box-shadow: grey 4px 0px 13px -1px;
 }
 a{
     cursor: pointer;
@@ -115,6 +118,7 @@ a{
     align-items: center;
     background-color: white;
     box-shadow: grey -1px 2px 8px -2px;
+    border-radius: 7px;
 
 }
 .tres-botao{
