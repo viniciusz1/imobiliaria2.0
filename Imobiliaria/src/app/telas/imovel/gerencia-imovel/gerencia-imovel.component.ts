@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-gerencia-imovel',
@@ -7,9 +7,15 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./gerencia-imovel.component.css']
 })
 export class GerenciaImovelComponent implements OnInit {
-
+  idRota = undefined
+  lista=[];
+  objeto={};
   constructor(private router: Router,
-    private usuarioService: UsuarioService) { }
+    private usuarioService: UsuarioService,
+    private route: ActivatedRoute) {
+     
+
+    }
   gotoGerenciaImovel(){
     this.router.navigate(['/gerencia-imovel/novo'])
   }
@@ -85,11 +91,53 @@ id = 0
   this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
   this.id = this.id + 1
   } 
+  codigo = 0;
   ngOnInit(): void {
+    const idRota = this.route.snapshot.paramMap.get('id');
+
+    this.idRota = idRota;
+
+    if (idRota != 'novo') {
+      this.codigo = parseInt(idRota) - 1;
+      console.log(this.codigo)
+      this.usuarioService.testando()
+      .then(
+          //esultado => console.log(resultado),
+        (resultado: infoImovel[])=> {
+          this.codigoImovel = resultado[this.codigo].CODIGO_REFERENCIA;
+          this.descricaoImovel= resultado[this.codigo].DESCRICAO,
+          this.valorImovel= resultado[this.codigo].VALOR_IMOVEL,
+          this.finalidadeImovel= resultado[this.codigo].FINALIDADE,
+          this.tipoImovel=resultado[this.codigo].TIPO_IMOVEL,
+          this.dormitoriosImovel= resultado[this.codigo].DORMITORIOS,
+          this.suitesImovel= resultado[this.codigo].SUITES,
+          this.banheirosImovel= resultado[this.codigo].BANHEIROS,
+          this.vagasImovel=resultado[this.codigo].VAGAS_GARAGEM,
+          this.lavanderiaImovel=resultado[this.codigo].LAVANDERIA,
+          this.sacadaImovel=resultado[this.codigo].SACADA,
+          this.churrasImovel=resultado[this.codigo].CHURRASQUEIRA,
+          this.festasImovel=resultado[this.codigo].AREA_FESTAS,
+          this.bairroImovel=resultado[this.codigo].BAIRRO,
+          this.logradouroImovel=resultado[this.codigo].LOGRADOURO,
+          this.numeroImovel=resultado[this.codigo].NUMERO,
+          this.complementoImovel=resultado[this.codigo].COMPLEMENTO,
+          this.regiaoImovel=resultado[this.codigo].REGIAO,
+          this.estadoImovel= resultado[this.codigo].ESTADO,
+          this.zonaImovel= resultado[this.codigo].ZONA,
+          this.cidadeImovel= resultado[this.codigo].CIDADE,
+          this.corretor= resultado[this.codigo].CORRETOR,
+          this.proprietario= resultado[this.codigo].PROPRIETARIO
+        }
+      
+      ).catch(erro => {
+        console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
+      })
+    }
   }
-  imageURL 
-  teste
-  openModal
+
+  imageURL;
+  teste;
+  openModal;
 
   mostrarImagem(event){
     const file = new FileReader
@@ -99,7 +147,7 @@ id = 0
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
   }
-
+  user = localStorage.getItem('USER')
 
   abrirModal(){
     this.openModal = 1
@@ -112,4 +160,33 @@ id = 0
     console.log(item)
     item.appendChild(image);
   }
+  
+}
+interface infoImovel {
+  DESCRICAO: string;
+  CIDADE: string;
+  CORRETOR: string;
+  PROPRIETARIO: string;
+  CODIGO_REFERENCIA: string;
+  VALOR_IMOVEL: string;
+  FINALIDADE: string;
+  TIPO_IMOVEL: string;
+  CODIGO : string;
+  BAIRRO : string;
+  LOGRADOURO: string;
+  NUMERO : string;
+  COMPLEMENTO : string;
+  REGIAO: string;
+  ESTADO : string;
+  ZONA: string;
+  INFOIMOVEL_CODIGO_REFERENCIA: string;
+  DORMITORIOS: string;
+  SUITES: string;
+  BANHEIROS: string;
+  VAGAS_GARAGEM: string;
+  LAVANDERIA: string;
+  SACADA: string;
+  CHURRASQUEIRA : string;
+  AREA_FESTAS: string;
+
 }

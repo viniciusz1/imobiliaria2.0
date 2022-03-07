@@ -18,7 +18,7 @@ export class ListaProprietariosComponent implements OnInit {
    }
  
   listasClientes = JSON.parse(localStorage.getItem('lista'))
-
+  user = localStorage.getItem('USER')
 
 
 

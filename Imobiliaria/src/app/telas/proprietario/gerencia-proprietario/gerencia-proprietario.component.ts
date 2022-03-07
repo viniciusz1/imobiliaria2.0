@@ -52,7 +52,7 @@ export class GerenciaProprietarioComponent implements OnInit {
     item.appendChild(image);
   }
 
-
+  user = localStorage.getItem('USER')
 
 
   gotoGerenciaImovel() {

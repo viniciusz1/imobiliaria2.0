@@ -16,7 +16,6 @@ export class TelaLoginComponent implements OnInit {
   
   username = ""
   pass = ""
-
   
   ngOnInit() {
     this.usuarioService.buscarUsuarios()

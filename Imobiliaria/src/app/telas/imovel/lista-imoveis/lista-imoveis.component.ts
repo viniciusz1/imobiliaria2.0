@@ -26,6 +26,7 @@ export class ListaImoveisComponent implements OnInit {
   gotoTelaPrincipal(){
     this.router.navigate(['/tela-principal'])
   }
+  user = localStorage.getItem('USER')
   modal = 0
   indice = 0
   abrirModal(i){
@@ -82,7 +83,7 @@ export class ListaImoveisComponent implements OnInit {
     })
    
       }
-
+      console.log(this.lista)
 
     }
   }

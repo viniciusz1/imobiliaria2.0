@@ -13,13 +13,13 @@ export class TelaPrincipalComponent implements OnInit {
   ) { }
   user = localStorage.getItem('USER')
   gotoGerenciaImovel(){
-    this.router.navigate(['/gerencia-imovel'])
+    this.router.navigate(['/gerencia-imovel/novo'])
   }
   gotoListaImoveis(){
     this.router.navigate(['/lista-imoveis'])
   }
   gotoGerenciaCliente(){
-    this.router.navigate(['/gerencia-proprietario'])
+    this.router.navigate(['/gerencia-proprietario/novo'])
   }
   gotoListaClientes(){
     this.router.navigate(['/lista-proprietarios'])
