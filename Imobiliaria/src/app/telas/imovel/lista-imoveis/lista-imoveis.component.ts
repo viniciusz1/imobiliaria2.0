@@ -14,6 +14,9 @@ export class ListaImoveisComponent implements OnInit {
   gotoGerenciaImovel(){
     this.router.navigate(['/gerencia-imovel/novo'])
   }
+  gotoGerenciaImovel2(index){
+    this.router.navigate(['/gerencia-imovel/' + (index+1)])
+  }
   gotoListaImoveis(){
     this.router.navigate(['/lista-imoveis'])
   }
@@ -38,6 +41,13 @@ export class ListaImoveisComponent implements OnInit {
     }
 
   }
+  codigo = 0;
+  removeImovel(indice){
+    this.codigo = this.lista[indice].codigoReferencia;
+    console.log(this.codigo)
+    this.usuarioService.deletarImovel(this.codigo)
+  }
+
   lista=[]
   objeto={}
   infoImovel={}

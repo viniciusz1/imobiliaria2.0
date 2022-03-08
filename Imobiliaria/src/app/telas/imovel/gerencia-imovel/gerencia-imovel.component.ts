@@ -146,6 +146,7 @@ id = 0
     }
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
+    console.log(file)
   }
   user = localStorage.getItem('USER')
 
@@ -159,10 +160,12 @@ id = 0
     image.src = this.imageURL;
     console.log(item)
     item.appendChild(image);
+
   }
   
 }
 interface infoImovel {
+  IMAGEM: string;
   DESCRICAO: string;
   CIDADE: string;
   CORRETOR: string;

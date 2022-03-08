@@ -7,7 +7,8 @@ function inserir(dados, resposta) {
         VALOR_IMOVEL,
         FINALIDADE,
         TIPO_IMOVEL,
-        DESCRICAO
+        DESCRICAO,
+        IMAGEM
         )
         VALUES
         (
@@ -15,7 +16,8 @@ function inserir(dados, resposta) {
         "${dados.valorImovel}", 
         "${dados.finalidade}",
         "${dados.tipoImovel}",
-        "${dados.descricao}"
+        "${dados.descricao}",
+        "${dados.imagem}"
         )`)
         .then(result => {
         console.log('infoimovel inserido com sucesso!')
@@ -24,6 +26,24 @@ function inserir(dados, resposta) {
         console.log('infoimovel NÃO FOI inserido com sucesso!')
         console.log(erro)
         resposta({message: 'infoimovel NÃO FOI inserido com sucesso"'})
+    });
+})
+
+
+inserirRota('/deleta_imovel',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`
+        DELETE FROM *
+        WHERE INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo};
+        `)
+        .then(result => {
+        console.log('deletou!')
+        resposta({message: 'deletou'})
+    }).catch(erro => {
+        console.log('NÃO deletou!')
+        console.log(erro)
+        resposta({message: 'NÃO deletou'})
     });
 })
 

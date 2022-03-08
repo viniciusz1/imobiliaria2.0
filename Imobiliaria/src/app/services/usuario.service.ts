@@ -78,13 +78,37 @@ export class UsuarioService {
     })
     })
   }
-  inserirInfoimovel(id, valorImovel, finalidade, tipoImovel, descricao){
+
+  deletarImovel(codigo){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/deleta_imovel', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            codigo
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+
+  inserirInfoimovel(id, valorImovel, finalidade, tipoImovel, descricao, imagem){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_infoimovel', {
         method: 'POST',
         body: JSON.stringify(
           {
-          id, valorImovel, finalidade, tipoImovel, descricao
+          id, valorImovel, finalidade, tipoImovel, descricao, imagem
           }
         ),
         headers: {
