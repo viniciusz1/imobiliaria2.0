@@ -85,7 +85,7 @@ id = 0
 
   jogaDB(){
     
-  this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel),
+  this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL),
   this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel),
   this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.codigoImovel),
   this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
@@ -143,6 +143,7 @@ id = 0
     const file = new FileReader
     file.onload = (e) => {
       this.imageURL = e.target.result;
+      console.log(this.imageURL)
     }
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
