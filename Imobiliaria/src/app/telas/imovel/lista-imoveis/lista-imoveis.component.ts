@@ -57,7 +57,7 @@ export class ListaImoveisComponent implements OnInit {
     for(let i = 0; i < 8; i++){
     this.usuarioService.testando()
     .then(
-       //resultado => console.log(resultado),
+      //  resultado => console.log(resultado),
       (resultado: infoImovel[])=> {
         this.infoImovel = {
           descricao: resultado[i].DESCRICAO,
@@ -84,7 +84,8 @@ export class ListaImoveisComponent implements OnInit {
           zona: resultado[i].ZONA,
           cidade: resultado[i].CIDADE,
           corretor: resultado[i].CORRETOR,
-          proprietario: resultado[i].PROPRIETARIO
+          proprietario: resultado[i].PROPRIETARIO,
+          imagem: resultado[i].IMAGEM
       }
       this.lista.push(this.infoImovel)
     }
@@ -127,5 +128,6 @@ interface infoImovel {
   SACADA: string;
   CHURRASQUEIRA : string;
   AREA_FESTAS: string;
+  IMAGEM: string;
 
 }
