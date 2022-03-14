@@ -51,6 +51,7 @@ export class ListaImoveisComponent implements OnInit {
   lista=[]
   objeto={}
   infoImovel={}
+  tamanhoLista;
   //saodifjsadiop
   ngOnInit(): void {
 

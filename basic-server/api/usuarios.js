@@ -1,16 +1,16 @@
-// inserirRota('/login',
-//     function (dados, resposta) {
-//         console.log(dados, resposta);
+inserirRota('/login',
+    function (dados, resposta) {
+        console.log(dados, resposta);
 
        
-// //     database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`)
-// //         .then(result => {
-// //             console.log('result:', result);
-// //         resposta({user: result[0]})
-// //     }).catch(erro => {
-// //         resposta({erro: 'Erro ao buscar os usuários!'})
-// //     });
-// // })
+    database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`)
+        .then(result => {
+            console.log('result:', result);
+        resposta({user: result[0]})
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários!'})
+    });
+})
 
 inserirRota('/inserir_cliente',
 function inserir(dados, resposta) {

@@ -19,7 +19,7 @@ database(`CREATE TABLE IF NOT EXISTS USER (
 });
 
 database(`CREATE TABLE IF NOT EXISTS INFOIMOVEL (
-    CODIGO_REFERENCIA int,
+    CODIGO_REFERENCIA int unique,
     VALOR_IMOVEL int,
     FINALIDADE varchar(30),
     TIPO_IMOVEL varchar(30),
