@@ -90,7 +90,8 @@ ngOnInit(): void {
         this.zonaImovel= resultado[this.codigo].ZONA,
         this.cidadeImovel= resultado[this.codigo].CIDADE,
         this.corretor= resultado[this.codigo].CORRETOR,
-        this.proprietario= resultado[this.codigo].PROPRIETARIO
+        this.proprietario= resultado[this.codigo].PROPRIETARIO,
+        this.imageURL = resultado[this.codigo].IMAGEM
       }
     
     ).catch(erro => {
@@ -105,8 +106,9 @@ id = 0
   jogaDB(){
     if(this.idRota != 'novo'){
       this.usuarioService.updateInfoimovel(this.oldCodigoImovel, this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL)
-      this.usuarioService.updateResponsavel(this.oldCodigoImovel, this.proprietario, this.corretor)
+      this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel)
       this.usuarioService.updateCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.oldCodigoImovel)
+      this.usuarioService.updateResponsavel(this.codigoImovel, this.proprietario, this.corretor)
 
     }else{
 

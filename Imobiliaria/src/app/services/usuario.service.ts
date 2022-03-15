@@ -250,6 +250,27 @@ export class UsuarioService {
     })
     })
   }
+  updateLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/update_localizacao', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade  
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
 
   inserirCaracteristicas(dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas, codigo){
     return new Promise((resolve, rejeitado) => {

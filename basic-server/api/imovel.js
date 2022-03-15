@@ -42,8 +42,8 @@ function inserir(dados, resposta) {
         WHERE
         CODIGO_REFERENCIA = "${dados.oldcodigo}"`)
         .then(result => {
-        console.log(dados)
-        resposta({dados})
+        console.log('infoimovel ALTERADO com sucesso!')
+        resposta({message: 'infoimovel  FOI ALTERADO com sucesso"'})
     }).catch(erro => {
         console.log('infoimovel NÃO FOI ALTERADO com sucesso!')
         console.log(erro)
@@ -51,24 +51,6 @@ function inserir(dados, resposta) {
     });
 })
 
-
-
-inserirRota('/update_responsavel',
-function inserir(dados, resposta) {
-    console.log(dados)
-    database(`UPDATE RESPONSAVEL SET PROPRIETARIO = "${dados.proprietario}",
-        CORRETOR = "${dados.corretor}"
-        WHERE
-        INFOIMOVEL_CODIGO_REFERENCIA = "${dados.oldCodigoImovel}"`)
-        .then(result => {
-        console.log("deu boa alterando responsavel")
-        resposta({message:"deu boa alterando responsavel"})
-    }).catch(erro => {
-        console.log('responsavle NÃO FOI ALTERADO com sucesso!')
-        console.log(erro)
-        resposta({message: 'responsavle NÃO FOI ALTERADO com sucesso"'})
-    });
-})
 
 
 
@@ -128,6 +110,25 @@ function inserir(dados, resposta) {
 })
 
 
+
+
+inserirRota('/update_responsavel',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`UPDATE RESPONSAVEL SET PROPRIETARIO = "${dados.proprietario}",
+        CORRETOR = "${dados.corretor}"
+        WHERE
+        INFOIMOVEL_CODIGO_REFERENCIA = "${dados.oldCodigoImovel}"`)
+        .then(result => {
+        console.log("deu boa alterando responsavel")
+        resposta({message:"deu boa alterando responsavel"})
+    }).catch(erro => {
+        console.log('responsavle NÃO FOI ALTERADO com sucesso!')
+        console.log(erro)
+        resposta({message: 'responsavle NÃO FOI ALTERADO com sucesso"'})
+    });
+})
+
 inserirRota('/update_caracteristicas',
 function inserir(dados, resposta) {
     console.log(dados)
@@ -140,8 +141,7 @@ function inserir(dados, resposta) {
         CHURRASQUEIRA = "${dados.churrasqueira}",
         AREA_FESTAS = "${dados.festas}"
         WHERE 
-        INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo}"
-        )`)
+        INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo}"`)
         .then(result => {
         console.log('caracteristicas ALTERADO com sucesso!')
         resposta({message: 'caracteristicas ALTERADO com sucesso'})
@@ -178,6 +178,31 @@ function inserir(dados, resposta) {
         resposta({message: 'responsavel NÃO FOI inserido com sucesso"'})
     });
 })
+
+inserirRota('/update_localizacao',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`UPDATE LOCALIZACAO SET  
+        BAIRRO= "${dados.bairro}",
+        LOGRADOURO = "${dados.logradouro}", 
+        NUMERO = "${dados.numero}",
+        COMPLEMENTO = "${dados.complemento}",
+        REGIAO = "${dados.regiao}",
+        ESTADO = "${dados.estado}",
+        ZONA = "${dados.zona}",
+        CIDADE = "${dados.cidade}"
+        WHERE INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo}"`)
+        .then(result => {
+        console.log('localizacao alterado com sucesso!')
+        resposta({message: 'localizacao alterado com sucesso'})
+    }).catch(erro => {
+        console.log('localizacao NÃO FOI alterado com sucesso!')
+        console.log(erro)
+        resposta({message: 'localizacao NÃO FOI alterado com sucesso"'})
+    });
+})
+
+
 
 inserirRota('/inserir_localizacao',
 function inserir(dados, resposta) {
