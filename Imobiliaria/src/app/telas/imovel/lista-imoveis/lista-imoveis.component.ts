@@ -45,7 +45,9 @@ export class ListaImoveisComponent implements OnInit {
   removeImovel(indice){
     this.codigo = this.lista[indice].codigoReferencia;
     console.log(this.codigo)
-    this.usuarioService.deletarImovel(this.codigo)
+    this.usuarioService.deletaInfoimovel(this.codigo)
+    this.gotoListaImoveis();
+    this.lista.splice(this.indice)
   }
 
   lista=[]

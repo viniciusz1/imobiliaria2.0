@@ -294,6 +294,30 @@ export class UsuarioService {
     })
   }
 
+  deletaInfoimovel(codigo){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/delete_infoimovel', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            codigo
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+
+
   updateCaracteristicas(dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas, codigo){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/update_caracteristicas', {

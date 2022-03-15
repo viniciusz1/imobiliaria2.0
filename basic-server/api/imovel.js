@@ -51,6 +51,20 @@ function inserir(dados, resposta) {
     });
 })
 
+inserirRota('/delete_infoimovel',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`DELETE FROM INFOIMOVEL WHERE CODIGO_REFERENCIA = "${dados.codigo}"`)
+        .then(result => {
+        console.log('infoimovel ALTERADO com sucesso!')
+        resposta({message: 'infoimovel  FOI ALTERADO com sucesso"'})
+    }).catch(erro => {
+        console.log('infoimovel NÃO FOI ALTERADO com sucesso!')
+        console.log(erro)
+        resposta({message: 'infoimovel NÃO FOI ALTERADO com sucesso"'})
+    });
+})
+
 
 
 
