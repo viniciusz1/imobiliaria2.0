@@ -31,6 +31,7 @@
                 Proprietário Responsável *
                 <br>
                 <select required=""  class="lateral form-control" type="number" [(ngModel)]="proprietario" (ngModelChange)="onAddCidade()" >
+                    <option></option>
                     <option *ngFor="let cliente of clienteNomeObj">{{cliente.NOME}}</option>
                   </select>
             </div>
