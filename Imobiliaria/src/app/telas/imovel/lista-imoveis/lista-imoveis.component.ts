@@ -33,6 +33,7 @@ export class ListaImoveisComponent implements OnInit {
   modal = 0
   indice = 0
   abrirModal(i){
+    console.log(i)
     this.indice = i
     if(this.modal==1){
       this.modal=0;
@@ -53,84 +54,14 @@ export class ListaImoveisComponent implements OnInit {
   lista=[]
   objeto={}
   infoImovel={}
-  tamanhoLista;
-  //saodifjsadiop
   ngOnInit(): void {
 
-    for(let i = 0; i < 8; i++){
-    this.usuarioService.testando()
-    .then(
-      //  resultado => console.log(resultado),
-      (resultado: infoImovel[])=> {
-        this.infoImovel = {
-          descricao: resultado[i].DESCRICAO,
-          valor: resultado[i].VALOR_IMOVEL,
-          codigoReferencia: resultado[i].CODIGO_REFERENCIA,
-          finalidade: resultado[i].FINALIDADE,
-          tipoImovel: resultado[i].TIPO_IMOVEL,
-          codigo: resultado[i].CODIGO,
-          dormitorios: resultado[i].DORMITORIOS,
-          suites: resultado[i].SUITES,
-          banheiros: resultado[i].BANHEIROS,
-          vagas: resultado[i].VAGAS_GARAGEM,
-          lavanderia: resultado[i].LAVANDERIA,
-          sacada: resultado[i].SACADA,
-          churrasqueira: resultado[i].CHURRASQUEIRA,
-          festas: resultado[i].AREA_FESTAS,
-          infoimovelCodigo: resultado[i].INFOIMOVEL_CODIGO_REFERENCIA,
-          bairro: resultado[i].BAIRRO,
-          logradouro: resultado[i].LOGRADOURO,
-          numero: resultado[i].NUMERO,
-          complemento: resultado[i].COMPLEMENTO,
-          regiao: resultado[i].REGIAO,
-          estado: resultado[i].ESTADO,
-          zona: resultado[i].ZONA,
-          cidade: resultado[i].CIDADE,
-          corretor: resultado[i].CORRETOR,
-          proprietario: resultado[i].PROPRIETARIO,
-          imagem: resultado[i].IMAGEM
-      }
-      this.lista.push(this.infoImovel)
-    }
-    ).catch(erro => {
-      console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
+    this.usuarioService.testando().then((resultado)=>{
+      this.objeto = resultado
+      console.log(this.objeto)
     })
-   
-      }
-      console.log(this.lista)
-
     }
   }
 
   
 
-
-interface infoImovel {
-  DESCRICAO: string;
-  CIDADE: string;
-  CORRETOR: string;
-  PROPRIETARIO: string;
-  CODIGO_REFERENCIA: string;
-  VALOR_IMOVEL: string;
-  FINALIDADE: string;
-  TIPO_IMOVEL: string;
-  CODIGO : string;
-  BAIRRO : string;
-  LOGRADOURO: string;
-  NUMERO : string;
-  COMPLEMENTO : string;
-  REGIAO: string;
-  ESTADO : string;
-  ZONA: string;
-  INFOIMOVEL_CODIGO_REFERENCIA: string;
-  DORMITORIOS: string;
-  SUITES: string;
-  BANHEIROS: string;
-  VAGAS_GARAGEM: string;
-  LAVANDERIA: string;
-  SACADA: string;
-  CHURRASQUEIRA : string;
-  AREA_FESTAS: string;
-  IMAGEM: string;
-
-}
