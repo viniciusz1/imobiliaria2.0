@@ -55,7 +55,12 @@ sacadaImovel="";
 churrasImovel="";
 festasImovel="";
 descricaoImovel="";
+
+clienteNomeObj = {}
 ngOnInit(): void {
+  this.usuarioService.buscarClientes().then(
+    (resultado => this.clienteNomeObj = resultado)
+  )
   const idRota = this.route.snapshot.paramMap.get('id');
 
   this.idRota = idRota;
@@ -104,21 +109,26 @@ ngOnInit(): void {
 id = 0
   
   jogaDB(){
-    if(this.idRota != 'novo'){
-      this.usuarioService.updateInfoimovel(this.oldCodigoImovel, this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL)
-      this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel)
-      this.usuarioService.updateCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.oldCodigoImovel)
-      this.usuarioService.updateResponsavel(this.codigoImovel, this.proprietario, this.corretor)
-
+    if(this.codigoImovel != "" && this.proprietario != ""&& this.corretor != "" && this.valorImovel != "" && this.finalidadeImovel !="" && this.tipoImovel != ""){
+      if(this.idRota != 'novo'){
+        this.usuarioService.updateInfoimovel(this.oldCodigoImovel, this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL)
+        this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel)
+        this.usuarioService.updateCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.oldCodigoImovel)
+        this.usuarioService.updateResponsavel(this.codigoImovel, this.proprietario, this.corretor)
+  
+      }else{
+  
+        this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL),
+        this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel),
+        this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.codigoImovel),
+        this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
+        this.id = this.id + 1
+        //this.gotoListaImoveis();
+      }
     }else{
-
-      this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL),
-      this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel),
-      this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.codigoImovel),
-      this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
-      this.id = this.id + 1
-      //this.gotoListaImoveis();
+      alert("Preencha no mínimo todas as informações com *")
     }
+    
   console.log(this.idRota)
   } 
   oldCodigoImovel;
@@ -126,7 +136,6 @@ id = 0
 
 
   imageURL;
-  teste;
   openModal;
 
   mostrarImagem(event){
@@ -135,7 +144,6 @@ id = 0
       this.imageURL = e.target.result;
       console.log(this.imageURL)
     }
-    this.teste = 1
     file.readAsDataURL(event.target.files[0])
     console.log(file)
   }

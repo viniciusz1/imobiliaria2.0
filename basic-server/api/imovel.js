@@ -56,34 +56,55 @@ function inserir(dados, resposta) {
     console.log(dados)
     database(`DELETE FROM INFOIMOVEL WHERE CODIGO_REFERENCIA = "${dados.codigo}"`)
         .then(result => {
-        console.log('infoimovel ALTERADO com sucesso!')
-        resposta({message: 'infoimovel  FOI ALTERADO com sucesso"'})
+        console.log('infoimovel removido com sucesso!')
+        resposta({message: 'infoimovel  FOI removido com sucesso"'})
     }).catch(erro => {
-        console.log('infoimovel NÃO FOI ALTERADO com sucesso!')
+        console.log('infoimovel NÃO FOI removido com sucesso!')
         console.log(erro)
-        resposta({message: 'infoimovel NÃO FOI ALTERADO com sucesso"'})
+        resposta({message: 'infoimovel NÃO FOI removido com sucesso"'})
     });
 })
-
-
-
-
-inserirRota('/deleta_imovel',
+inserirRota('/delete_caracteristicas',
 function inserir(dados, resposta) {
     console.log(dados)
-    database(`
-        DELETE FROM *
-        WHERE INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo};
-        `)
+    database(`DELETE FROM CARACTERISTICAS WHERE INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo}"`)
         .then(result => {
-        console.log('deletou!')
-        resposta({message: 'deletou'})
+        console.log('caracteristicas removido com sucesso!')
+        resposta({message: 'caracteristicas  FOI removido com sucesso"'})
     }).catch(erro => {
-        console.log('NÃO deletou!')
+        console.log('caracteristicas NÃO FOI removido com sucesso!')
         console.log(erro)
-        resposta({message: 'NÃO deletou'})
+        resposta({message: 'caracteristicas NÃO FOI removido com sucesso"'})
     });
 })
+inserirRota('/delete_localizacao',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`DELETE FROM LOCALIZACAO WHERE INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo}"`)
+        .then(result => {
+        console.log('localizacao removido com sucesso!')
+        resposta({message: 'localizacao  FOI removido com sucesso"'})
+    }).catch(erro => {
+        console.log('localizacao NÃO FOI removido com sucesso!')
+        console.log(erro)
+        resposta({message: 'localizacao NÃO FOI removido com sucesso"'})
+    });
+})
+inserirRota('/delete_responsavel',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`DELETE FROM RESPONSAVEL WHERE INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo}"`)
+        .then(result => {
+        console.log('responsavel removido com sucesso!')
+        resposta({message: 'responsavel  FOI removido com sucesso"'})
+    }).catch(erro => {
+        console.log('responsavel NÃO FOI removido com sucesso!')
+        console.log(erro)
+        resposta({message: 'responsavel NÃO FOI removido com sucesso"'})
+    });
+})
+
+
 
 
 inserirRota('/inserir_caracteristicas',

@@ -25,8 +25,8 @@ export class GerenciaProprietarioComponent implements OnInit {
     if(!(this.nomeCliente && this.cpfCliente && this.emailCliente && this.dataCliente && this.telefoneCliente)){
       alert('Preencha todos os campos')
     }else{
-      this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente)
-      
+      this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente, this.imageURL)
+      console.log(this.imageURL)
     }
   }
 
@@ -42,15 +42,10 @@ export class GerenciaProprietarioComponent implements OnInit {
     }
     this.teste = 1
     file.readAsDataURL(event.target.files[0])
+    console.log(this.imageURL)
   }
 
-  clickBotao(){
-    var item = document.createElement('li');
-    var image = document.createElement('img');
-    image.src = this.imageURL;
-    console.log(item)
-    item.appendChild(image);
-  }
+  
 
   user = localStorage.getItem('USER')
 

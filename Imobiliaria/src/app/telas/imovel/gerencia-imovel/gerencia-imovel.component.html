@@ -4,7 +4,7 @@
         <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
     </div>
     <h1>BONATTI IMÓVEIS</h1>
-    <h2 id="usuario-header">USUÁRIO: Juninho</h2>
+    <h2 id="usuario-header">USUÁRIO: {{user}}</h2>
 </header>
 <div id="pos-header">
     <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
@@ -28,25 +28,17 @@
         <hr>
         <div id="container-secundario">
             <div class="titulo-secundario">
-                Proprietário Responsável
+                Proprietário Responsável *
                 <br>
-                <select class="lateral form-control" type="number" [(ngModel)]="proprietario" (ngModelChange)="onAddCidade()" >
-                    <option>a</option>
-                    <option>b</option>
-                    <option>v</option>
-                    <option>f</option>
-                    <option>t</option>
+                <select required=""  class="lateral form-control" type="number" [(ngModel)]="proprietario" (ngModelChange)="onAddCidade()" >
+                    <option *ngFor="let cliente of clienteNomeObj">{{cliente.NOME}}</option>
                   </select>
             </div>
             <div class="titulo-secundario">
-                Corretor Responsável
+                Corretor Responsável *
                 <br>
                 <select name="" id="" class="lateral"  [(ngModel)]="corretor" (ngModelChange)="onAddCidade()" >
-                    <option>imovel</option>
-                    <option>asdfas</option>
-                    <option>imovel</option>
-                    <option>imovel</option>
-                    <option>imovel</option>
+                    <option>{{user}}</option>
                 </select>
             </div>
         </div>
@@ -57,18 +49,17 @@
         </b>
         <hr>
         <div class="titulo-secundario">
-            Valor do Imóvel
-            <br>
+            Valor do Imóvel *            <br>
             <input [(ngModel)]="valorImovel" type="text" class="codigo trinta">
         </div>
         <div id="container-secundario">
             <div class="titulo-secundario">
-                Código referência
+                Código referência *
                 <br>
                 <input [(ngModel)]="codigoImovel" type="text" class="codigo">
             </div>
             <div class="titulo-secundario">
-                Finalidade
+                Finalidade *
                 <br>
                 <select [(ngModel)]="finalidadeImovel" name="" id="" class="lateral">
                     <option>Venda</option>
@@ -76,7 +67,7 @@
                 </select>
             </div>
             <div class="titulo-secundario">
-                Tipo do Imóvel
+                Tipo do Imóvel *
                 <br>
                 <select [(ngModel)]="tipoImovel" name="" id="" class="lateral">
                     <option>Casa</option>
@@ -304,12 +295,10 @@
     </b>
     <hr>
 <div class="centralizar">
-    <img *ngIf="teste == 1" [src]="imageURL" alt="" width="300px" height="250px">
+    <img *ngIf="imageURL != null" [src]="imageURL" alt="" width="300px" height="250px">
     <form action="">
         <div>
-          <i *ngIf="teste == 0999999" class="fas fa-image"></i>
-          <label *ngIf="teste != 1" for="arquivo"></label>
-          <input *ngIf="imageURL == null" type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
+          <input type="file" name="arquivo" id="arquivo" (change)="mostrarImagem($event)">
         </div>
       </form>
 </div>

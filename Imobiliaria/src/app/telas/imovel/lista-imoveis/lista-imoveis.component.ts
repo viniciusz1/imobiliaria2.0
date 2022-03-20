@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -42,22 +43,21 @@ export class ListaImoveisComponent implements OnInit {
     }
 
   }
+  tamanho = ""
   codigo = 0;
   removeImovel(indice){
-    this.codigo = this.lista[indice].codigoReferencia;
-    console.log(this.codigo)
+    this.codigo = this.objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA
     this.usuarioService.deletaInfoimovel(this.codigo)
-    this.gotoListaImoveis();
-    this.lista.splice(this.indice)
+    this.usuarioService.deletaCaracteristicas(this.codigo)
+    this.usuarioService.deletaLocalizacao(this.codigo)
+    this.usuarioService.deletaResponsavel(this.codigo)
+  //  document.location.reload();
   }
 
-  lista=[]
   objeto={}
-  infoImovel={}
   ngOnInit(): void {
-
     this.usuarioService.testando().then((resultado)=>{
-      this.objeto = resultado
+      this.objeto= resultado
       console.log(this.objeto)
     })
     }

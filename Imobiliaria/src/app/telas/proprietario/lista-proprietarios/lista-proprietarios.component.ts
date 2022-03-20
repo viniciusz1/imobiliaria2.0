@@ -37,7 +37,7 @@ export class ListaProprietariosComponent implements OnInit {
   gotoTelaPrincipal(){
     this.router.navigate(['/tela-principal'])
   }
-  
+  imageURL = ""
   lista=[]
   objeto={}
   ngOnInit(): void {
@@ -49,7 +49,8 @@ export class ListaProprietariosComponent implements OnInit {
           telefone: resultado[i].TELEFONE,
           cpf: resultado[i].CPF,
           email: resultado[i].EMAIL,
-          data: resultado[i].DATA
+          data: resultado[i].DATA,
+          imagem: resultado[i].IMAGEM
         }
         console.log(this.lista)
         this.lista.push(this.objeto)
@@ -68,5 +69,5 @@ interface Cliente {
   CPF: string;
   EMAIL: string;
   DATA: number;
-
+  IMAGEM: string;
 }

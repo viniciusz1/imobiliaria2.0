@@ -58,13 +58,13 @@ export class UsuarioService {
 
 
 
-  inserircliente(nome, telefone, cpf, email, data){
+  inserircliente(nome, telefone, cpf, email, data, imagem){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_cliente', {
         method: 'POST',
         body: JSON.stringify(
           {
-            nome, telefone, cpf, email, data,
+            nome, telefone, cpf, email, data, imagem
           }
         ),
         headers: {
@@ -80,7 +80,7 @@ export class UsuarioService {
     })
   }
 
-  updateCliente(nome, telefone, cpf, email, data){
+  /*updateCliente(nome, telefone, cpf, email, data){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_cliente', {
         method: 'POST',
@@ -100,7 +100,7 @@ export class UsuarioService {
         console.log(erro);
     })
     })
-  }
+  }*/
 
 
 
@@ -151,28 +151,7 @@ export class UsuarioService {
 
 
 
-  deletarImovel(codigo){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/deleta_imovel', {
-        method: 'POST',
-        body: JSON.stringify(
-          {
-            codigo
-          }
-        ),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(function (result) {
-        return result.json();
-    }).then(function (dados){
-        console.log(dados);
-    }).catch(function(erro) {
-        console.log(erro);
-    })
-    })
-  }
-
+  
 
   inserirInfoimovel(id, valorImovel, finalidade, tipoImovel, descricao, imagem){
     return new Promise((resolve, rejeitado) => {
@@ -315,7 +294,69 @@ export class UsuarioService {
     })
     })
   }
-
+  deletaCaracteristicas(codigo){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/delete_caracteristicas', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            codigo
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+  deletaLocalizacao(codigo){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/delete_localizacao', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            codigo
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+  deletaResponsavel(codigo){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/delete_responsavel', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            codigo
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
 
 
   updateCaracteristicas(dormitorios, suites, banheiros, vagas, lavanderia, sacada, churrasqueira, festas, codigo){
