@@ -151,3 +151,11 @@ a:hover{
     background-color: #2f3275;
     cursor: pointer;
 }
+.telefone{
+    width: 93%;
+}
+
+#botao-final:hover{
+    background-color: #2f3275;
+    cursor: pointer;
+}
