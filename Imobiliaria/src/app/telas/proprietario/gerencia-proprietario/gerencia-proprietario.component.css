@@ -142,3 +142,12 @@ a{
     margin-top: 40px;
     margin-bottom: 40px;
 }
+.imoveis-header:hover{
+    background-color: #d6d2d2;
+    border: solid 1px #bdbdbd;
+    transition:all 0.4s ease;
+}
+a:hover{
+    background-color: #2f3275;
+    cursor: pointer;
+}

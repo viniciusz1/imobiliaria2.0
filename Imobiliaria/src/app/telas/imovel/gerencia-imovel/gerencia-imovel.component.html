@@ -38,7 +38,7 @@
             <div class="titulo-secundario">
                 Corretor Responsável *
                 <br>
-                <select name="" id="" class="lateral"  [(ngModel)]="corretor" (ngModelChange)="onAddCidade()" >
+                <select name="" id="" class="lateral corretor-responsavel"  [(ngModel)]="corretor" (ngModelChange)="onAddCidade()" >
                     <option>{{user}}</option>
                 </select>
             </div>
@@ -70,7 +70,7 @@
             <div class="titulo-secundario">
                 Tipo do Imóvel *
                 <br>
-                <select [(ngModel)]="tipoImovel" name="" id="" class="lateral">
+                <select  [(ngModel)]="tipoImovel" name="" id="" class="tipo-imovel lateral">
                     <option>Casa</option>
                     <option>Sobrado</option>
                     <option>Apartamento</option>
