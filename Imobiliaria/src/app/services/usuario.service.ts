@@ -380,23 +380,28 @@ export class UsuarioService {
     })
     })
   }
-
+  buscaLogin(nickname, password){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/login', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            nickname, password 
+          })
+          ,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
 }
 
 
 
-  // buscarInfoimovel(){
-  //   return new Promise((resolve, rejeitado) => {
-  //     fetch('/api/buscar_infoimovel', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     }).then(resultado => resultado.json())
-  //     .then(resolvido => resolve(resolvido))
-  //     .catch(rejeitado);
-  //   })
-  // }
+ 
   // buscarCaracteristicas(){
   //   return new Promise((resolve, rejeitado) => {
   //     fetch('/api/buscar_caracteristicas', {

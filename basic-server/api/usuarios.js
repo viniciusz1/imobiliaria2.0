@@ -3,10 +3,10 @@ inserirRota('/login',
         console.log(dados, resposta);
 
        
-    database(`SELECT * FROM USER WHERE NICKNAME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`)
+    database(`SELECT * FROM USER WHERE NOME = "${dados.nickname}" AND PASSWORD = "${dados.password}" LIMIT 1`)
         .then(result => {
             console.log('result:', result);
-        resposta({user: result[0]})
+        resposta(result)
     }).catch(erro => {
         resposta({erro: 'Erro ao buscar os usuários!'})
     });

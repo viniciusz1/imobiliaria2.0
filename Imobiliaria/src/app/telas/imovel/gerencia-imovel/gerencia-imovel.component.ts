@@ -150,14 +150,6 @@ ngOnInit(): void {
   abrirModal(){
     this.openModal = 1
   }
-  clickBotao(){
-    var item = document.createElement('li');
-    var image = document.createElement('img');
-    image.src = this.imageURL;
-    console.log(item)
-    item.appendChild(image);
-
-  }
 
   /*
   getMoney( str )

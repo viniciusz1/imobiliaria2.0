@@ -27,29 +27,17 @@ export class TelaLoginComponent implements OnInit {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
   }
+  objeto={}
 
-
-  logar(){    
-    this.usuarioService.buscarUsuarios()
-    .then((resultado: User[])=> {
-      for(let i = 0; i < resultado.length; i++){
-        if(this.username == resultado[i].NOME && this.pass == resultado[i].PASSWORD){
-          this.router.navigate(['/tela-principal'])
-          localStorage.setItem('USER', this.username)
-        }
+  logar(){   
+    this.usuarioService.buscaLogin(this.username, this.pass).then((resultado: any) => {
+      if(resultado != ""){
+        localStorage.setItem("USER", this.username);
+        localStorage.setItem("PASS", this.pass);
+        this.router.navigate(["/"])
       }
-      // this.user = resultado.user;
-      // this.password = resultado.password;
-    }).catch(erro => {
-      console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
   }
 
   
-}
-interface User {
-
-  NOME: string;
-  PASSWORD: string;
-
 }

@@ -30,7 +30,8 @@
             <div class="titulo-secundario">
                 Proprietário Responsável *
                 <br>
-                <select required=""  class="lateral form-control" type="number" [(ngModel)]="proprietario" (ngModelChange)="onAddCidade()" >
+                <select required=""  class="lateral form-control" type="number" 
+                [(ngModel)]="proprietario" (ngModelChange)="onAddCidade()" >
                     <option></option>
                     <option *ngFor="let cliente of clienteNomeObj">{{cliente.NOME}}</option>
                   </select>
@@ -38,7 +39,8 @@
             <div class="titulo-secundario">
                 Corretor Responsável *
                 <br>
-                <select name="" id="" class="lateral corretor-responsavel"  [(ngModel)]="corretor" (ngModelChange)="onAddCidade()" >
+                <select name="" id="" class="lateral corretor-responsavel"  
+                [(ngModel)]="corretor" (ngModelChange)="onAddCidade()" >
                     <option>{{user}}</option>
                 </select>
             </div>
@@ -97,34 +99,34 @@
             <div class="titulo-terciario">
                 Bairro
                 <br>
-                <input [(ngModel)]="bairroImovel" type="text" class="input100" />
+                <input [(ngModel)]="bairroImovel" type="text" class="input100" placeholder="ex: Molha"/>
             </div>
             <div class="titulo-terciario">
                 Logradouro
                 <br>
-                <input [(ngModel)]="logradouroImovel" type="text" class="input100" />
+                <input [(ngModel)]="logradouroImovel" type="text" class="input100" placeholder="ex: Campo" />
             </div>
             <div class="titulo-terciario">
                 Número
                 <br>
-                <input [(ngModel)]="numeroImovel" type="number" class="input100" />
+                <input [(ngModel)]="numeroImovel" type="number" class="input100" placeholder="ex: 123" />
             </div>
             <div class="titulo-terciario">
                 Complemento
                 <br>
-                <input [(ngModel)]="complementoImovel" type="text" class="input100" />
+                <input [(ngModel)]="complementoImovel" type="text" class="input100" placeholder="ex: Perto da ponte"/>
             </div>
         </div>
         <div id='container-secundario'>
             <div class="titulo-terciario">
                 Região
                 <br>
-                <input [(ngModel)]="regiaoImovel" type="text" class="input100" />
+                <input [(ngModel)]="regiaoImovel" type="text" class="input100" placeholder="ex: Sul"/>
             </div>
             <div class="titulo-terciario">
                 Estado
                 <br>
-                <input [(ngModel)]="estadoImovel" type="text" class="input100" />
+                <input [(ngModel)]="estadoImovel" type="text" class="input100"placeholder="ex: Santa Catarina"/>
             </div>
             <div class="titulo-terciario">
                 Zona
