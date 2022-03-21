@@ -114,7 +114,7 @@ ngOnInit(): void {
 
   
   jogaDB(){
-    if(this.codigoImovel != "" && this.proprietario != ""&& this.corretor != "" && this.valorImovel != "" && this.finalidadeImovel !="" && this.tipoImovel != ""){
+    if(this.codigoImovel != "" && this.proprietario != ""&& this.corretor != "" && this.valorImovel && this.finalidadeImovel !="" && this.tipoImovel != ""){
       if(this.idRota != 'novo'){
         this.usuarioService.updateInfoimovel(this.oldCodigoImovel, this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL)
         this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel)
@@ -188,6 +188,8 @@ ngOnInit(): void {
     return valor;
   }
 
+
+
   k(i) {
     var v = i.value.replace(/\D/g,'');
     v = (v/100).toFixed(2) + '';
@@ -199,6 +201,7 @@ ngOnInit(): void {
   }
 
   valorMask(){  
+
    if(this.valorImovel.toString().length > 2){
       this.valorImovel = this.formatarMoeda(this.valorImovel)
     }

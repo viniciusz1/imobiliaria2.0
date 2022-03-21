@@ -51,13 +51,14 @@
         <hr>
         <div class="titulo-secundario">
             Valor do Imóvel *            <br>
-            <input [(ngModel)]="valorImovel" type="text" class="codigo trinta"(keypress)="valorMask()">
+            <input [(ngModel)]="valorImovel" type="text" class="codigo trinta"
+            placeholder="ex: R$ 500.000,00"(keypress)="valorMask()">
         </div>
         <div id="container-secundario">
             <div class="titulo-secundario">
                 Código referência *
                 <br>
-                <input [(ngModel)]="codigoImovel" type="text" class="codigo">
+                <input [(ngModel)]="codigoImovel" placeholder="ex: 57"type="text" class="codigo">
             </div>
             <div class="titulo-secundario">
                 Finalidade *
@@ -91,7 +92,7 @@
             <div class="titulo-terciario">
                 Cidade
                 <br>
-                <input [(ngModel)]="cidadeImovel" type="text" class="input100" />
+                <input [(ngModel)]="cidadeImovel" type="text" class="input100" placeholder="ex: Timbó"/>
             </div>
             <div class="titulo-terciario">
                 Bairro
