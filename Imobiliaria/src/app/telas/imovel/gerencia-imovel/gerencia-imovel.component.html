@@ -31,7 +31,7 @@
                 Proprietário Responsável *
                 <br>
                 <select required=""  class="lateral form-control" type="number" 
-                [(ngModel)]="proprietario" (ngModelChange)="onAddCidade()" >
+                [(ngModel)]="proprietario">
                     <option></option>
                     <option *ngFor="let cliente of clienteNomeObj">{{cliente.NOME}}</option>
                   </select>
@@ -40,7 +40,7 @@
                 Corretor Responsável *
                 <br>
                 <select name="" id="" class="lateral corretor-responsavel"  
-                [(ngModel)]="corretor" (ngModelChange)="onAddCidade()" >
+                [(ngModel)]="corretor">
                     <option>{{user}}</option>
                 </select>
             </div>

@@ -32,9 +32,10 @@ export class TelaLoginComponent implements OnInit {
   logar(){   
     this.usuarioService.buscaLogin(this.username, this.pass).then((resultado: any) => {
       if(resultado != ""){
-        localStorage.setItem("USER", this.username);
-        localStorage.setItem("PASS", this.pass);
-        this.router.navigate(["/"])
+        localStorage.setItem("NOME", this.username);
+        localStorage.setItem("PASSWORD", this.pass);
+        localStorage.setItem("USER", this.username)
+        this.router.navigate(["/tela-principal"])
       }
     })
   }

@@ -6,28 +6,34 @@ import {
     RouterStateSnapshot
 } from "@angular/router";
 import { Observable } from "rxjs";
+import { UsuarioService } from "./services/usuario.service"
+
 @Injectable()
-class CheckLogged implements CanActivate{
-    usuarios: any;
+class CheckLogged implements CanActivate {
     constructor(
-        private router: Router
-    ){}
- 
+        private router: Router,
+        private usuarios: UsuarioService
+    ) { }
+
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot,
-        ): Observable<boolean> | Promise<boolean> | boolean {
- 
-            let username = localStorage.getItem('USER')
-            let password = localStorage.getItem('PASS')
-            if(username && password){
-                return true;
+    ): Observable<boolean> | Promise<boolean> | boolean {
+
+
+        let username = localStorage.getItem('NOME')
+        let password = localStorage.getItem('PASSWORD')
+        let retorno;
+
+            if (username && password) {
+                return true
             } else {
-                alert("deu bosta mano")
-                this.router.navigate(["/"]);
+                alert("É necessário um login válido!")
+                this.router.navigate([""]);
                 return false;
             }
+        
     }
 }
- 
+
 export default CheckLogged;
