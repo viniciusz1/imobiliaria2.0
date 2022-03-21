@@ -51,7 +51,7 @@
         <hr>
         <div class="titulo-secundario">
             Valor do Imóvel *            <br>
-            <input [(ngModel)]="valorImovel" type="text" class="codigo trinta">
+            <input [(ngModel)]="valorImovel" type="text" class="codigo trinta"(keypress)="valorMask()">
         </div>
         <div id="container-secundario">
             <div class="titulo-secundario">

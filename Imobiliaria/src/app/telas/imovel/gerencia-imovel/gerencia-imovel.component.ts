@@ -31,7 +31,14 @@ export class GerenciaImovelComponent implements OnInit {
   gotoTelaPrincipal(){
     this.router.navigate(['/tela-principal'])
   }
+  oldCodigoImovel;
+  codigo = 0;
 
+
+  imageURL;
+  openModal;
+  user = localStorage.getItem('USER')
+  id = 0
 proprietario="";
 corretor ="";
 valorImovel="";
@@ -55,14 +62,13 @@ sacadaImovel="";
 churrasImovel="";
 festasImovel="";
 descricaoImovel="";
-
 clienteNomeObj = {}
+
 ngOnInit(): void {
   this.usuarioService.buscarClientes().then(
     (resultado => this.clienteNomeObj = resultado)
   )
   const idRota = this.route.snapshot.paramMap.get('id');
-
   this.idRota = idRota;
 
   if (idRota != 'novo') {
@@ -106,7 +112,6 @@ ngOnInit(): void {
 }
 
 
-id = 0
   
   jogaDB(){
     if(this.codigoImovel != "" && this.proprietario != ""&& this.corretor != "" && this.valorImovel != "" && this.finalidadeImovel !="" && this.tipoImovel != ""){
@@ -131,12 +136,6 @@ id = 0
     
   console.log(this.idRota)
   } 
-  oldCodigoImovel;
-  codigo = 0;
-
-
-  imageURL;
-  openModal;
 
   mostrarImagem(event){
     const file = new FileReader
@@ -147,34 +146,9 @@ id = 0
     file.readAsDataURL(event.target.files[0])
     console.log(file)
   }
-  user = localStorage.getItem('USER')
 
   abrirModal(){
     this.openModal = 1
-  }
-  onAddCidade(){ // Função que foi chamada
-    console.log("proprietario", this.proprietario); // Imprimiu o valor no Console log.
-    console.log('corretor', this.corretor);
-    console.log('valorImovel', this.valorImovel);
-    console.log('codigoImovel', this.codigoImovel);
-    console.log('finalidadeImovel', this.finalidadeImovel);
-    console.log('tipoImovel', this.tipoImovel);
-    console.log('cidadeImovel', this.cidadeImovel);
-    console.log('bairroImovel', this.bairroImovel);
-    console.log('logradouroImovel', this.logradouroImovel);
-    console.log('numeroImovel', this.numeroImovel);
-    console.log('complementoImovel', this.complementoImovel);
-    console.log('regiaoImovel', this.regiaoImovel);
-    console.log('estadoImovel', this.estadoImovel);
-    console.log('zonaImovel', this.zonaImovel);
-    console.log('dormitoriosImovel', this.dormitoriosImovel);
-    console.log('suitesImovel', this.suitesImovel);
-    console.log('banheirosImovel', this.banheirosImovel);
-    console.log('vagasImovel', this.vagasImovel);
-    console.log('sacadaImovel', this.sacadaImovel);
-    console.log('churrasImovel', this.churrasImovel);
-    console.log('festasImovel', this.festasImovel);
-    console.log('descricaoImovel', this.descricaoImovel);
   }
   clickBotao(){
     var item = document.createElement('li');
@@ -184,6 +158,43 @@ id = 0
     item.appendChild(image);
 
   }
+
+  /*
+  getMoney( str )
+  {
+          return parseInt( str.replace(/[\D]+/g,'') );
+  }
+  formatReal( int )
+  {
+          var tmp = int+'';
+          tmp = tmp.replace(/([0-9]{1})$/g, ",$1");
+          if( tmp.length > 6 )
+                  tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+  
+          return tmp;
+  }
+  valorInt = 0
+  valorInt2*/
+
+  formatarMoeda(valor) {
+    valor = valor + '';
+    valor = parseInt(valor.replace(/[\D]+/g,''));
+    valor = valor + '';
+    valor = valor.replace(/([0-9]{1})$/g, ",$1");
+  
+    if (valor.length > 5) {
+      valor = valor.replace(/([0-9]{3}),([0-9]{1}$)/g, ".$1,$2");
+    }
+  
+    return valor;
+  }
+
+
+  valorMask(){  
+    if(this.valorImovel.toString().length > 2){
+      this.valorImovel = this.formatarMoeda(this.valorImovel)
+    }
+     }
   
 }
 interface infoImovel {
