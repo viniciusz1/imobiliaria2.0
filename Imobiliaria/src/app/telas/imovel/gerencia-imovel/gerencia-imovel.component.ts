@@ -185,17 +185,27 @@ ngOnInit(): void {
     if (valor.length > 5) {
       valor = valor.replace(/([0-9]{3}),([0-9]{1}$)/g, ".$1,$2");
     }
-  
     return valor;
   }
 
+  k(i) {
+    var v = i.value.replace(/\D/g,'');
+    v = (v/100).toFixed(2) + '';
+    v = v.replace(".", ",");
+    v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+    v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
+    i.value = v;
+    this.valorImovel = i;
+  }
 
   valorMask(){  
-    if(this.valorImovel.toString().length > 2){
+   if(this.valorImovel.toString().length > 2){
       this.valorImovel = this.formatarMoeda(this.valorImovel)
     }
-     }
+  }
   
+
+
 }
 interface infoImovel {
   IMAGEM: string;
