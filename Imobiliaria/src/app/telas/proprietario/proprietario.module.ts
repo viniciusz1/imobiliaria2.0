@@ -4,6 +4,7 @@ import { ListaProprietariosComponent } from './lista-proprietarios/lista-proprie
 import { GerenciaProprietarioComponent } from './gerencia-proprietario/gerencia-proprietario.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
 const routes: Routes = [
   {
     path: 'gerencia-proprietario/:id',
@@ -20,7 +21,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
-    FormsModule
+    FormsModule 
   ]
 })
 export class ProprietarioModule { }

@@ -1,4 +1,9 @@
 <html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
 <header>
     <div id='imagem' (click)="gotoTelaPrincipal()">
         <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
@@ -23,7 +28,7 @@
     </div>
 
     <div class="responsavel espacamento">
-        <b (click)="teste()">
+        <b>
             INFORMAÇÕES
         </b>
         <hr>
@@ -31,29 +36,35 @@
         <div class="titulo-secundario">
             Nome do Proprietário
             <br>
-            <input [(ngModel)]="nomeCliente" type="text"  maxlength="45"class="codigo trinta">
+            <input [(ngModel)]="nomeCliente" type="text"  maxlength="45"class="codigo input-size trinta"
+            placeholder="ex: Francisco Alvarenga">
         </div>
         <div class="titulo-secundario">
             Telefone
             <br>
-            <input [(ngModel)]="telefoneCliente" type="number" maxlength="9" class="telefone codigo trinta">
+            <input id="telefone" (keypress)="telefoneMask()" [(ngModel)]="telefoneCliente" 
+            type="text" maxlength="15" class="telefone input-size codigo trinta"
+            placeholder="ex: (47) 00000-0000">
         </div>
     </div>
         <div id="container-secundario">
-            <div class="titulo-secundario">
+            <div class="titulo-secundario input-size">
                 CPF
                 <br>
-                <input [(ngModel)]="cpfCliente" type="text" maxlength="11"class="codigo trinta">
+                <input (keypress)="cpfMask()" placeholder="ex: 000.000.000-00"[(ngModel)]="cpfCliente" 
+                type="text" maxlength="14"class="codigo input-size trinta">
             </div>
             <div class="titulo-secundario">
                 Email
                 <br>
-                <input [(ngModel)]="emailCliente" type="email" class="codigo trinta">
+                <input [(ngModel)]="emailCliente" placeholder="ex: fulano123@gmail.com" 
+                type="email" class="codigo input-size trinta">
             </div>
             <div class="titulo-secundario">
                 Data de nascimento
                 <br>
-                <input [(ngModel)]="dataCliente" type="date" class="codigo trinta">
+                <input (keypress)="dateMask()"
+                [(ngModel)]="dataCliente" placeholder="00/00/0000" maxlength="10" type="text" class="codigo input-size trinta">
             </div>
         </div>
     </div>
@@ -79,4 +90,5 @@
 <div id="div-final">
     <button id="botao-final" (click)="cadastraCliente()">Cadastrar Cliente</button>
 </div>
+
 </html>

@@ -103,10 +103,10 @@ database(`INSERT INTO USER VALUES(
 database(`CREATE TABLE IF NOT EXISTS CLIENTE (
     NOME varchar(45) not null,
     TELEFONE varchar(15) not null,
-    CPF INTEGER PRIMARY KEY UNIQUE,
+    CPF varchar(16) PRIMARY KEY UNIQUE,
     EMAIL varchar(100),
     IMAGEM varchar(99999999),    
-    DATA varchar(20)
+    DATA varchar(30)
     )`).then(result => {
     console.log('Tabela CLIENTE criada com sucesso');
 }).catch(erro => {

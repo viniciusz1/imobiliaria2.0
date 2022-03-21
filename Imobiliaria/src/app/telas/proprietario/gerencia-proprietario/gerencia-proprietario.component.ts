@@ -22,19 +22,36 @@ export class GerenciaProprietarioComponent implements OnInit {
   list=[]
 
   cadastraCliente(){    
-    if(!(this.nomeCliente && this.cpfCliente && this.emailCliente && this.dataCliente && this.telefoneCliente)){
-      alert('Preencha todos os campos')
-    }else{
+  
       this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente, this.imageURL)
-      console.log(this.imageURL)
-    }
+     
   }
 
   
   imageURL 
-  teste
+  teste = 9999
   openModal
-
+  telefoneMask (){
+    if(this.telefoneCliente.toString().length == 0){
+      this.telefoneCliente =  "(" + this.telefoneCliente 
+    }else if(this.telefoneCliente.toString().length == 3){
+      this.telefoneCliente = this.telefoneCliente + ") "
+    }else if(this.telefoneCliente.toString().length == 10){
+      this.telefoneCliente = this.telefoneCliente + "-"
+    }
+  }
+  dateMask (){
+    if(this.dataCliente.toString().length == 2 || this.dataCliente.toString().length == 5){
+      this.dataCliente =  this.dataCliente += "/"
+    }
+  }
+  cpfMask(){
+    if(this.cpfCliente.toString().length == 3 || this.cpfCliente.toString().length == 7){
+      this.cpfCliente = this.cpfCliente += "."
+    }else if(this.cpfCliente.toString().length == 11){
+      this.cpfCliente = this.cpfCliente += "-"
+    }
+  }
   mostrarImagem(event){
     const file = new FileReader
     file.onload = (e) => {

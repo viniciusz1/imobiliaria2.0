@@ -6,6 +6,9 @@
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     
 }
+.input-size{
+    font-size: 12px;
+}
 html{
     background-color: #ededed;
 }
