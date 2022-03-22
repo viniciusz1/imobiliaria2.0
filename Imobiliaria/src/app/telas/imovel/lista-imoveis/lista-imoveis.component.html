@@ -41,54 +41,63 @@
         </div>
         <div class="fundo" *ngIf="modal == 1" (click)="abrirModal(i)">
             <div id="modal">
-                    <div class="parte-cima">
-                        <div class="informacoes-imovel">
-                            <img class="img" [src]="objeto[indice].IMAGEM">
-                            <div class="primeiro-imovel">
-                                <div class="">
-                                    <h2>TITULO</h2>
-                                    <div>REGIÃO:{{objeto[indice].REGIAO}}</div>
-                                    <div>ESTADO:{{objeto[indice].ESTADO}}</div>
-                                    <div>CIDADE:{{objeto[indice].CIDADE}}</div>
-                                    <div>BAIRRO: {{objeto[indice].BAIRRO}}</div>
-                                </div>
-                                <div class="espacamento">
-                                    <div>VALOR DO IMÓVEL: {{objeto[indice].VALOR_IMOVEL}}/</div>
-                                </div>
-                                <div class="espacamento-cima">
-                                    <div class=''>PROPRIETÁRIO:{{objeto[indice].PROPRIETARIO}}</div>
-                                </div>
-                                <div class="">
-                                    <div>CORRETOR RESPONSÁVEL:{{objeto[indice].CORRETOR}}</div>
-                                </div>
-                                <div class="espacamento-cima">
-                                    <div>CODIGO: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
-                                </div>
-                            </div>          
+                <div class="parte-cima">
+                    <div class="informacoes-imovel">
+                        <img class="img" [src]="objeto[indice].IMAGEM">
+                        <div class="primeiro-imovel">
                             <div class="">
-                                <h2 class="esconde">L</h2>
-                                <div>DORMITÓRIOS: {{objeto[indice].DORMITORIOS}}</div>
-                                <div>SUÍTES:  {{objeto[indice].SUITES}}</div>
-                                <div>BANHEIROS: {{objeto[indice].BANHEIROS}}</div>
-
-                                <div>VAGAS DE GARAGEM:  {{objeto[indice].VAGAS_GARAGEM}}</div>
-                                <div>SACADA:  {{objeto[indice].SACADA}}</div>
-                                <div>CHURRASQUEIRA:  {{objeto[indice].CHURRASQUEIRA}}</div>
-                                <div>ÁREA DE FESTA:  {{objeto[indice].AREA_FESTAS}}</div>
+                                <div>Região:{{objeto[indice].REGIAO}}</div>
+                                <div>Estado:{{objeto[indice].ESTADO}}</div>
+                                <div>Cidade:{{objeto[indice].CIDADE}}</div>
+                                <div>Bairro: {{objeto[indice].BAIRRO}}</div>
                             </div>
+                            <div class="espacamento">
+                                <div>Valor: {{objeto[indice].VALOR_IMOVEL}}/</div>
+                            </div>
+                            <div class="espacamento-cima">
+                                <div class=''>Proprietário:{{objeto[indice].PROPRIETARIO}}</div>
+                            </div>
+                            <div class="">
+                                <div>Corretor:{{objeto[indice].CORRETOR}}</div>
+                            </div>
+                            <div class="espacamento-cima">
+                                <div>Codigo: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
+                            </div>
+                        </div>          
+                        <div class="">
+                            <h2 class="esconde">L</h2>
+                            <div>Dormitórios: {{objeto[indice].DORMITORIOS}}</div>
+                            <div>Suítes:  {{objeto[indice].SUITES}}</div>
+                            <div>Banheiros: {{objeto[indice].BANHEIROS}}</div>
+
+                            <div>Vagas de Garagem:  {{objeto[indice].VAGAS_GARAGEM}}</div>
+                            <div>Sacada:  {{objeto[indice].SACADA}}</div>
+                            <div>Churrasqueira:  {{objeto[indice].CHURRASQUEIRA}}</div>
+                            <div>Área de festas:  {{objeto[indice].AREA_FESTAS}}</div>
+
+               
+                        </div>
+                        <div class="container">
+                            <div>
+                                <label for=""></label>
+                                <span></span>
+                                </div>
                         </div>
                     </div>
-                    <div class="espacamento-cima">
-                        
-                        Descrição do Imóvel:
-                    </div>
-                    
-                    <div class="descricao borda">
-                        
-                        {{objeto[indice].DESCRICAO}}
-                    </div>
-                
-            </div>
+                </div>
+                <div class="espacamento-cima">
+                   
+                    Descrição do Imóvel:
+                </div>
+               
+                <div class="descricao borda">
+                   
+                    {{objeto[indice].DESCRICAO}}
+                </div>
+           
+        </div>
+
+
         </div>
     </div>
     
