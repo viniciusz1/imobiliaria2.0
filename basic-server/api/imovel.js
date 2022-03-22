@@ -37,7 +37,7 @@ function inserir(dados, resposta) {
         VALOR_IMOVEL = "${dados.valorImovel}",
         FINALIDADE = "${dados.finalidade}",
         TIPO_IMOVEL = "${dados.tipoImovel}",
-        DESCRICAO = "${dados.tipoImovel}",
+        DESCRICAO = "${dados.descricao}",
         IMAGEM = "${dados.imagem}"
         WHERE
         CODIGO_REFERENCIA = "${dados.oldcodigo}"`)
