@@ -16,6 +16,9 @@ header{
     box-shadow: grey 0px -3px 11px 3px;
 
 }
+.contorno{
+    border: black 1px solid;
+}
 #imagem{
     height: 70px;
     cursor: pointer;
@@ -157,7 +160,7 @@ a{
     margin-bottom: 10px
 }
 .primeiro-imovel{
-    margin: 0 70px;
+    display: flex;
 }
 .esconde{
     color: transparent;
@@ -213,4 +216,13 @@ a{
 a:hover{
     background-color: #2f3275;
     cursor: pointer;
+}
+
+primeiras-info{
+    display: flex;
+    flex-direction: column;
+    
+}
+.flex{
+
 }

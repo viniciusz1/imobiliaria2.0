@@ -42,44 +42,32 @@
         <div class="fundo">
             <div id="modal">
                 <div class="parte-cima">
-                    <div class="informacoes-imovel">
+                    <div class="informacoes-imovel contorno">
                         <img class="img" [src]="objeto[indice].IMAGEM">
-                        <div class="primeiro-imovel">
-                            <div class="">
-                                <div class=''>Proprietário:{{objeto[indice].PROPRIETARIO}}</div>
-                                <div>Corretor:{{objeto[indice].CORRETOR}}</div>
-                                <div>Região:{{objeto[indice].REGIAO}}</div>
-                                <div>Estado:{{objeto[indice].ESTADO}}</div>
-                                <div>Cidade:{{objeto[indice].CIDADE}}</div>
-                                <div>Bairro: {{objeto[indice].BAIRRO}}</div>
-                                <div>Valor: {{objeto[indice].VALOR_IMOVEL}}/</div>
-                                <div>Codigo: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
-                                <div>Finalidade: {{objeto[indice].FINALIDADE}}</div>
-                                <div>Tipo Imóvel: {{objeto[indice].TIPO_IMOVEL}}</div>
+                        <div class="primeiro-imovel contorno">
+                            <div class="contorno ">
+                                <span class=''>Proprietário:{{objeto[indice].PROPRIETARIO}}</span><br>
+                                <span>Corretor:{{objeto[indice].CORRETOR}}</span><br>
+                                <span>Valor: {{objeto[indice].VALOR_IMOVEL}}/</span><br>
+                                <span>Codigo: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</span><br>
+                                <span>Finalidade: {{objeto[indice].FINALIDADE}}</span><br>
+                                <span>Tipo Imóvel: {{objeto[indice].TIPO_IMOVEL}}</span><br>
                             </div>
-                            <div class="">
-                                <span>Cidade: {{objeto[indice].CIDADE}}</span>
+                            <div class="contorno">
+                                <span>Cidade: {{objeto[indice].CIDADE}}</span><br>
+                                <span>Bairro: {{objeto[indice].BAIRRO}}</span><br>
+                                <span>Logradouro: {{objeto[indice].LOGRADOURO}}</span><br>
+                                <span>Número: {{objeto[indice].NUMERO}}</span><br>
+                                <span>Complemento: {{objeto[indice].COMPLEMENTO}}</span><br>
+                                <span>Região: {{objeto[indice].REGIAO}}</span><br>
                             </div>
-                        </div>          
-                        <div class="">
-                            <h2 class="esconde">L</h2>
-                            <div>Dormitórios: {{objeto[indice].DORMITORIOS}}</div>
-                            <div>Suítes:  {{objeto[indice].SUITES}}</div>
-                            <div>Banheiros: {{objeto[indice].BANHEIROS}}</div>
+                            <div class="contorno">
+                                <span>Estado: {{objeto[indice].ESTADO}}</span><br>
+                                <span>Zona: {{objeto[indice].ZONA}}</span><br>
 
-                            <div>Vagas de Garagem:  {{objeto[indice].VAGAS_GARAGEM}}</div>
-                            <div>Sacada:  {{objeto[indice].SACADA}}</div>
-                            <div>Churrasqueira:  {{objeto[indice].CHURRASQUEIRA}}</div>
-                            <div>Área de festas:  {{objeto[indice].AREA_FESTAS}}</div>
-
-               
-                        </div>
-                        <div class="container">
-                            <div>
-                                <label for=""></label>
-                                <span></span>
-                                </div>
-                        </div>
+                        </div>  
+                    </div>        
+                        
                     </div>
                 </div>
                 <div class="espacamento-cima">
