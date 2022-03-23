@@ -46,22 +46,19 @@
                         <img class="img" [src]="objeto[indice].IMAGEM">
                         <div class="primeiro-imovel">
                             <div class="">
+                                <div class=''>Proprietário:{{objeto[indice].PROPRIETARIO}}</div>
+                                <div>Corretor:{{objeto[indice].CORRETOR}}</div>
                                 <div>Região:{{objeto[indice].REGIAO}}</div>
                                 <div>Estado:{{objeto[indice].ESTADO}}</div>
                                 <div>Cidade:{{objeto[indice].CIDADE}}</div>
                                 <div>Bairro: {{objeto[indice].BAIRRO}}</div>
-                            </div>
-                            <div class="espacamento">
                                 <div>Valor: {{objeto[indice].VALOR_IMOVEL}}/</div>
-                            </div>
-                            <div class="espacamento-cima">
-                                <div class=''>Proprietário:{{objeto[indice].PROPRIETARIO}}</div>
+                                <div>Codigo: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
+                                <div>Finalidade: {{objeto[indice].FINALIDADE}}</div>
+                                <div>Tipo Imóvel: {{objeto[indice].TIPO_IMOVEL}}</div>
                             </div>
                             <div class="">
-                                <div>Corretor:{{objeto[indice].CORRETOR}}</div>
-                            </div>
-                            <div class="espacamento-cima">
-                                <div>Codigo: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
+                                <span>Cidade: {{objeto[indice].CIDADE}}</span>
                             </div>
                         </div>          
                         <div class="">
