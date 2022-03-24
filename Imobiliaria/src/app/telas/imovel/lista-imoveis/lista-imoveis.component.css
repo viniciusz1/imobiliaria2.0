@@ -180,7 +180,8 @@ a{
 }
 .parte-cima{
     display: flex;
-
+    column-gap: 8%;
+    justify-content: center;
 }
 .red{
     cursor: pointer;
@@ -227,12 +228,19 @@ primeiras-info{
     
 }
 .info-baixo{
+    padding: 10px;
     display: flex;
+    width: 80%;
     column-gap: 10px;
     margin-top: 25px;
-    background-color: green;    
+    background-color: green;
     justify-content: center;
 }
-span{
+.span{
     font-size: 15px;
+    margin-bottom: 2px;
+    margin: 20px -24px 19px 26px
+}
+.tres{
+    margin-right: 20px;
 }
