@@ -82,15 +82,26 @@ export class GerenciaProprietarioComponent implements OnInit {
   gotoTelaPrincipal() {
     this.router.navigate(['/tela-principal'])
   }
+  codigo = 0;
   ngOnInit(): void {
+    const idRota = this.route.snapshot.paramMap.get('id');
+    if (idRota != 'novo') {
+      this.codigo = parseInt(idRota) - 1;
+      console.log(this.codigo)
     this.usuarioService.buscarClientes()
     .then((resultado: (Object: (String))  => [])=> {
-      console.log("RESULTADO:", resultado)
-      // this.user = resultado.user;
-      // this.password = resultado.password;
+      
+      console.log(resultado)
+      this.nomeCliente = resultado[0].NOME;
+      this.cpfCliente = resultado[0].CPF;
+      this.emailCliente = resultado[0].EMAIL;
+      this.dataCliente = resultado[0].DATA;
+      this.telefoneCliente = resultado[0].TELEFONE;
+      
     }).catch(erro => {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
   }
+}
 
 }
