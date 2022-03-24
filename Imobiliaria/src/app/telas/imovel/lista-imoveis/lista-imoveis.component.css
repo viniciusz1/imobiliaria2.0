@@ -161,10 +161,13 @@ a{
 }
 .primeiro-imovel{
     display: flex;
-    background-color: green;
+    background-color: #5b5ea1;
     margin-left: 5%;
-    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 8px 8px 10px -5px;
+    padding: 10px;  
 }
+
 .esconde{
     color: transparent;
 }
@@ -174,6 +177,10 @@ a{
 }
 .descricao{
     height: 35%;
+    background-color: #5b5ea1;
+    border-radius: 5px;
+    box-shadow: 6px 6px 16px -1px;
+    padding: 30px;
 }
 .informacoes-imovel{
     display: flex;
@@ -211,6 +218,7 @@ a{
     background-color: rgb(49, 49, 51);
     width: 300px;
     height: 300px;
+    box-shadow: 7px 7px 10px -5px;
 }
 .imoveis-header:hover{
     background-color: #d6d2d2;
@@ -240,12 +248,21 @@ primeiras-info{
     margin-top: 25px;
     background-color: green;
     justify-content: center;
+    background-color: #5b5ea1;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px -1px;
 }
-.span{
+    .span{
     font-size: 15px;
     margin-bottom: 2px;
     margin: 20px -24px 19px 26px
 }
+.self-baixo{
+    color: white;
+}
+
 .tres{
+    
+    color: white;
     margin-right: 20px;
 }

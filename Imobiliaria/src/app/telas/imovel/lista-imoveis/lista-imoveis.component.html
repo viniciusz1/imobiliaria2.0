@@ -39,7 +39,7 @@
             </div>
 
         </div>
-        <div class="fundo">
+        <div class="fundo" *ngIf="modal != 0" (click)="abrirModal(i)">
             <div id="modal">
                 <div class="parte-cima ">
                         <img class="img" [src]="objeto[indice].IMAGEM">
@@ -72,26 +72,30 @@
                 </div>
                 <div class="flex">
                 <div class=" info-baixo">
-                    <div>Dormitórios: {{objeto[indice].DORMITORIOS}}</div>
-                    <div>Suítes:  {{objeto[indice].SUITES}}</div>
-                    <div>Banheiros: {{objeto[indice].BANHEIROS}}</div>
-                    <div>Lavanderia: {{objeto[indice].BANHEIROS}}</div>
-                    <div>Vagas de Garagem:  {{objeto[indice].VAGAS_GARAGEM}}</div>
-                    <div>Sacada:  {{objeto[indice].SACADA}}</div>
-                    <div>Churrasqueira:  {{objeto[indice].CHURRASQUEIRA}}</div>
-                    <div>Área de festas:  {{objeto[indice].AREA_FESTAS}}</div>
+                    <div class="self-baixo">Dormitórios: {{objeto[indice].DORMITORIOS}}</div>
+                    <div class="self-baixo">Suítes:  {{objeto[indice].SUITES}}</div>
+                    <div class="self-baixo">Banheiros: {{objeto[indice].BANHEIROS}}</div>
+                    <div class="self-baixo">Lavanderia: {{objeto[indice].BANHEIROS}}</div>
+                    <div class="self-baixo">Vagas de Garagem:  {{objeto[indice].VAGAS_GARAGEM}}</div>
+                    <div class="self-baixo">Sacada:  {{objeto[indice].SACADA}}</div>
+                    <div class="self-baixo">Churrasqueira:  {{objeto[indice].CHURRASQUEIRA}}</div>
+                    <div class="self-baixo">Área de festas:  {{objeto[indice].AREA_FESTAS}}</div>
                 </div>
                 </div>
                 <div class="espacamento-cima">
-
-                    Descrição do Imóvel:
+                    <b>
+                    Descrição do Imóvell:
+                </b>
                 </div>
+                <div>                    
+                    <div class="descricao"> 
+                        <div style="color: white">
 
-                <div class="descricao borda">
-
-                    {{objeto[indice].DESCRICAO}}
+                            {{objeto[indice].DESCRICAO}}
+                        </div>                       
+                    </div>
                 </div>
-
+                
             </div>
 
 

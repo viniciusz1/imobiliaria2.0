@@ -51,7 +51,7 @@ export class ListaImoveisComponent implements OnInit {
     this.usuarioService.deletaCaracteristicas(this.codigo)
     this.usuarioService.deletaLocalizacao(this.codigo)
     this.usuarioService.deletaResponsavel(this.codigo)
-  //  document.location.reload();
+    document.location.reload();
   }
 
   objeto={}
