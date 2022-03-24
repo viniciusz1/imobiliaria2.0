@@ -227,6 +227,11 @@ primeiras-info{
     flex-direction: column;
     
 }
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .info-baixo{
     padding: 10px;
     display: flex;
