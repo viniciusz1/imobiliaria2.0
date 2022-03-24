@@ -147,7 +147,7 @@ a{
     padding: 40px;
     height: 80%;
     width: 80%;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 .espacamento{
     margin: 10px 0px;
@@ -161,6 +161,9 @@ a{
 }
 .primeiro-imovel{
     display: flex;
+    background-color: green;
+    margin-left: 5%;
+    padding: 10px;
 }
 .esconde{
     color: transparent;
@@ -223,6 +226,13 @@ primeiras-info{
     flex-direction: column;
     
 }
-.flex{
-
+.info-baixo{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 25px;
+    background-color: green;    
+    justify-content: center;
+}
+span{
+    font-size: 15px;
 }
