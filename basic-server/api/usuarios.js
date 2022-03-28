@@ -92,6 +92,7 @@ inserirRota('/buscar_clientes',
         resposta({erro: 'Erro ao buscar os usuários'})
     });
 })
+
 inserirRota('/buscar_usuario',
     function (dados, resposta) {
         console.log(dados, resposta);
@@ -104,6 +105,8 @@ inserirRota('/buscar_usuario',
         resposta({erro: 'Erro ao buscar os usuários'})
     });
 })
+
+
 
 inserirRota('/testando',
     function (dados, resposta) {
@@ -122,37 +125,37 @@ inserirRota('/testando',
 })
 
 
-inserirRota('/criar_usuario',
-function name(dados, resposta) {
-    console.log(dados)
+// inserirRota('/criar_usuario',
+// function name(dados, resposta) {
+//     console.log(dados)
 
-    if(!dados.nome){
-        return resposta({erro: 'É necessário preencher o nome'})
-    }
-    if(!dados.nickname){
-        return resposta({erro: 'É necessário preencher o nome'})
-    }
-    if(!dados.password){
-        return resposta({erro: 'É necessário preencher senha '})
-    }
-    database(`INSERT INTO USER 
-    (
-        NOME, 
-        PASSWORD
-        )
-        VALUES
-        (
-        "${dados.nome}", 
-        "${dados.password}"
-        )`)
-        .then(result => {
-        console.log('Usuario inserido com sucesso!')
-        resposta({message: 'Usuario inserido com sucesso"'})
-    }).catch(erro => {
-        console.log('Usuario NÃO FOI inserido com sucesso!')
-        resposta({message: 'Usuario NÃO FOI inserido com sucesso"'})
-    });
-})
+//     if(!dados.nome){
+//         return resposta({erro: 'É necessário preencher o nome'})
+//     }
+//     if(!dados.nickname){
+//         return resposta({erro: 'É necessário preencher o nome'})
+//     }
+//     if(!dados.password){
+//         return resposta({erro: 'É necessário preencher senha '})
+//     }
+//     database(`INSERT INTO USER 
+//     (
+//         NOME, 
+//         PASSWORD
+//         )
+//         VALUES
+//         (
+//         "${dados.nome}", 
+//         "${dados.password}"
+//         )`)
+//         .then(result => {
+//         console.log('Usuario inserido com sucesso!')
+//         resposta({message: 'Usuario inserido com sucesso"'})
+//     }).catch(erro => {
+//         console.log('Usuario NÃO FOI inserido com sucesso!')
+//         resposta({message: 'Usuario NÃO FOI inserido com sucesso"'})
+//     });
+// })
 
 inserirRota('/criar_usuario', 
 function name(dados, resposta) {
