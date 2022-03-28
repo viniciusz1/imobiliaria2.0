@@ -16,7 +16,7 @@
                     <input [(ngModel)]="username" type="text" placeholder="Usuário">
                 </div>
                 <div class="ordem">
-                    <input  [(ngModel)]="pass" type="text" placeholder="Senha">
+                    <input  [(ngModel)]="pass" type="password" placeholder="Senha">
                 </div>
                 <br>
                 <div class="divbutton">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="rodape">
                     <div class="senha">Esqueceu a senha?</div>
-                    <div class="senha">Cadastre-se</div>
+                    <div class="senha" (click)="gotoCadastro()">Cadastre-se</div>
                 </div>
 
             </main>

@@ -9,14 +9,14 @@
     <div id="pos-header">
         <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
         <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
-        <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
-        <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+        <div class="imoveis-header" (click)="gotoGerenciaCliente()">Proprietários: Inserir</div>
+        <div class="imoveis-header" (click)="gotoListaClientes()">Proprietários: Listar</div>
     </div>
 <main>
-    <div class="titulo">Clientes: listar</div>
+    <div class="titulo">Proprietários: listar</div>
     <div class="postitulo">
         <b>
-            <div>Clientes -> </div>
+            <div>Proprietários -> </div>
         </b>
         <a (click)="gotoGerenciaCliente()">Incluir</a>
         <a (click)="gotoListaClientes()">Listar</a>
@@ -24,14 +24,14 @@
     
     <div class="encontrados">Imóveis encontrados:0</div>
     <div class="imoveis">
-        <div class="imovel" *ngFor="let lista of lista">
+        <div class="imovel" *ngFor="let lista of lista; let i = index">
             <div class="div-imagem">
                 <img width="100%" height="100%" [src]="lista.imagem" alt="">
             </div>
             <div style="padding-left: 10px;">
                 <div class="espacamento-baixo">
                 </div>
-                <div (click)="logar()">
+                <div>
                     <div>
                         Nome: {{lista.nome}}<br>
                         CPF: {{lista.cpf}}
@@ -44,9 +44,8 @@
                 </div>
             </div>
             <div class="tres-botao">
-                <!-- <div class="botoes-lateral" (click)="abrirModal()"> Detalhes</div> -->
-                <div class="botoes-lateral" (click)="gotoGerenciaImovel()"> Editar</div>
-                <!-- <div class="red" (click)="abrirModal()"> Remover</div> -->
+                <div class="botoes-lateral" (click)="gotoGerenciaCliente2(i)"> Editar</div>
+                <div class="red" (click)="removeCliente()"> Remover</div> 
             </div>
         </div>
     </div>

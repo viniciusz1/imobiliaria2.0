@@ -63,7 +63,7 @@ export class GerenciaImovelComponent implements OnInit {
   festasImovel = "";
   descricaoImovel = "";
   clienteNomeObj = {}
-
+  mensagemImovel = "";
   ngOnInit(): void {
     this.usuarioService.buscarClientes().then(
       (resultado => this.clienteNomeObj = resultado)
@@ -74,6 +74,7 @@ export class GerenciaImovelComponent implements OnInit {
     if (idRota != 'novo') {
       this.codigo = parseInt(idRota) - 1;
       console.log(this.codigo)
+      this.mensagemImovel = "Editar Imóvel"
       this.usuarioService.testando()
         .then(
           // resultado => console.log(resultado),
@@ -108,6 +109,8 @@ export class GerenciaImovelComponent implements OnInit {
         ).catch(erro => {
           console.log("ERRO AO BUSCAR INFOIMÓVEL:", erro)
         })
+    }else{
+      this.mensagemImovel = "Cadastrar Imóvel" 
     }
   }
 

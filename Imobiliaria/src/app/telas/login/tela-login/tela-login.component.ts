@@ -28,6 +28,9 @@ export class TelaLoginComponent implements OnInit {
     })
   }
   objeto={}
+  gotoCadastro(){
+
+  }
 
   logar(){   
     this.usuarioService.buscaLogin(this.username, this.pass).then((resultado: any) => {
@@ -36,6 +39,8 @@ export class TelaLoginComponent implements OnInit {
         localStorage.setItem("PASSWORD", this.pass);
         localStorage.setItem("USER", this.username)
         this.router.navigate(["/tela-principal"])
+      }else{
+        alert("Usuário ou senha Incorretos!")
       }
     })
   }

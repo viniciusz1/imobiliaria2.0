@@ -20,10 +20,14 @@ export class GerenciaProprietarioComponent implements OnInit {
   dataCliente = ""
   telefoneCliente = ""
   list=[]
-
+  oldCpf = ""
   cadastraCliente(){    
-  
-      this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente, this.imageURL)
+      this.codigoRota = this.codigoRota.toString();
+      if(this.codigoRota == 'novo'){
+        this.usuarioService.inserircliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.emailCliente, this.dataCliente, this.imageURL)
+      }else{
+        this.usuarioService.updateCliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.oldCpf, this.emailCliente, this.dataCliente, this.imageURL)
+      }
      
   }
 
@@ -83,24 +87,31 @@ export class GerenciaProprietarioComponent implements OnInit {
     this.router.navigate(['/tela-principal'])
   }
   codigo = 0;
+  codigoRota = "";
+  mensagemBotao = "";
   ngOnInit(): void {
     const idRota = this.route.snapshot.paramMap.get('id');
+    this.codigoRota = idRota;
     if (idRota != 'novo') {
       this.codigo = parseInt(idRota) - 1;
       console.log(this.codigo)
+      this.mensagemBotao =  "Editar Proprietário"
     this.usuarioService.buscarClientes()
     .then((resultado: (Object: (String))  => [])=> {
       
       console.log(resultado)
-      this.nomeCliente = resultado[0].NOME;
-      this.cpfCliente = resultado[0].CPF;
-      this.emailCliente = resultado[0].EMAIL;
-      this.dataCliente = resultado[0].DATA;
-      this.telefoneCliente = resultado[0].TELEFONE;
-      
+      this.oldCpf = resultado[idRota].CPF;
+      this.nomeCliente = resultado[idRota].NOME;
+      this.cpfCliente = resultado[idRota].CPF;
+      this.emailCliente = resultado[idRota].EMAIL;
+      this.dataCliente = resultado[idRota].DATA;
+      this.telefoneCliente = resultado[idRota].TELEFONE;      
+      this.imageURL = resultado[idRota].IMAGEM;
     }).catch(erro => {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
+  }else{
+    this.mensagemBotao = "Cadastrar Proprietário"
   }
 }
 

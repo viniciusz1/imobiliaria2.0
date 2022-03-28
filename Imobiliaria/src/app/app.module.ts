@@ -22,6 +22,11 @@ import { ImovelModule } from './telas/imovel/imovel.module'
         component: TelaLoginComponent,
         canActivate: []
       },
+      {
+        path: 'cadastro',
+        component: TelaLoginComponent,
+        canActivate: []
+      }
     ]),
     FormsModule,
     TelasModule,

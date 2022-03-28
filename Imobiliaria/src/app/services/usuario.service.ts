@@ -80,13 +80,13 @@ export class UsuarioService {
     })
   }
 
-  /*updateCliente(nome, telefone, cpf, email, data){
+  updateCliente(nome, telefone, cpf, oldcpf, email, data, imagem){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/inserir_cliente', {
+      fetch('/api/update_cliente', {
         method: 'POST',
         body: JSON.stringify(
           {
-            nome, telefone, cpf, email, data,
+            nome, telefone, cpf, oldcpf, email, data, imagem
           }
         ),
         headers: {
@@ -100,8 +100,29 @@ export class UsuarioService {
         console.log(erro);
     })
     })
-  }*/
+  }
 
+  deletaProprietario(cpf){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/deleta_cliente', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            cpf
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
 
 
   inserirResponsavel(infoimovelCodigo, proprietario, corretor){

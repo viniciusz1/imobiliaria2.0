@@ -37,6 +37,18 @@ export class ListaProprietariosComponent implements OnInit {
   gotoTelaPrincipal(){
     this.router.navigate(['/tela-principal'])
   }
+  gotoGerenciaCliente2(indice){
+    this.router.navigate(['/gerencia-proprietario/' + indice])
+  }
+  removeCliente(indice){
+    console.log(indice)
+    console.log(this.lista)
+      const rmCPF = this.lista[indice].cpf
+      this.usuarioService.deletaProprietario(rmCPF)
+     document.location.reload();
+    
+  }
+
   imageURL = ""
   lista=[]
   objeto={}

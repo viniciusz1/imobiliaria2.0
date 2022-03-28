@@ -14,14 +14,14 @@
 <div id="pos-header">
     <div class="imoveis-header" (click)="gotoGerenciaImovel()">Imóveis: Inserir</div>
     <div class="imoveis-header" (click)="gotoListaImoveis()">Imóveis: Listar</div>
-    <div class="imoveis-header" (click)="gotoGerenciaCliente()">Clientes: Inserir</div>
-    <div class="imoveis-header" (click)="gotoListaClientes()">Clientes: Listar</div>
+    <div class="imoveis-header" (click)="gotoGerenciaCliente()">Proprietários: Inserir</div>
+    <div class="imoveis-header" (click)="gotoListaClientes()">Proprietários: Listar</div>
 </div>
 <main>
-    <div class="titulo">Clientes: listar</div>
+    <div class="titulo">Proprietários: listar</div>
     <div class="postitulo">
         <b>
-            <div>Clientes -> </div>
+            <div>Proprietários -> </div>
         </b>
         <a (click)="gotoGerenciaCliente()">Incluir</a>
         <a (click)="gotoListaClientes()">Listar</a>
@@ -78,7 +78,7 @@
     </b>
     <hr>
     <div class="centralizar">
-        <img *ngIf="teste == 1" [src]="imageURL" alt="" width="300px" height="250px">
+        <img *ngIf="imageURL != null" [src]="imageURL" alt="" width="300px" height="250px">
         <form action="">
             <div>
                 <input *ngIf="imageURL == null" type="file" name="arquivo" id="arquivo"
@@ -88,7 +88,7 @@
     </div>
 </div>
 <div id="div-final">
-    <button id="botao-final" (click)="cadastraCliente()">Cadastrar Cliente</button>
+    <button id="botao-final" (click)="cadastraCliente()">{{mensagemBotao}}</button>
 </div>
 
 </html>

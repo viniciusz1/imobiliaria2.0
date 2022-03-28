@@ -12,6 +12,43 @@ inserirRota('/login',
     });
 })
 
+inserirRota('/update_cliente',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`UPDATE CLIENTE SET CPF = "${dados.cpf}",
+        NOME = "${dados.nome}",
+        TELEFONE = "${dados.telefone}",
+        EMAIL = "${dados.email}",
+        IMAGEM = "${dados.imagem}",
+        DATA = "${dados.data}"
+        WHERE
+        CPF = "${dados.oldcpf}"`)
+        .then(result => {
+        console.log('update_cliente com sucesso!')
+        resposta({message: 'update_cliente com sucesso"'})
+    }).catch(erro => {
+        console.log('update_cliente NÃO FOI ALTERADO com sucesso!')
+        console.log(erro)
+        resposta({message: 'update_cliente NÃO FOI ALTERADO com sucesso"'})
+    });
+})
+
+inserirRota('/deleta_cliente',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`DELETE FROM CLIENTE WHERE CPF = "${dados.cpf}"`)
+        .then(result => {
+        console.log('infoimovel removido com sucesso!')
+        resposta({message: 'infoimovel  FOI removido com sucesso"'})
+    }).catch(erro => {
+        console.log('infoimovel NÃO FOI removido com sucesso!')
+        console.log(erro)
+        resposta({message: 'infoimovel NÃO FOI removido com sucesso"'})
+    });
+})
+
+
+
 inserirRota('/inserir_cliente',
 function inserir(dados, resposta) {
     console.log(dados)
