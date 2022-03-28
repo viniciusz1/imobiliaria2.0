@@ -9,6 +9,7 @@ import { TelasModule } from './telas/telas.module'
 import { AcessoriosModule } from './acessorios/acessorios.module'
 import { ProprietarioModule } from './telas/proprietario/proprietario.module'
 import { ImovelModule } from './telas/imovel/imovel.module'
+import { TelaCadastroComponent } from './telas/login/tela-cadastro/tela-cadastro.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ImovelModule } from './telas/imovel/imovel.module'
       },
       {
         path: 'cadastro',
-        component: TelaLoginComponent,
+        component: TelaCadastroComponent,
         canActivate: []
       }
     ]),

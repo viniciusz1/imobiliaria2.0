@@ -154,38 +154,27 @@ function name(dados, resposta) {
     });
 })
 
-// inserirRota('/criar_usuario', 
-// function name(dados, resposta) {
-//     console.log(dados);
+inserirRota('/criar_usuario', 
+function name(dados, resposta) {
+    console.log(dados);
+    database(`INSERT INTO USER
+    (
+        NOME, 
+        PASSWORD,
+        ADM
+    ) 
+    VALUES
+    (
+        "${dados.user}",
+        "${dados.pass}",
+        "${dados.adm}"
+    )`)
+    .then(result => {
+        resposta({message: 'USUARIO INSERIDO COM SUCESSO!'});
+    }).catch(erro => {
+        resposta({erro: 'ERRO AO INSERIR O USUÁRIO!'});
+    });
 
-//     if(!dados.nome){
-//         return resposta({erro:'É necessário preencher o nome"'})
-//     }
-//     if(!dados.nickname){
-//         return resposta({erro:'É necessário preencher o nickname"'})
-//     }
-//     if(!dados.password){
-//         return resposta({erro:'É necessário preencher a senha!'})
-//     }
-
-//     database(`INSERT INTO USER
-//     (
-//         NOME, 
-//         NICKNAME,
-//         PASSWORD
-//     ) 
-//     VALUES
-//     (
-//         "${dados.nome}",
-//         "${dados.nickname}",
-//         "${dados.password}"
-//     )`)
-//     .then(result => {
-//         resposta({message: 'USUARIO INSERIDO COM SUCESSO!'});
-//     }).catch(erro => {
-//         resposta({erro: 'ERRO AO INSERIR O USUÁRIO!'});
-//     });
-
-// })
+})
 
 

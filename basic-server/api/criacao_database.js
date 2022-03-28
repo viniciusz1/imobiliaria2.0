@@ -11,7 +11,8 @@
 database(`CREATE TABLE IF NOT EXISTS USER (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
     NOME varchar(30),
-    PASSWORD varchar(30)
+    PASSWORD varchar(30),
+    ADM boolean
     )`).then(result => {
     console.log('TABELA USER CRIADA')
 }).catch(erro => {
@@ -89,7 +90,8 @@ database(`CREATE TABLE IF NOT EXISTS LOCALIZACAO (
 database(`INSERT INTO USER VALUES(
     null,
     'vinicius',
-    '123'
+    '123',
+    true
 )`).then(result => {
     console.log('insert CRIADA')
 }).catch(erro => {

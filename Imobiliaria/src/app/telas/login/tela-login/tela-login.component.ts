@@ -29,7 +29,7 @@ export class TelaLoginComponent implements OnInit {
   }
   objeto={}
   gotoCadastro(){
-
+    this.router.navigate(['/cadastro'])
   }
 
   logar(){   

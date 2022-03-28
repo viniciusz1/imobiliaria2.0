@@ -79,6 +79,27 @@ export class UsuarioService {
     })
     })
   }
+  inserirUsuario(user, pass, adm){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/criar_usuario', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            user, pass, adm
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
 
   updateCliente(nome, telefone, cpf, oldcpf, email, data, imagem){
     return new Promise((resolve, rejeitado) => {
