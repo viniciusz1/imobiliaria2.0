@@ -79,6 +79,31 @@ export class UsuarioService {
     })
     })
   }
+
+
+  inserirVendaCompra(codigo, tipo){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/inserir_vendacompra', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            codigo, tipo
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+
   inserirUsuario(user, pass, adm){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/criar_usuario', {

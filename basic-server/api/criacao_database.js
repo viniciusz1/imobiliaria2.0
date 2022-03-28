@@ -19,6 +19,15 @@ database(`CREATE TABLE IF NOT EXISTS USER (
     console.log('TABELA DEU ERRO USER')
 });
 
+database(`CREATE TABLE IF NOT EXISTS VENDA_COMPRA (
+    CODIGO INTEGER PRIMARY KEY AUTOINCREMENT,
+    TIPO varchar(10)
+    )`).then(result => {
+    console.log('TABELA VENDA_COMPRA CRIADA')
+}).catch(erro => {
+    console.log('TABELA DEU ERRO VENDA_COMPRA')
+});
+
 database(`CREATE TABLE IF NOT EXISTS INFOIMOVEL (
     CODIGO_REFERENCIA int unique,
     VALOR_IMOVEL int,

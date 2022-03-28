@@ -30,6 +30,31 @@ function inserir(dados, resposta) {
 })
 
 
+inserirRota('/inserir_vendacompra',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`INSERT INTO VENDA_COMPRA 
+    (
+        CODIGO,
+        TIPO
+        )
+        VALUES
+        (
+        "${dados.codigo}", 
+        "${dados.tipo}"
+        )`)
+        .then(result => {
+        console.log('infoimovel inserido com sucesso!')
+        resposta({message: 'infoimovel inserido com sucesso'})
+    }).catch(erro => {
+        console.log('infoimovel NÃO FOI inserido com sucesso!')
+        console.log(erro)
+        resposta({message: 'infoimovel NÃO FOI inserido com sucesso"'})
+    });
+})
+
+
+
 inserirRota('/update_infoimovel',
 function inserir(dados, resposta) {
     console.log(dados)

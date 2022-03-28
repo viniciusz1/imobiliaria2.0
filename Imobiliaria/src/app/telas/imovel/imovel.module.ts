@@ -5,6 +5,9 @@ import { GerenciaImovelComponent } from './gerencia-imovel/gerencia-imovel.compo
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import CheckLogged from '../../checkLogged';
+import { TelaCompraComponent } from './tela-compra/tela-compra.component';
+import { TelaVendaComponent } from './tela-venda/tela-venda.component';
+
 
 const routes: Routes = [
   {
@@ -19,10 +22,22 @@ const routes: Routes = [
     canActivate: [CheckLogged]
 
   },
+  {
+    path: 'compra',
+    component: TelaCompraComponent,
+    canActivate: [CheckLogged]
+
+  },
+  {
+    path: 'venda',
+    component: TelaVendaComponent,
+    canActivate: [CheckLogged]
+
+  }
 ]
 
 @NgModule({
-  declarations: [ListaImoveisComponent, GerenciaImovelComponent],
+  declarations: [ListaImoveisComponent, GerenciaImovelComponent, TelaCompraComponent, TelaVendaComponent],
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
