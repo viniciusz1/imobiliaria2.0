@@ -19,7 +19,31 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-
+  buscarCompra(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/compra', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+  buscarVendaCompra(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/select_vendacompra', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+  
 
   buscarClientes(){
     return new Promise((resolve, rejeitado) => {
