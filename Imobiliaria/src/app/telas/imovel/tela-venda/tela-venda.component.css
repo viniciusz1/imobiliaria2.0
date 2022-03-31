@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400&family=Roboto:ital,wght@0,300;1,100&display=swap');
+
+*{
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+ 
+}
+html{
+    background-color: #ededed;
+}
+header{
+    display: flex;
+    align-items: center;
+    background-color: #434597;
+    height: 13vh;
+    position: relative;
+    box-shadow: grey 0px -3px 11px 3px;
+
+}
+.contorno{
+    border: black 1px solid;
+}
+#imagem{
+    height: 70px;
+    cursor: pointer;
+}
+.imagem{
+    height: 100%;
+}
+h1{
+    color: white;
+    font-family: monospace;
+}
+#usuario-header{
+    position: absolute;
+    right: 90px;
+    color: white;
+    font-family: monospace;
+}
+.codigo{
+    width: 84%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+.trinta{
+    width: 30%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+.borda{
+    border: solid 1px black;
+}
+.input{
+    width: 90%;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+#pos-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:8vh;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 4px;
+}
+.imoveis-header{
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    color: black;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+    border: solid 1px #dbdbdb;
+    cursor: pointer;
+}
+.titulo{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;    
+    color: white;
+    background-color: #434597;
+    box-shadow: grey 3px 3px 13px -1px;
+    border-radius: 5px;
+}
+.postitulo{
+    display: flex;
+    align-items: center;
+    margin: 0 10px 20px 10px;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: grey 3px -1px 13px -1px;
+}
+a{
+    cursor: pointer;
+    background-color: #434597;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 10px;
+    margin-left: 5px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);
+}
+.encontrados{
+    margin-bottom: 18px;
+    margin-left: 26px;
+}
+.imovel{
+    position: relative;
+    margin: 10px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: grey -1px 2px 8px -2px;
+    border-radius: 7px;
+
+}
+.tres-botao{
+    position: absolute;
+    right: 0px;
+    display: grid;
+}
+.div-imagem{
+    background-color: #ce3131;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+.fundo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000b8;
+}
+#modal{
+    background-color: #ffffff;
+    padding: 40px;
+    height: 80%;
+    width: 80%;
+    border-radius: 4px;
+}
+.espacamento{
+    margin: 10px 0px;
+
+}
+.espacamento-cima{
+    margin-top: 20px;
+}
+.espacamento-baixo{
+    margin-bottom: 10px
+}
+.primeiro-imovel{
+    display: flex;
+    background-color: #5b5ea1;
+    margin-left: 5%;
+    border-radius: 7px;
+    box-shadow: 8px 8px 10px -5px;
+    padding: 10px;  
+}
+
+.esconde{
+    color: transparent;
+}
+.info-modal{
+    padding: 40px;
+    height: 100%;
+}
+.descricao{
+    height: 25%;
+    background-color: #5b5ea1;
+    border-radius: 5px;
+    box-shadow: 6px 6px 16px -1px;
+    padding: 30px;
+}
+.informacoes-imovel{
+    display: flex;
+}
+.parte-cima{
+    display: flex;
+    column-gap: 8%;
+    justify-content: center;
+}
+.red{
+    cursor: pointer;
+    background-color: #ce3131;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 7px;
+    margin: 2px;
+    margin-right: 10px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);}
+
+.botoes-lateral{
+    cursor: pointer;
+    background-color: #434597;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 7px;
+    margin: 2px;
+    margin-right: 10px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 5%), 0 1px 6px 3px rgb(0 0 0 / 8%), 0 2px 6px 0 rgb(0 0 0 / 8%);}
+
+.img{
+    background-color: rgb(49, 49, 51);
+    width: 300px;
+    height: 300px;
+    box-shadow: 7px 7px 10px -5px;
+}
+.imoveis-header:hover{
+    background-color: #d6d2d2;
+    border: solid 1px #bdbdbd;
+    transition:all 0.4s ease;
+}
+a:hover{
+    background-color: #2f3275;
+    cursor: pointer;
+}
+
+primeiras-info{
+    display: flex;
+    flex-direction: column;
+    
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info-baixo{
+    padding: 10px;
+    display: flex;
+    width: 80%;
+    column-gap: 10px;
+    margin-top: 25px;
+    background-color: green;
+    justify-content: center;
+    background-color: #5b5ea1;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px -1px;
+}
+    .span{
+    font-size: 15px;
+    margin-bottom: 2px;
+    margin: 20px -24px 19px 26px
+}
+.self-baixo{
+    color: white;
+}
+
+.tres{
+    
+    color: white;
+    margin-right: 20px;
+}

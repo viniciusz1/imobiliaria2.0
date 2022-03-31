@@ -7,8 +7,8 @@
     <h2 id="usuario-header">USUÁRIO: {{user}}</h2>
 </header>
 <div id="pos-header">
-    <div class="imoveis-header">Imóveis: Comprar</div>
-    <div class="imoveis-header">Imóveis: Vender</div>
+    <div class="imoveis-header" (click)="goToCompra()">Imóveis: Comprar</div>
+    <div class="imoveis-header" (click)="goToVenda()">Imóveis: Vender</div>
 
 </div>
 <main>
@@ -22,7 +22,7 @@
     </div>
     <div class="encontrados">Imóveis encontrados:0</div>
     <div class="imoveis">
-        <div class="imovel" *ngFor="let lista of objeto; let i = index">
+        <div class="imovel" *ngFor="let lista of lista; let i = index">
             <img class="div-imagem" [src]="lista.IMAGEM">
             <div style="padding-left: 10px;">
                 Valor: {{lista.VALOR_IMOVEL}}<br>
@@ -33,7 +33,7 @@
             </div>
             <div class="tres-botao">
                 <div class="botoes-lateral" (click)="abrirModal(i)"> Detalhes</div>
-                <div class="botoes-lateral"> Comprar</div>
+                <div class="botoes-lateral" (click)="alteraVendido(i)"> Comprar</div>
             </div>
 
         </div>

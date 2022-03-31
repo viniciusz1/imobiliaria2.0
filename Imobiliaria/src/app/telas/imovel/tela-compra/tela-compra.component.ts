@@ -10,8 +10,39 @@ import { Router } from '@angular/router';
 export class TelaCompraComponent implements OnInit {
 
   constructor(private router: Router,
-    private usuarioService: UsuarioService) { }
+    private usuarioService: UsuarioService) {
 
+
+      console.log("sdofjapsodi")
+      this.usuarioService.testando().then(result => {
+
+        this.lengthObjeto=(Object.keys(result).length)
+        console.log(this.lengthObjeto)
+        for(let i = 0; i < this.lengthObjeto; i++){
+          if(result[i].VENDIDO == 'false'){
+            console.log("é falso")
+            this.lista.push(result[i])
+          }
+        }
+
+      })
+
+     }
+     goToCompra(){
+    this.router.navigate(['compra'])
+  }
+    goToVenda(){
+    this.router.navigate(['venda'])
+
+  }
+  alteraVendido(indice){
+    this.usuarioService.testando().then(result=>{
+      this.usuarioService.updateInfoimovelVendido(result[indice].CODIGO_REFERENCIA, true)
+      this.usuarioService.inserirVendido(result[indice].CODIGO_REFERENCIA, localStorage.getItem("ID"))
+      document.location.reload()
+    })
+}
+  lista = []
   user = localStorage.getItem('USER')
   modal = 0
   indice = 0
@@ -27,11 +58,8 @@ export class TelaCompraComponent implements OnInit {
   }
   tamanho = ""
   codigo = 0;
-
+  lengthObjeto = 0;
   objeto={}
   ngOnInit(): void {
-    this.usuarioService.buscarCompra().then(resultado => {
-      this.objeto = resultado
-    });
-  }
-}
+    
+}}

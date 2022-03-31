@@ -1,1 +1,105 @@
-<p>tela-venda works!</p>
+<html>
+<header>
+    <div id='imagem'>
+        <img class="imagem" src="https://agiliza.ai/wp-content/uploads/2021/02/Aplicacoes_03.png" alt="">
+    </div>
+    <h1>BONATTI IMÓVEIS</h1>
+    <h2 id="usuario-header">USUÁRIO: {{user}}</h2>
+</header>
+<div id="pos-header">
+    <div class="imoveis-header" (click)="goToCompra()">Imóveis: Comprar</div>
+    <div class="imoveis-header" (click)="goToVenda()">Imóveis: Vender</div>
+
+</div>
+<main>
+    <div class="titulo">Imóveis: {{indice}}</div>
+    <div class="postitulo">
+        <b>
+            <div>Imóveis -> </div>
+        </b>
+        <a>Incluir</a>
+        <a>Listar</a>
+    </div>
+    <div class="encontrados">Imóveis encontrados:0</div>
+    <div class="imoveis">
+        <div class="imovel" *ngFor="let lista of lista; let i = index">
+            <img class="div-imagem" [src]="lista.IMAGEM">
+            <div style="padding-left: 10px;">
+                Valor: {{lista.VALOR_IMOVEL}}<br>
+                Tipo do Imóvel: {{lista.TIPO_IMOVEL}}<br>
+                Código de Referência: {{lista.INFOIMOVEL_CODIGO_REFERENCIA}}<br>
+                <div class="espacamento-baixo">
+                </div>
+            </div>
+            <div class="tres-botao">
+                <div class="botoes-lateral" (click)="abrirModal(i)"> Detalhes</div>
+                <div class="botoes-lateral" (click)="alteraVendido(i)"> Comprar</div>
+            </div>
+
+        </div>
+        <div class="fundo" *ngIf="modal != 0" (click)="abrirModal(i)">
+            <div id="modal">
+                <div class="parte-cima ">
+                        <img class="img" [src]="objeto[indice].IMAGEM">
+                        
+                    <div class="informacoes-imovel ">
+                        <div class="primeiro-imovel ">
+                            <div class="tres">
+                                <div class='span'>Proprietário:{{objeto[indice].PROPRIETARIO}}</div>
+                                <div class="span">Corretor:{{objeto[indice].CORRETOR}}</div>
+                                <div class="span">Valor: {{objeto[indice].VALOR_IMOVEL}}/</div>
+                                <div class="span">Codigo: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
+                                <div class="span">Finalidade: {{objeto[indice].FINALIDADE}}</div>
+                                <div class="span">Tipo Imóvel: {{objeto[indice].TIPO_IMOVEL}}</div>
+                            </div>
+                            <div class="tres">
+                                <div class="span">Cidade: {{objeto[indice].CIDADE}}</div>
+                                <div class="span">Bairro: {{objeto[indice].BAIRRO}}</div>
+                                <div class="span">Logradouro: {{objeto[indice].LOGRADOURO}}</div>
+                                <div class="span">Número: {{objeto[indice].NUMERO}}</div>
+                                <div class="span">Complemento: {{objeto[indice].COMPLEMENTO}}</div>
+                                <div class="span">Região: {{objeto[indice].REGIAO}}</div>
+                            </div>
+                            <div class="tres">
+                                <div class="span">Estado: {{objeto[indice].ESTADO}}</div>
+                                <div class="span">Zona: {{objeto[indice].ZONA}}</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex">
+                <div class=" info-baixo">
+                    <div class="self-baixo">Dormitórios: {{objeto[indice].DORMITORIOS}}</div>
+                    <div class="self-baixo">Suítes:  {{objeto[indice].SUITES}}</div>
+                    <div class="self-baixo">Banheiros: {{objeto[indice].BANHEIROS}}</div>
+                    <div class="self-baixo">Lavanderia: {{objeto[indice].BANHEIROS}}</div>
+                    <div class="self-baixo">Vagas de Garagem:  {{objeto[indice].VAGAS_GARAGEM}}</div>
+                    <div class="self-baixo">Sacada:  {{objeto[indice].SACADA}}</div>
+                    <div class="self-baixo">Churrasqueira:  {{objeto[indice].CHURRASQUEIRA}}</div>
+                    <div class="self-baixo">Área de festas:  {{objeto[indice].AREA_FESTAS}}</div>
+                </div>
+                </div>
+                <div class="espacamento-cima">
+                    <b>
+                    Descrição do Imóvell:
+                </b>
+                </div>
+                <div>                    
+                    <div class="descricao"> 
+                        <div style="color: white">
+
+                            {{objeto[indice].DESCRICAO}}
+                        </div>                       
+                    </div>
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div>
+
+</main>
+
+</html>

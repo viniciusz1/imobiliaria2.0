@@ -36,9 +36,9 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-  buscarVendaCompra(){
+  buscarVendido(){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/select_vendacompra', {
+      fetch('/api/buscar_vendido', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -70,6 +70,29 @@ export class UsuarioService {
         body: JSON.stringify(
           {
           oldcodigo, id, valorImovel, finalidade, tipoImovel, descricao, imagem
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
+
+  updateInfoimovelVendido(id, vendido){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/update_infoimovel_vendido', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            id, vendido
           }
         ),
         headers: {

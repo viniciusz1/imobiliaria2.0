@@ -57,6 +57,23 @@ function inserir(dados, resposta) {
 
 
 
+
+inserirRota('/update_infoimovel_vendido',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`UPDATE INFOIMOVEL SET VENDIDO = "${dados.vendido}"
+        WHERE
+        CODIGO_REFERENCIA = "${dados.id}"`)
+        .then(result => {
+        console.log('infoimovel ALTERADO com sucesso!')
+        resposta({message: 'infoimovel  FOI ALTERADO com sucesso"'})
+    }).catch(erro => {
+        console.log('infoimovel NÃO FOI ALTERADO com sucesso!')
+        console.log(erro)
+        resposta({message: 'infoimovel NÃO FOI ALTERADO com sucesso"'})
+    });
+})
+
 inserirRota('/update_infoimovel',
 function inserir(dados, resposta) {
     console.log(dados)
