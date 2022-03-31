@@ -244,13 +244,13 @@ export class UsuarioService {
 
   
 
-  inserirInfoimovel(id, valorImovel, finalidade, tipoImovel, descricao, imagem){
+  inserirInfoimovel(id, valorImovel, finalidade, tipoImovel, descricao, imagem, vendido){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_infoimovel', {
         method: 'POST',
         body: JSON.stringify(
           {
-          id, valorImovel, finalidade, tipoImovel, descricao, imagem
+          id, valorImovel, finalidade, tipoImovel, descricao, imagem, vendido
           }
         ),
         headers: {

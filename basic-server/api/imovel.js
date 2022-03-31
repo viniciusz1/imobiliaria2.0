@@ -8,7 +8,8 @@ function inserir(dados, resposta) {
         FINALIDADE,
         TIPO_IMOVEL,
         DESCRICAO,
-        IMAGEM
+        IMAGEM,
+        VENDIDO
         )
         VALUES
         (
@@ -17,7 +18,8 @@ function inserir(dados, resposta) {
         "${dados.finalidade}",
         "${dados.tipoImovel}",
         "${dados.descricao}",
-        "${dados.imagem}"
+        "${dados.imagem}",
+        "${dados.vendido}"
         )`)
         .then(result => {
         console.log('infoimovel inserido com sucesso!')

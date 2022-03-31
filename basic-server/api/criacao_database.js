@@ -23,7 +23,7 @@ database(`CREATE TABLE IF NOT EXISTS VENDIDOS (
     CODIGO_IMOVEL INT NOT NULL,
     CODIGO_USUARIO INT NOT NULL,
     FOREIGN KEY(CODIGO_IMOVEL) REFERENCES INFOIMOVEL(CODIGO_REFERENCIA) on delete cascade on update cascade,
-    FOREIGN KEY(CODIGO_USUARIO) REFERENCES USER(ID) on delete cascade on update
+    FOREIGN KEY(CODIGO_USUARIO) REFERENCES USER(ID) on delete cascade on update cascade 
     )`).then(result => {
     console.log('TABELA VENDIDOS CRIADA')
 }).catch(erro => {
@@ -32,6 +32,7 @@ database(`CREATE TABLE IF NOT EXISTS VENDIDOS (
 
 database(`CREATE TABLE IF NOT EXISTS INFOIMOVEL (
     CODIGO_REFERENCIA int unique,
+    VENDIDO boolean NOT NULL,
     VALOR_IMOVEL int,
     FINALIDADE varchar(30),
     TIPO_IMOVEL varchar(30),
