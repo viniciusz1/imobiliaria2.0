@@ -35,12 +35,18 @@ export class TelaLoginComponent implements OnInit {
 
   logar(){   
     this.usuarioService.buscaLogin(this.username, this.pass).then((resultado: any) => {
+      console.log(resultado)  
       if(resultado != ""){
         localStorage.setItem("NOME", this.username);
         localStorage.setItem("PASSWORD", this.pass);
         localStorage.setItem("USER", this.username);
-        localStorage.setItem("ID", resultado[0].ID)
-        this.router.navigate(["/tela-principal"])
+        localStorage.setItem("ID", resultado[0].ID);
+        
+        if(resultado[0].ADM == 1){
+          this.router.navigate(["/tela-principal"])
+        }else{
+          this.router.navigate(["/compra"])
+        }
       }else{
         alert("Usuário ou senha Incorretos!")
       }
