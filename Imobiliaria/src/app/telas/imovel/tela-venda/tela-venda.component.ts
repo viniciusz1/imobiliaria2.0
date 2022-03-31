@@ -21,10 +21,11 @@ export class TelaVendaComponent implements OnInit {
           if(result[i].VENDIDO == 'true'){
             this.usuarioService.buscarVendido().then(vendido => {
               if(vendido[i].CODIGO_USUARIO == localStorage.getItem('ID')){
-                console.log("é igual")
+              console.log("vendido "+vendido[i].CODIGO_USUARIO)
+              console.log("localstorage "+localStorage.getItem("ID"))
+              this.lista.push(result[i])
               }
             })
-            this.lista.push(result[i])
           }
         }
       })
