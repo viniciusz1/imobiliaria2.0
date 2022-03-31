@@ -110,9 +110,7 @@ inserirRota('/buscar_usuario',
 
 inserirRota('/testando',
     function (dados, resposta) {
-        console.log(dados, resposta);
-
-       
+        console.log(dados, resposta);       
     database(`SELECT INFOIMOVEL.*, CARACTERISTICAS.*, LOCALIZACAO.*, RESPONSAVEL.* FROM INFOIMOVEL
     INNER JOIN CARACTERISTICAS ON CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA = INFOIMOVEL.CODIGO_REFERENCIA
     INNER JOIN LOCALIZACAO ON LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA = CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA
@@ -124,6 +122,16 @@ inserirRota('/testando',
     });
 })
 
+inserirRota('/buscar_vendido',
+    function (dados, resposta) {
+        console.log(dados, resposta);       
+    database(`SELECT * FROM VENDIDO`)
+        .then(result => {
+        resposta(result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
 inserirRota('/select_vendacompra',
     function (dados, resposta) {
         console.log(dados, resposta);

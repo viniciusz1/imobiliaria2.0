@@ -35,10 +35,12 @@ export class TelaVendaComponent implements OnInit {
   
     }
     alteraVendido(indice){
-      this.usuarioService.testando().then(result=>{
-        this.usuarioService.updateInfoimovelVendido(result[indice].CODIGO_REFERENCIA, false)
-        this.usuarioService.inserirVendido(result[indice].CODIGO_REFERENCIA, localStorage.getItem("ID"))
-        document.location.reload()
+      this.usuarioService.testando().then(imovel=>{
+       // this.usuarioService.updateInfoimovelVendido(imovel[indice].CODIGO_REFERENCIA, false)
+        this.usuarioService.buscarVendido().then(vendido => {
+          console.log(vendido)
+        })
+        //document.location.reload()
       })
   }
     lista = []
