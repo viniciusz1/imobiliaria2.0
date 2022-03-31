@@ -125,7 +125,7 @@ inserirRota('/testando',
 inserirRota('/buscar_vendido',
     function (dados, resposta) {
         console.log(dados, resposta);       
-    database(`SELECT * FROM VENDIDO`)
+    database(`SELECT * FROM VENDIDOS`)
         .then(result => {
         resposta(result)
     }).catch(erro => {

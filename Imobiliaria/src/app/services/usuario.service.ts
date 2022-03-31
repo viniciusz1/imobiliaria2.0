@@ -413,6 +413,29 @@ export class UsuarioService {
     })
     })
   }
+
+  deletaVendido(codigo){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/delete_vendido', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+            codigo
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        return result.json();
+    }).then(function (dados){
+        console.log(dados);
+    }).catch(function(erro) {
+        console.log(erro);
+    })
+    })
+  }
+
   deletaCaracteristicas(codigo){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/delete_caracteristicas', {

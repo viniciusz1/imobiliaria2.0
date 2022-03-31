@@ -19,11 +19,14 @@ export class TelaVendaComponent implements OnInit {
         console.log(this.lengthObjeto)
         for(let i = 0; i < this.lengthObjeto; i++){
           if(result[i].VENDIDO == 'true'){
-            console.log("é falso")
+            this.usuarioService.buscarVendido().then(vendido => {
+              if(vendido[i].CODIGO_USUARIO == localStorage.getItem('ID')){
+                console.log("é igual")
+              }
+            })
             this.lista.push(result[i])
           }
         }
-
       })
 
      }
@@ -36,10 +39,8 @@ export class TelaVendaComponent implements OnInit {
     }
     alteraVendido(indice){
       this.usuarioService.testando().then(imovel=>{
-       // this.usuarioService.updateInfoimovelVendido(imovel[indice].CODIGO_REFERENCIA, false)
-        this.usuarioService.buscarVendido().then(vendido => {
-          console.log(vendido)
-        })
+        this.usuarioService.updateInfoimovelVendido(imovel[indice].CODIGO_REFERENCIA, false)
+        this.usuarioService.deletaVendido(imovel[indice].CODIGO_REFERENCIA)
         //document.location.reload()
       })
   }

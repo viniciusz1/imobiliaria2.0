@@ -108,6 +108,21 @@ function inserir(dados, resposta) {
         resposta({message: 'infoimovel NÃO FOI removido com sucesso"'})
     });
 })
+
+inserirRota('/delete_vendido',
+function inserir(dados, resposta) {
+    console.log(dados)
+    database(`DELETE FROM VENDIDOS WHERE CODIGO_IMOVEL = "${dados.codigo}"`)
+        .then(result => {
+        console.log('infoimovel removido com sucesso!')
+        resposta({message: 'infoimovel  FOI removido com sucesso"'})
+    }).catch(erro => {
+        console.log('infoimovel NÃO FOI removido com sucesso!')
+        console.log(erro)
+        resposta({message: 'infoimovel NÃO FOI removido com sucesso"'})
+    });
+})
+
 inserirRota('/delete_caracteristicas',
 function inserir(dados, resposta) {
     console.log(dados)
