@@ -32,18 +32,18 @@ function inserir(dados, resposta) {
 })
 
 
-inserirRota('/inserir_vendacompra',
+inserirRota('/inserir_vendido',
 function inserir(dados, resposta) {
     console.log(dados)
-    database(`INSERT INTO VENDA_COMPRA 
+    database(`INSERT INTO VENDIDOS 
     (
-        CODIGO,
-        TIPO
+        CODIGO_IMOVEL,
+        CODIGO_USUARIO
         )
         VALUES
         (
-        "${dados.codigo}", 
-        "${dados.tipo}"
+        "${dados.imovel}", 
+        "${dados.usuario}"
         )`)
         .then(result => {
         console.log('infoimovel inserido com sucesso!')

@@ -23,6 +23,7 @@ export class TelaLoginComponent implements OnInit {
       console.log("RESULTADO:", resultado)
       // this.user = resultado.user;
       // this.password = resultado.password;
+    console.log(resultado[0].ID)
     }).catch(erro => {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
@@ -37,7 +38,8 @@ export class TelaLoginComponent implements OnInit {
       if(resultado != ""){
         localStorage.setItem("NOME", this.username);
         localStorage.setItem("PASSWORD", this.pass);
-        localStorage.setItem("USER", this.username)
+        localStorage.setItem("USER", this.username);
+        localStorage.setItem("ID", resultado[0].ID)
         this.router.navigate(["/tela-principal"])
       }else{
         alert("Usuário ou senha Incorretos!")

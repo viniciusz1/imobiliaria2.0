@@ -19,10 +19,15 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-  buscarCompra(){
+  inserirVendido(imovel, usuario){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/compra', {
+      fetch('/api/inserir_vendido', {
         method: 'POST',
+        body: JSON.stringify(
+          {
+          imovel, usuario
+          }
+        ),
         headers: {
           'Content-Type': 'application/json'
         }
