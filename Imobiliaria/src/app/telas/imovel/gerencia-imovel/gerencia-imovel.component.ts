@@ -130,7 +130,7 @@ export class GerenciaImovelComponent implements OnInit {
           this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel),
           this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.codigoImovel),
           this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
-      //    this.usuarioService.inserirVendido(this.codigoImovel, this.)
+          this.usuarioService.inserirVendido(this.codigoImovel, localStorage.getItem("ID"))
         this.id = this.id + 1
         //this.gotoListaImoveis();
       }
