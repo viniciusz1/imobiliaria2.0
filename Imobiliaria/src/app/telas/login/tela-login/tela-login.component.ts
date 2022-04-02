@@ -41,6 +41,7 @@ export class TelaLoginComponent implements OnInit {
         localStorage.setItem("PASSWORD", this.pass);
         localStorage.setItem("USER", this.username);
         localStorage.setItem("ID", resultado[0].ID);
+        localStorage.setItem("ADM", resultado[0].ADM);
         
         if(resultado[0].ADM == 1){
           this.router.navigate(["/tela-principal"])

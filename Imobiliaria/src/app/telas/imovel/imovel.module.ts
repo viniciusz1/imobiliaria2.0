@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import CheckLogged from '../../checkLogged';
 import { TelaCompraComponent } from './tela-compra/tela-compra.component';
 import { TelaVendaComponent } from './tela-venda/tela-venda.component';
-
+import CheckLogged2 from '../../CheckLogged2';
 
 const routes: Routes = [
   {
@@ -25,13 +25,13 @@ const routes: Routes = [
   {
     path: 'compra',
     component: TelaCompraComponent,
-    canActivate: [CheckLogged]
+    canActivate: [CheckLogged2]
 
   },
   {
     path: 'venda',
     component: TelaVendaComponent,
-    canActivate: [CheckLogged]
+    canActivate: [CheckLogged2]
 
   }
 ]
@@ -43,6 +43,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
   ],
-  providers: [CheckLogged],
+  providers: [CheckLogged, CheckLogged2],
 })
 export class ImovelModule { }
