@@ -26,7 +26,7 @@ export class TelaCadastroComponent implements OnInit {
         this.usuarioService.inserirUsuario(this.user, this.pass, this.adm)
         this.usuarioService.buscarUsuarios().then(result => {
           this.quantidade = (Object.keys(result).length)
-          this.quantidade = this.quantidade +1;
+          this.quantidade = this.quantidade+1;
           localStorage.setItem("ID", this.quantidade.toString())
           localStorage.setItem("NOME", this.user);
           localStorage.setItem("PASSWORD", this.pass);
