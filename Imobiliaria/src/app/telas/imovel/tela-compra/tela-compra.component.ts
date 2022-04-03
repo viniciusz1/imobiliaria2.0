@@ -18,9 +18,10 @@ export class TelaCompraComponent implements OnInit {
 
         this.lengthObjeto=(Object.keys(result).length)
         console.log(this.lengthObjeto)
+
+
         for(let i = 0; i < this.lengthObjeto; i++){
           if(result[i].VENDIDO == 'false'){
-            console.log("é falso")
             this.lista.push(result[i])
           }
         }
@@ -39,7 +40,7 @@ export class TelaCompraComponent implements OnInit {
     this.usuarioService.testando().then(result=>{
       this.usuarioService.updateInfoimovelVendido(result[indice].CODIGO_REFERENCIA, true)
       this.usuarioService.inserirVendido(result[indice].CODIGO_REFERENCIA, localStorage.getItem("ID"))
-      document.location.reload()
+      //document.location.reload()
     })
 }
   lista = []

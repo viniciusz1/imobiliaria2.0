@@ -12,17 +12,19 @@ export class TelaVendaComponent implements OnInit {
     private usuarioService: UsuarioService) {
 
 
-      console.log("sdofjapsodi")
       this.usuarioService.testando().then(result => {
-
         this.lengthObjeto=(Object.keys(result).length)
-        console.log(this.lengthObjeto)
+
         for(let i = 0; i < this.lengthObjeto; i++){
           if(result[i].VENDIDO == 'true'){
             this.usuarioService.buscarVendido().then(vendido => {
+              console.log(vendido)
+              console.log(vendido[2].CODIGO_USUARIO)
+              console.log(localStorage.getItem("ID"))
               if(vendido[i].CODIGO_USUARIO == localStorage.getItem('ID')){
-              console.log("vendido "+vendido[i].CODIGO_USUARIO)
-              console.log("localstorage "+localStorage.getItem("ID"))
+                
+              console.log(vendido[i].CODIGO_USUARIO)
+              console.log(localStorage.getItem("ID"))
               this.lista.push(result[i])
               }
             })
