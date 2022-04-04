@@ -16,6 +16,17 @@ header{
     box-shadow: grey 0px -3px 11px 3px;
 
 }
+.imoveis{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    column-gap: 10px;
+}
+.gap{
+    column-gap: 15px;
+}
 .contorno{
     border: black 1px solid;
 }

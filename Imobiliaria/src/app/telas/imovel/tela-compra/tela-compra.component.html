@@ -28,26 +28,23 @@
     </div>
     <div class="encontrados">Imóveis encontrados:0</div>
     <div class="imoveis">
-            <!-- <img class="div-imagem" [src]="lista.IMAGEM">
-            <div style="padding-left: 10px;">
-                Valor: {{lista.VALOR_IMOVEL}}<br>
-                Tipo do Imóvel: {{lista.TIPO_IMOVEL}}<br>
-                Código de Referência: {{lista.INFOIMOVEL_CODIGO_REFERENCIA}}<br>
-                <div class="espacamento-baixo">
-                </div>
-            </div>
-            <div class="tres-botao">
-                <div class="botoes-lateral" (click)="abrirModal(i)"> Detalhes</div>
-                <div class="botoes-lateral" (click)="alteraVendido(i)"> Comprar</div>
-            </div> -->
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+
+            <div class="card" style="width: 18rem" *ngFor="let lista of lista">
+                <img src="https://static8.depositphotos.com/1003924/886/i/600/depositphotos_8868243-stock-photo-spectrum-multicolored-eye-macro.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+                  <h5 class="card-title">{{lista.CODIGO_REFERENCIA}}</h5>
+                  <p class="card-text">Valor: {{lista.VALOR_IMOVEL}}<br>    
+                      Cidade:{{lista.CIDADE}}<br>
+                    Proprietário: {{lista.PROPRIETARIO}}<br>
+                Tipo:{{lista.TIPO_IMOVEL}} </p>
+                  <div class="flex gap">
+
+                    <a href="#" class="btn btn-primary" (click)="abrirModal(i)">Detalhes</a><br>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                  
+                  </div>
+                  </div>
               </div>
-
-
 
 
 

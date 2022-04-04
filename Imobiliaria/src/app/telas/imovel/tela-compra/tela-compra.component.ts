@@ -23,6 +23,7 @@ export class TelaCompraComponent implements OnInit {
         for(let i = 0; i < this.lengthObjeto; i++){
           if(result[i].VENDIDO == 'false'){
             this.lista.push(result[i])
+            console.log(this.lista)
           }
         }
 
