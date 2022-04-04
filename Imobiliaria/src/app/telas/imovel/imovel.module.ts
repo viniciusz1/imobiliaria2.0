@@ -8,7 +8,6 @@ import CheckLogged from '../../checkLogged';
 import { TelaCompraComponent } from './tela-compra/tela-compra.component';
 import { TelaVendaComponent } from './tela-venda/tela-venda.component';
 import CheckLogged2 from '../../CheckLogged2';
-
 const routes: Routes = [
   {
     path: 'gerencia-imovel/:id',
