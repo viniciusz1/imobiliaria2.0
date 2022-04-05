@@ -42,6 +42,7 @@ export class TelaVendaComponent implements OnInit {
   }
   alteraVendido(indice) {
     this.usuarioService.testando().then(imovel => {
+      console.log(imovel)
       this.usuarioService.updateInfoimovelVendido(imovel[indice].CODIGO_REFERENCIA, false)
       this.usuarioService.deletaVendido(imovel[indice].CODIGO_REFERENCIA)
       document.location.reload()
