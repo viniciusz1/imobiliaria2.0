@@ -17,7 +17,7 @@ export class TelaVendaComponent implements OnInit {
       this.lengthObjeto = (Object.keys(result).length)
 
 
-
+      console.log(result)
       for (let i = 0; i < this.lengthObjeto; i++) {
         if (result[i].VENDIDO == 'true') {
           

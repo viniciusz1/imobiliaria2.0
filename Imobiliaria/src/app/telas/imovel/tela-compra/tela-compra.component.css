@@ -2,7 +2,9 @@
 
 *{
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;
- 
+    box-sizing: border-box;
+    
+    --bs-body-line-height: 0;
 }
 html{
     background-color: #ededed;
@@ -44,8 +46,10 @@ h1{
 #usuario-header{
     position: absolute;
     right: 90px;
+    font-size: 20px;
     color: white;
     font-family: monospace;
+    top: 39px;
 }
 .codigo{
     width: 84%;
@@ -86,6 +90,12 @@ h1{
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%), 0 3px 1px -2px rgb(0 0 0 / 8%), 0 1px 5px 0 rgb(0 0 0 / 8%);
     border: solid 1px #dbdbdb;
     cursor: pointer;
+}
+#titulo{
+    font-size: 26px;
+    color: white;   
+    color: white;
+    font-family: monospace;
 }
 .titulo{
     font-size: 20px;

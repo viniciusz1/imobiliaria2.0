@@ -28,7 +28,7 @@ export class GerenciaProprietarioComponent implements OnInit {
       }else{
         this.usuarioService.updateCliente(this.nomeCliente, this.telefoneCliente, this.cpfCliente, this.oldCpf, this.emailCliente, this.dataCliente, this.imageURL)
       }
-     
+     this.gotoListaClientes()
   }
 
   
