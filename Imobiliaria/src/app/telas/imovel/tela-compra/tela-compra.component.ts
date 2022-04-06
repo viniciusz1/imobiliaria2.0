@@ -41,7 +41,7 @@ export class TelaCompraComponent implements OnInit {
     this.usuarioService.testando().then(result=>{
       this.usuarioService.updateInfoimovelVendido(result[indice].CODIGO_REFERENCIA, true)
       this.usuarioService.inserirVendido(result[indice].CODIGO_REFERENCIA, localStorage.getItem("ID"))
-      //document.location.reload()
+      document.location.reload()
     })
 }
   lista = []
@@ -56,7 +56,6 @@ export class TelaCompraComponent implements OnInit {
     }else{
       this.modal=1;
     }
-
   }
   tamanho = ""
   codigo = 0;

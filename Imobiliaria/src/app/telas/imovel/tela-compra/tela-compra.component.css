@@ -26,6 +26,7 @@ header{
     display: flex;
     column-gap: 10px;
 }
+
 .gap{
     column-gap: 15px;
 }
@@ -165,9 +166,9 @@ a{
 }
 #modal{
     background-color: #ffffff;
-    padding: 40px;
-    height: 80%;
-    width: 80%;
+    padding: 2%;
+    height: 97%;
+    width: 90%;
     border-radius: 4px;
 }
 .espacamento{
@@ -197,11 +198,10 @@ a{
     height: 100%;
 }
 .descricao{
-    height: 25%;
     background-color: #5b5ea1;
     border-radius: 5px;
     box-shadow: 6px 6px 16px -1px;
-    padding: 30px;
+    padding: 14px;
 }
 .informacoes-imovel{
     display: flex;
