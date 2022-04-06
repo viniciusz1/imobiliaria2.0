@@ -284,7 +284,8 @@ function inserir(dados, resposta) {
         REGIAO = "${dados.regiao}",
         ESTADO = "${dados.estado}",
         ZONA = "${dados.zona}",
-        CIDADE = "${dados.cidade}"
+        CIDADE = "${dados.cidade}",
+        CEP = "${dados.cep}",
         WHERE INFOIMOVEL_CODIGO_REFERENCIA = "${dados.codigo}"`)
         .then(result => {
         console.log('localizacao alterado com sucesso!')

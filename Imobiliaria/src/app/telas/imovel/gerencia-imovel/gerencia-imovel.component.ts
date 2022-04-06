@@ -105,7 +105,8 @@ export class GerenciaImovelComponent implements OnInit {
               this.cidadeImovel = resultado[this.codigo].CIDADE,
               this.corretor = resultado[this.codigo].CORRETOR,
               this.proprietario = resultado[this.codigo].PROPRIETARIO,
-              this.imageURL = resultado[this.codigo].IMAGEM
+              this.imageURL = resultado[this.codigo].IMAGEM,
+              this.cepImovel = resultado[this.codigo].CEP
           }
 
         ).catch(erro => {
@@ -133,7 +134,7 @@ export class GerenciaImovelComponent implements OnInit {
     if (this.codigoImovel != "" && this.proprietario != "" && this.corretor != "" && this.valorImovel && this.finalidadeImovel != "" && this.tipoImovel != "") {
       if (this.idRota != 'novo') {
         this.usuarioService.updateInfoimovel(this.oldCodigoImovel, this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL)
-        this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel)
+        this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel, this.cepImovel)
         this.usuarioService.updateCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.oldCodigoImovel)
         this.usuarioService.updateResponsavel(this.codigoImovel, this.proprietario, this.corretor)
         this.gotoListaImoveis();
@@ -167,22 +168,6 @@ export class GerenciaImovelComponent implements OnInit {
     this.openModal = 1
   }
 
-  /*
-  getMoney( str )
-  {
-          return parseInt( str.replace(/[\D]+/g,'') );
-  }
-  formatReal( int )
-  {
-          var tmp = int+'';
-          tmp = tmp.replace(/([0-9]{1})$/g, ",$1");
-          if( tmp.length > 6 )
-                  tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-  
-          return tmp;
-  }
-  valorInt = 0
-  valorInt2*/
 
   formatarMoeda(valor) {
     valor = valor + '';
@@ -215,7 +200,11 @@ export class GerenciaImovelComponent implements OnInit {
     }
   }
 
-
+  cepMask(){
+    if (this.cepImovel.toString().length == 5) {
+      this.cepImovel += "-"
+    }
+  }
 
 }
 interface infoImovel {
@@ -245,5 +234,5 @@ interface infoImovel {
   SACADA: string;
   CHURRASQUEIRA: string;
   AREA_FESTAS: string;
-
+  CEP: string
 }

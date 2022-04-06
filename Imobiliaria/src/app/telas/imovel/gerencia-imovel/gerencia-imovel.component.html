@@ -94,14 +94,13 @@
             <div class="titulo-terciario">
                 CEP
                 <br>
-                <input (blur)="cepPreenche()"  [(ngModel)]="cepImovel" type="text" class="input100" 
+                <input (blur)="cepPreenche()" (keypress)="cepMask()" [(ngModel)]="cepImovel" type="text" class="input100" 
                 placeholder="ex: Timbó"/>
             </div>
             <div class="titulo-terciario">
                 Cidade
                 <br>
                 <input [(ngModel)]="cidadeImovel" type="text" class="input100" placeholder="ex: Timbó" (keypress)="cepPreenche()"  />
-                <button (click)="cepPreenche()"></button>
             </div>
             <div class="titulo-terciario">
                 Bairro

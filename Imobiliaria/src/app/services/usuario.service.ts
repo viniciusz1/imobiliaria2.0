@@ -354,13 +354,13 @@ export class UsuarioService {
     })
     })
   }
-  updateLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade){
+  updateLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade, cep){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/update_localizacao', {
         method: 'POST',
         body: JSON.stringify(
           {
-            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade  
+            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade, cep
           }
         ),
         headers: {
