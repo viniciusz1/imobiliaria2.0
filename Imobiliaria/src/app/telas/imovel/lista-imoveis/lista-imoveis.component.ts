@@ -2,7 +2,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
-
+import swal from 'sweetalert'
 @Component({
   selector: 'app-lista-imoveis',
   templateUrl: './lista-imoveis.component.html',
@@ -51,6 +51,10 @@ export class ListaImoveisComponent implements OnInit {
     this.usuarioService.deletaCaracteristicas(this.codigo)
     this.usuarioService.deletaLocalizacao(this.codigo)
     this.usuarioService.deletaResponsavel(this.codigo)
+    swal({
+      title: "Imóvel removido com sucesso!",
+      icon: "success"
+  });
     document.location.reload();
   }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
-
+import swal from 'sweetalert'
 @Component({
   selector: 'app-lista-proprietarios',
   templateUrl: './lista-proprietarios.component.html',
@@ -41,12 +41,15 @@ export class ListaProprietariosComponent implements OnInit {
     this.router.navigate(['/gerencia-proprietario/' + indice])
   }
   removeCliente(indice){
-    console.log(indice)
-    console.log(this.lista)
       const rmCPF = this.lista[indice].cpf
       this.usuarioService.deletaProprietario(rmCPF)
-     document.location.reload();
+      swal({
+        title: "Imóvel editado com sucesso!",
+        icon: "success"
+    });
     
+    window.clearInterval(1000000)
+    document.location.reload();
   }
 
   imageURL = ""

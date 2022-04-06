@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import swal from 'sweetalert';
 @Component({
   selector: 'app-gerencia-imovel',
   templateUrl: './gerencia-imovel.component.html',
@@ -137,6 +138,10 @@ export class GerenciaImovelComponent implements OnInit {
         this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel, this.cepImovel)
         this.usuarioService.updateCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.oldCodigoImovel)
         this.usuarioService.updateResponsavel(this.codigoImovel, this.proprietario, this.corretor)
+        swal({
+          title: "Imóvel editado com sucesso!",
+          icon: "success"
+      });
         this.gotoListaImoveis();
       } else {
 
@@ -145,10 +150,18 @@ export class GerenciaImovelComponent implements OnInit {
           this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.codigoImovel),
           this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
         this.id = this.id + 1
-        //this.gotoListaImoveis();
+        swal({
+          title: "Imóvel editado com sucesso!",
+          icon: "success"
+      });
+        this.gotoListaImoveis();
       }
     } else {
-      alert("Preencha no mínimo todas as informações com *")
+      swal({
+        title: "Falha no cadastro!",
+        text: "Tenha a certeza que preencheu todas as informações com *: ",
+        icon: "error"
+    });
     }
 
     console.log(this.idRota)

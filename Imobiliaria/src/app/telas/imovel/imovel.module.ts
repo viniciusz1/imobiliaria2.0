@@ -10,6 +10,7 @@ import { TelaVendaComponent } from './tela-venda/tela-venda.component';
 import CheckLogged2 from '../../CheckLogged2';
 import { HttpClientModule } from '@angular/common/http'
 
+
 const routes: Routes = [
   {
     path: 'gerencia-imovel/:id',
