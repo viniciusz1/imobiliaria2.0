@@ -8,6 +8,8 @@ import CheckLogged from '../../checkLogged';
 import { TelaCompraComponent } from './tela-compra/tela-compra.component';
 import { TelaVendaComponent } from './tela-venda/tela-venda.component';
 import CheckLogged2 from '../../CheckLogged2';
+import { HttpClientModule } from '@angular/common/http'
+
 const routes: Routes = [
   {
     path: 'gerencia-imovel/:id',
@@ -41,6 +43,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     CommonModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [CheckLogged, CheckLogged2],
 })

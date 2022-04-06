@@ -64,12 +64,14 @@ export class GerenciaImovelComponent implements OnInit {
   descricaoImovel = "";
   clienteNomeObj = {}
   mensagemImovel = "";
+  cepImovel=""
   ngOnInit(): void {
     this.usuarioService.buscarClientes().then(
       (resultado => this.clienteNomeObj = resultado)
     )
     const idRota = this.route.snapshot.paramMap.get('id');
     this.idRota = idRota;
+
 
     if (idRota != 'novo') {
       this.codigo = parseInt(idRota) - 1;
@@ -115,6 +117,17 @@ export class GerenciaImovelComponent implements OnInit {
   }
 
 
+  cepPreenche(){
+      this.usuarioService.buscar(this.cepImovel).subscribe((dados) => this.populaForm(dados))
+  }
+  populaForm(dados){
+    this.cidadeImovel = dados.localidade,
+    this.bairroImovel = dados.bairro,
+    this.complementoImovel = dados.complemento,
+    this.estadoImovel = dados.uf,
+    this.logradouroImovel = dados.logradouro,
+    this.regiaoImovel = dados.ddd
+  }
 
   jogaDB() {
     if (this.codigoImovel != "" && this.proprietario != "" && this.corretor != "" && this.valorImovel && this.finalidadeImovel != "" && this.tipoImovel != "") {
@@ -127,7 +140,7 @@ export class GerenciaImovelComponent implements OnInit {
       } else {
 
         this.usuarioService.inserirInfoimovel(this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL, false),
-          this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel),
+          this.usuarioService.inserirLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel, this.cepImovel),
           this.usuarioService.inserirCaracteristicas(this.dormitoriosImovel, this.suitesImovel, this.banheirosImovel, this.vagasImovel, this.lavanderiaImovel, this.sacadaImovel, this.churrasImovel, this.festasImovel, this.codigoImovel),
           this.usuarioService.inserirResponsavel(this.codigoImovel, this.proprietario, this.corretor)
         this.id = this.id + 1

@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  constructor() { }
+  constructor(private httpCliente: HttpClient) { }
+
+
+  buscar(cep: String){
+    return this.httpCliente.get('https://viacep.com.br/ws/'+ cep + '/json');
+  }
 
   buscarUsuarios(){
     return new Promise((resolve, rejeitado) => {
@@ -327,13 +333,13 @@ export class UsuarioService {
   // }
 
 
-  inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade){
+  inserirLocalizacao(bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade,cep){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/inserir_localizacao', {
         method: 'POST',
         body: JSON.stringify(
           {
-            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade  
+            bairro, logradouro, numero, complemento, regiao, estado, zona, codigo, cidade, cep  
           }
         ),
         headers: {

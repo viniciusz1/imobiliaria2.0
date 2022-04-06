@@ -311,7 +311,8 @@ function inserir(dados, resposta) {
         ESTADO,
         ZONA,
         INFOIMOVEL_CODIGO_REFERENCIA,
-        CIDADE
+        CIDADE,
+        CEP
         )
         VALUES
         (
@@ -323,7 +324,8 @@ function inserir(dados, resposta) {
         "${dados.estado}",
         "${dados.zona}",
         "${dados.codigo}",
-        "${dados.cidade}"
+        "${dados.cidade}",
+        "${dados.cep}"
 
         )`)
         .then(result => {

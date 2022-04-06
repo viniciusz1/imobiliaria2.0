@@ -92,9 +92,16 @@
         <hr>
         <div id="container-secundario">
             <div class="titulo-terciario">
+                CEP
+                <br>
+                <input (blur)="cepPreenche()"  [(ngModel)]="cepImovel" type="text" class="input100" 
+                placeholder="ex: Timbó"/>
+            </div>
+            <div class="titulo-terciario">
                 Cidade
                 <br>
-                <input [(ngModel)]="cidadeImovel" type="text" class="input100" placeholder="ex: Timbó"/>
+                <input [(ngModel)]="cidadeImovel" type="text" class="input100" placeholder="ex: Timbó" (keypress)="cepPreenche()"  />
+                <button (click)="cepPreenche()"></button>
             </div>
             <div class="titulo-terciario">
                 Bairro
@@ -111,13 +118,14 @@
                 <br>
                 <input [(ngModel)]="numeroImovel" type="number" class="input100" placeholder="ex: 123" />
             </div>
+            
+        </div>
+        <div id='container-secundario'>
             <div class="titulo-terciario">
                 Complemento
                 <br>
                 <input [(ngModel)]="complementoImovel" type="text" class="input100" placeholder="ex: Perto da ponte"/>
             </div>
-        </div>
-        <div id='container-secundario'>
             <div class="titulo-terciario">
                 Região
                 <br>
@@ -127,11 +135,6 @@
                 Estado
                 <br>
                 <input [(ngModel)]="estadoImovel" type="text" class="input100"placeholder="ex: Santa Catarina"/>
-            </div>
-            <div class="titulo-terciario">
-                Zona
-                <br>
-                <input [(ngModel)]="zonaImovel" type="text" class="input100" placeholder="ex: Leste" />
             </div>
             <div class="titulo-terciario"></div>
             <div class="titulo-terciario"></div>
