@@ -21,7 +21,6 @@ export class TelaLoginComponent implements OnInit {
     this.usuarioService.buscarUsuarios()
     .then((resultado: (Object: (String))  => [])=> {
       console.log("RESULTADO:", resultado)
-    console.log(resultado[0].ID)
     }).catch(erro => {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })

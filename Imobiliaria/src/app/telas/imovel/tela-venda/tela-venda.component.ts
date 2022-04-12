@@ -12,25 +12,7 @@ export class TelaVendaComponent implements OnInit {
     private usuarioService: UsuarioService) {
 
 
-    this.usuarioService.testando().then(result => {
-
-      this.lengthObjeto = (Object.keys(result).length)
-
-
-      console.log(result)
-      for (let i = 0; i < this.lengthObjeto; i++) {
-        if (result[i].VENDIDO == 'true') {
-          
-          this.usuarioService.buscarVendido().then(vendido => {
-            if(vendido[i].CODIGO_USUARIO == localStorage.getItem("ID")){
-              this.lista.push(result[i])
-            }})
-
-
-
-        }
-      }
-    })
+   
 
   }
   goToCompra() {
@@ -67,6 +49,20 @@ export class TelaVendaComponent implements OnInit {
   lengthObjeto = 0;
   objeto = {}
   ngOnInit(): void {
+    this.usuarioService.testando().then(result => {
 
+      this.lengthObjeto = (Object.keys(result).length)
+
+      for (let i = 0; i < this.lengthObjeto; i++) {
+        if (result[i].VENDIDO == 'true') {
+          console.log(12321321321)
+          this.usuarioService.buscarVendido().then(vendido => {
+            console.log("vendido", vendido)
+            if(vendido[i].CODIGO_USUARIO == localStorage.getItem("ID")){
+              this.lista.push(result[i])
+            }})
+        }
+      }
+    })
   }
 }

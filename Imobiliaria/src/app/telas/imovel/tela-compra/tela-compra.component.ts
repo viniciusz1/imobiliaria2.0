@@ -41,6 +41,7 @@ export class TelaCompraComponent implements OnInit {
     this.usuarioService.testando().then(result=>{
       this.usuarioService.updateInfoimovelVendido(result[indice].CODIGO_REFERENCIA, true)
       this.usuarioService.inserirVendido(result[indice].CODIGO_REFERENCIA, localStorage.getItem("ID"))
+      console.log(result[indice].CODIGO_REFERENCIA,localStorage.getItem("ID"))
       document.location.reload()
     })
 }

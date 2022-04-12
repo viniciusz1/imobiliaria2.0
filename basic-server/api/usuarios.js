@@ -132,6 +132,7 @@ inserirRota('/buscar_vendido',
         resposta({erro: 'Erro ao buscar os usuários'})
     });
 })
+
 inserirRota('/select_vendacompra',
     function (dados, resposta) {
         console.log(dados, resposta);
