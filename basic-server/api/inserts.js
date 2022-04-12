@@ -1,6 +1,6 @@
 database(`INSERT INTO INFOIMOVEL VALUES(
     123,
-    true,
+    false,
     300000,
     "Venda",
     "Apartamento",
@@ -9,7 +9,7 @@ database(`INSERT INTO INFOIMOVEL VALUES(
     "Sobrado Legal"
 ),(
     321,
-    true,
+    false,
     400000,
     "Venda",
     "Casa",
@@ -18,7 +18,7 @@ database(`INSERT INTO INFOIMOVEL VALUES(
     "Casa Legal"
 ),(
     213,
-    true,
+    false,
     500000,
     "Venda",
     "Geminado",
@@ -26,14 +26,14 @@ database(`INSERT INTO INFOIMOVEL VALUES(
     "https://resizedimgs.vivareal.com/crop/286x200/vr.images.sp/db054dab096c1afe7d28109d53ac9758.jpg",
     "Geminado Legal"
 ),(
-    123,
-    true,
-    300000,
+    231,
+    false,
+    600000,
     "Venda",
     "Apartamento",
     "1234567890",
     "https://resizedimgs.vivareal.com/crop/286x200/vr.images.sp/db054dab096c1afe7d28109d53ac9758.jpg",
-    "Sobrado Legal"
+    "Apartamento Legal"
 )`).then(result => {
     console.log('insert INFOIMOVEL')
 }).catch(erro => {
@@ -52,38 +52,38 @@ database(`INSERT INTO CARACTERISTICAS VALUES(
     "1",
     "123"
 ),(
-    1,
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "123"
+    2,
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "321"
 ),(
-    1,
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "123"
+    3,
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "3",
+    "213"
 ),(
-    1,
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "1",
-    "123"
+    4,
+    "4",
+    "4",
+    "4",
+    "4",
+    "4",
+    "4",
+    "4",
+    "4",
+    "231"
 )`).then(result => {
     console.log('insert INFOIMOVEL')
 }).catch(erro => {
@@ -102,41 +102,41 @@ database(`INSERT INTO LOCALIZACAO VALUES(
     "Jaraguá do Sul",
     "89252-230"
 ),(
-    1,
-    "Nova Brasília",
-    "Venâcio da Silva Porto",
-    "123",
-    "Perto da Ponte",
+    2,
+    "Vila Lenzi",
+    "Marechal Deodora da Fonseca",
+    "321",
+    "Perto do Lago",
     "Sul",
     "Santa Catarina",
     "Leste",
-    "123",
+    "321",
     "Jaraguá do Sul",
-    "89252-230"
+    "89252-210"
 ),(
-    1,
-    "Nova Brasília",
-    "Venâcio da Silva Porto",
-    "123",
-    "Perto da Ponte",
+    3,
+    "Pomeranos",
+    "João Pessoa",
+    "213",
+    "Perto do Rio",
     "Sul",
     "Santa Catarina",
     "Leste",
-    "123",
+    "213",
     "Jaraguá do Sul",
-    "89252-230"
+    "89252-220"
 ),(
-    1,
-    "Nova Brasília",
-    "Venâcio da Silva Porto",
-    "123",
-    "Perto da Ponte",
+    4,
+    "Nova Zelândia",
+    "Venâcio Malta",
+    "231",
+    "Perto do riacho",
     "Sul",
     "Santa Catarina",
     "Leste",
-    "123",
+    "231",
     "Jaraguá do Sul",
-    "89252-230"
+    "89252-240"
 )`).then(result => {
     console.log('insert LOCALIZACAO')
 }).catch(erro => {
@@ -150,26 +150,26 @@ database(`INSERT INTO RESPONSAVEL VALUES(
     "3893892898",
     "123"
 ),(
-    "1",
+    "2",
     null,
-    "Clóvis Benner",
+    "Bruno Henrique",
     "Vinícius",
-    "3893892898",
-    "123"
+    "12432341",
+    "321"
 ),(
-    "1",
+    "3",
     null,
-    "Clóvis Benner",
+    "Armelindo Biterbrundos",
     "Vinícius",
-    "3893892898",
-    "123"
+    "4321432142",
+    "213"
 ),(
-    "1",
+    "4",
     null,
-    "Clóvis Benner",
+    "Jhowany",
     "Vinícius",
-    "3893892898",
-    "123"
+    "2342143214",
+    "231"
 )`).then(result => {
     console.log('insert RESPONSAVEL')
 }).catch(erro => {
