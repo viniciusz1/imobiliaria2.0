@@ -1,7 +1,7 @@
 database(`INSERT INTO INFOIMOVEL VALUES(
     123,
     false,
-    300000,
+    "300.000,00",
     "Venda",
     "Apartamento",
     "1234567890",
@@ -10,29 +10,29 @@ database(`INSERT INTO INFOIMOVEL VALUES(
 ),(
     321,
     false,
-    400000,
+    "400.000,00",
     "Venda",
     "Casa",
     "11111111111",
-    "https://resizedimgs.vivareal.com/crop/286x200/vr.images.sp/db054dab096c1afe7d28109d53ac9758.jpg",
+    "https://imobiliaria636.com.br/fotos/03234689/0323468946.jpg",
     "Casa Legal"
 ),(
     213,
     false,
-    500000,
+    "500.000,00",
     "Venda",
     "Geminado",
     "123432434344",
-    "https://resizedimgs.vivareal.com/crop/286x200/vr.images.sp/db054dab096c1afe7d28109d53ac9758.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnnPerICJQ62IZrU3Vx2MU1JqBCsfoNuXE1g&usqp=CAU",
     "Geminado Legal"
 ),(
     231,
     false,
-    600000,
+    "600.000,00",
     "Venda",
     "Apartamento",
     "1234567890",
-    "https://resizedimgs.vivareal.com/crop/286x200/vr.images.sp/db054dab096c1afe7d28109d53ac9758.jpg",
+    "https://blog.saluteimoveis.com/wp-content/uploads/2020/12/Apartamentos-mais-valiosos-de-Balneario-Camboriu-1.jpg",
     "Apartamento Legal"
 )`).then(result => {
     console.log('insert INFOIMOVEL')
