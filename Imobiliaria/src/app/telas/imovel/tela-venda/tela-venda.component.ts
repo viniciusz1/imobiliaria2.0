@@ -53,25 +53,4 @@ export class TelaVendaComponent implements OnInit {
       this.lista.push(result)
       this.lista = this.lista[0]
     })
-
-
-  //   this.usuarioService.testando().then(result => {
-
-
-
-
-  //     this.lengthObjeto = (Object.keys(result).length)
-  //     console.log(result)
-  //     for (let i = 0; i < this.lengthObjeto; i++) {
-  //       if (result[i].VENDIDO == 'true') {
-  //         console.log(12321321321)
-  //         this.usuarioService.buscarVendido().then(vendido => {
-  //           console.log("vendido", vendido)
-  //           if(vendido[i].CODIGO_USUARIO == localStorage.getItem("ID")){
-  //             this.lista.push(result[i])
-  //           }})
-  //       }
-  //     }
-  //   })
-   }
 }
