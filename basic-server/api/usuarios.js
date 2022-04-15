@@ -122,6 +122,39 @@ inserirRota('/testando',
     });
 })
 
+inserirRota('/buscar_vendido_true',
+    function (dados, resposta) {
+        console.log(dados, resposta);       
+    database(`SELECT INFOIMOVEL.*, CARACTERISTICAS.*, LOCALIZACAO.*, RESPONSAVEL.* FROM INFOIMOVEL
+    INNER JOIN CARACTERISTICAS ON CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA = INFOIMOVEL.CODIGO_REFERENCIA
+    INNER JOIN LOCALIZACAO ON LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA = CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA
+    INNER JOIN RESPONSAVEL ON RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA = LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA
+    WHERE INFOIMOVEL.VENDIDO = 0`)
+        .then(result => {
+        resposta(result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
+
+inserirRota('/buscar_vendido_false',
+    function (dados, resposta) {
+        console.log(dados, resposta);       
+    database(`SELECT VENDIDOS.*, INFOIMOVEL.*, CARACTERISTICAS.*, LOCALIZACAO.*, RESPONSAVEL.* FROM INFOIMOVEL
+    INNER JOIN CARACTERISTICAS ON CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA = INFOIMOVEL.CODIGO_REFERENCIA
+    INNER JOIN LOCALIZACAO ON LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA = CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA
+    INNER JOIN RESPONSAVEL ON RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA = LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA
+    INNER JOIN VENDIDOS ON VENDIDOS.CODIGO_IMOVEL = RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA 
+    WHERE VENDIDOS.CODIGO_USUARIO = ${dados.usuario}
+    `)
+        .then(result => {
+        resposta(result)
+    }).catch(erro => {
+        resposta({erro: 'Erro ao buscar os usuários'})
+    });
+})
+
+
 inserirRota('/buscar_vendido',
     function (dados, resposta) {
         console.log(dados, resposta);       

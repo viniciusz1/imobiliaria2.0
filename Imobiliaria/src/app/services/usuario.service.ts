@@ -54,7 +54,23 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-  
+  buscarVendidoFalse(usuario){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/buscar_vendido_false', {
+        method: 'POST',
+        body: JSON.stringify(
+          {
+          usuario
+          }
+        ),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
 
   buscarClientes(){
     return new Promise((resolve, rejeitado) => {
@@ -314,6 +330,19 @@ export class UsuarioService {
     }
 
     
+    buscarVEndidoTrue(){
+      return new Promise((resolve, rejeitado) => {
+        fetch('/api/buscar_vendido_true', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(resultado => resultado.json())
+        .then(resolvido => resolve(resolvido))
+        .catch(rejeitado);
+      })
+    }
+
   // testando(){
   //   return new Promise((resolve, rejeitado) => {
   //     fetch('/api/testando', {
