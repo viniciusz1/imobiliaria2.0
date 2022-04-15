@@ -23,7 +23,7 @@
     </div>
     <div class="encontrados">Imóveis encontrados:{{tamanho}}</div>
     <div class="imoveis">
-        <div class="imovel" *ngFor="let lista of objeto; let i = index">
+        <div class="imovel" *ngFor="let lista of listaImoveis; let i = index">
             <img class="div-imagem" [src]="lista.IMAGEM">
             <div style="padding-left: 10px;">
                 Valor: {{lista.VALOR_IMOVEL}}<br>
@@ -43,42 +43,42 @@
             <div id="modal">
                 <div class="segundo-modal">
                     <div class="parte-cima ">
-                        <img class="img" [src]="objeto[indice].IMAGEM">
+                        <img class="img" [src]="listaImoveis[indice].IMAGEM">
                         <div class="informacoes-imovel ">
                             <div class="primeiro-imovel ">
                                 <div class="tres">
-                                    <div class='span'>Proprietário:{{objeto[indice].PROPRIETARIO}}</div>
-                                    <div class="span">Corretor:{{objeto[indice].CORRETOR}}</div>
-                                    <div class="span">Valor: {{objeto[indice].VALOR_IMOVEL}}/</div>
-                                    <div class="span">Codigo: {{objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
-                                    <div class="span">Finalidade: {{objeto[indice].FINALIDADE}}</div>
-                                    <div class="span">Tipo Imóvel: {{objeto[indice].TIPO_IMOVEL}}</div>
+                                    <div class='span'>Proprietário:{{listaImoveis[indice].PROPRIETARIO}}</div>
+                                    <div class="span">Corretor:{{listaImoveis[indice].CORRETOR}}</div>
+                                    <div class="span">Valor: {{listaImoveis[indice].VALOR_IMOVEL}}</div>
+                                    <div class="span">Codigo: {{listaImoveis[indice].INFOIMOVEL_CODIGO_REFERENCIA}}</div>
+                                    <div class="span">Finalidade: {{listaImoveis[indice].FINALIDADE}}</div>
+                                    <div class="span">Tipo Imóvel: {{listaImoveis[indice].TIPO_IMOVEL}}</div>
                                 </div>
                                 <div class="tres">
-                                    <div class="span">Cidade: {{objeto[indice].CIDADE}}</div>
-                                    <div class="span">Bairro: {{objeto[indice].BAIRRO}}</div>
-                                    <div class="span">Logradouro: {{objeto[indice].LOGRADOURO}}</div>
-                                    <div class="span">Número: {{objeto[indice].NUMERO}}</div>
-                                    <div class="span">Complemento: {{objeto[indice].COMPLEMENTO}}</div>
-                                    <div class="span">Região: {{objeto[indice].REGIAO}}</div>
+                                    <div class="span">Cidade: {{listaImoveis[indice].CIDADE}}</div>
+                                    <div class="span">Bairro: {{listaImoveis[indice].BAIRRO}}</div>
+                                    <div class="span">Logradouro: {{listaImoveis[indice].LOGRADOURO}}</div>
+                                    <div class="span">Número: {{listaImoveis[indice].NUMERO}}</div>
+                                    <div class="span">Complemento: {{listaImoveis[indice].COMPLEMENTO}}</div>
+                                    <div class="span">Região: {{listaImoveis[indice].REGIAO}}</div>
                                 </div>
                                 <div class="tres">
-                                    <div class="span">Estado: {{objeto[indice].ESTADO}}</div>
-                                    <div class="span">Zona: {{objeto[indice].ZONA}}</div>
+                                    <div class="span">Estado: {{listaImoveis[indice].ESTADO}}</div>
+                                    <div class="span">Zona: {{listaImoveis[indice].ZONA}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex">
                         <div class=" info-baixo">
-                            <div class="self-baixo">Dormitórios: {{objeto[indice].DORMITORIOS}}</div>
-                            <div class="self-baixo">Suítes: {{objeto[indice].SUITES}}</div>
-                            <div class="self-baixo">Banheiros: {{objeto[indice].BANHEIROS}}</div>
-                            <div class="self-baixo">Lavanderia: {{objeto[indice].BANHEIROS}}</div>
-                            <div class="self-baixo">Vagas de Garagem: {{objeto[indice].VAGAS_GARAGEM}}</div>
-                            <div class="self-baixo">Sacada: {{objeto[indice].SACADA}}</div>
-                            <div class="self-baixo">Churrasqueira: {{objeto[indice].CHURRASQUEIRA}}</div>
-                            <div class="self-baixo">Área de festas: {{objeto[indice].AREA_FESTAS}}</div>
+                            <div class="self-baixo">Dormitórios: {{listaImoveis[indice].DORMITORIOS}}</div>
+                            <div class="self-baixo">Suítes: {{listaImoveis[indice].SUITES}}</div>
+                            <div class="self-baixo">Banheiros: {{listaImoveis[indice].BANHEIROS}}</div>
+                            <div class="self-baixo">Lavanderia: {{listaImoveis[indice].BANHEIROS}}</div>
+                            <div class="self-baixo">Vagas de Garagem: {{listaImoveis[indice].VAGAS_GARAGEM}}</div>
+                            <div class="self-baixo">Sacada: {{listaImoveis[indice].SACADA}}</div>
+                            <div class="self-baixo">Churrasqueira: {{listaImoveis[indice].CHURRASQUEIRA}}</div>
+                            <div class="self-baixo">Área de festas: {{listaImoveis[indice].AREA_FESTAS}}</div>
                         </div>
                     </div>
                     <div class="espacamento-cima">
@@ -90,7 +90,7 @@
                         <div class="descricao">
                             <div style="color: white">
 
-                                {{objeto[indice].DESCRICAO}}
+                                {{listaImoveis[indice].DESCRICAO}}
                             </div>
                         </div>
                     </div>

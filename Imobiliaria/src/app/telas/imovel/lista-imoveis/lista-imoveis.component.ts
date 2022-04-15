@@ -46,7 +46,7 @@ export class ListaImoveisComponent implements OnInit {
   tamanho = 0
   codigo = 0;
   removeImovel(indice){
-    this.codigo = this.objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA
+    this.codigo = this.listaImoveis[indice].INFOIMOVEL_CODIGO_REFERENCIA
     this.usuarioService.deletaInfoimovel(this.codigo)
     this.usuarioService.deletaCaracteristicas(this.codigo)
     this.usuarioService.deletaLocalizacao(this.codigo)
@@ -58,14 +58,22 @@ export class ListaImoveisComponent implements OnInit {
     document.location.reload();
   }
 
-  objeto=[]
+  listaImoveis=[]
+  filtroresult: any
   ngOnInit(): void {
     this.usuarioService.testando().then((resultado)=>{
-      this.objeto.push(resultado)
-      this.objeto = this.objeto[0]
-      this.tamanho = this.objeto.length
+      this.listaImoveis.push(resultado)
+      this.listaImoveis = this.listaImoveis[0]
+      this.tamanho = this.listaImoveis.length
+      
+
+
+      this.filtroresult = this.listaImoveis.filter(element => element.INFOIMOVEL_CODIGO_REFERENCIA.toString().startsWith("2")
+     )
+      console.log(this.filtroresult)
     })
-    }
+    
+  }
   }
 
   
