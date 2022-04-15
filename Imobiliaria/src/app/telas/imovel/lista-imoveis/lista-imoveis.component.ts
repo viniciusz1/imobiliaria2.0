@@ -60,16 +60,18 @@ export class ListaImoveisComponent implements OnInit {
 
   listaImoveis=[]
   filtroresult: any
+  filtroImovel;
+  filtro(){
+    console.log(this.filtroImovel)
+    this.listaImoveis = this.listaImoveis.filter(element => element.INFOIMOVEL_CODIGO_REFERENCIA.toString().startsWith(this.filtroImovel))
+    console.log(this.listaImoveis)
+  }
+
   ngOnInit(): void {
     this.usuarioService.testando().then((resultado)=>{
       this.listaImoveis.push(resultado)
       this.listaImoveis = this.listaImoveis[0]
       this.tamanho = this.listaImoveis.length
-      
-
-
-      this.filtroresult = this.listaImoveis.filter(element => element.INFOIMOVEL_CODIGO_REFERENCIA.toString().startsWith("2")
-     )
       console.log(this.filtroresult)
     })
     

@@ -23,6 +23,7 @@
     </div>
     <div class="encontrados">Imóveis encontrados:{{tamanho}}</div>
     <div class="imoveis">
+        <input  type="text" [(ngModel)]="filtroImovel" (keypress)="filtro()">
         <div class="imovel" *ngFor="let lista of listaImoveis; let i = index">
             <img class="div-imagem" [src]="lista.IMAGEM">
             <div style="padding-left: 10px;">
