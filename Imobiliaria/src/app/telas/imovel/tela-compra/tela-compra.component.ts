@@ -13,45 +13,48 @@ export class TelaCompraComponent implements OnInit {
     private usuarioService: UsuarioService) {
 
 
-      console.log("sdofjapsodi")
-      this.usuarioService.buscarVEndidoTrue().then(result => {
-        this.lista.push(result);
-        this.lista = this.lista[0]
-      })
+    console.log("sdofjapsodi")
+    this.usuarioService.buscarVEndidoTrue().then(result => {
+      this.lista.push(result);
+      this.lista = this.lista[0]
+      this.tamanho = this.lista.length
+    })
 
-     }
-     goToCompra(){
+  }
+  tamanho = 0
+  goToCompra() {
     this.router.navigate(['compra'])
   }
-    goToVenda(){
+  goToVenda() {
     this.router.navigate(['venda'])
 
   }
-  alteraVendido(indice){
-    this.usuarioService.buscarVEndidoTrue().then(result=>{
+  alteraVendido(indice) {
+    this.usuarioService.buscarVEndidoTrue().then(result => {
       this.usuarioService.updateInfoimovelVendido(result[indice].CODIGO_REFERENCIA, true)
       this.usuarioService.inserirVendido(result[indice].CODIGO_REFERENCIA, localStorage.getItem("ID"))
-      console.log(result[indice].CODIGO_REFERENCIA,localStorage.getItem("ID"))
+      console.log(result[indice].CODIGO_REFERENCIA, localStorage.getItem("ID"))
       document.location.reload()
     })
-}
+  }
   lista = []
   user = localStorage.getItem('USER')
   modal = 0
   indice = 0
-  abrirModal(i){
+  abrirModal(i) {
     console.log(i)
     this.indice = i
-    if(this.modal==1){
-      this.modal=0;
-    }else{
-      this.modal=1;
+    if (this.modal == 1) {
+      this.modal = 0;
+    } else {
+      this.modal = 1;
     }
   }
   tamanho = ""
   codigo = 0;
   lengthObjeto = 0;
-  objeto={}
+  objeto = {}
   ngOnInit(): void {
-    
-}}
+
+  }
+}

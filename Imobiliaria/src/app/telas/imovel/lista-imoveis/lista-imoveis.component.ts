@@ -43,7 +43,7 @@ export class ListaImoveisComponent implements OnInit {
     }
 
   }
-  tamanho = ""
+  tamanho = 0
   codigo = 0;
   removeImovel(indice){
     this.codigo = this.objeto[indice].INFOIMOVEL_CODIGO_REFERENCIA
@@ -58,11 +58,12 @@ export class ListaImoveisComponent implements OnInit {
     document.location.reload();
   }
 
-  objeto={}
+  objeto=[]
   ngOnInit(): void {
     this.usuarioService.testando().then((resultado)=>{
-      this.objeto= resultado
-      console.log(this.objeto)
+      this.objeto.push(resultado)
+      this.objeto = this.objeto[0]
+      this.tamanho = this.objeto.length
     })
     }
   }

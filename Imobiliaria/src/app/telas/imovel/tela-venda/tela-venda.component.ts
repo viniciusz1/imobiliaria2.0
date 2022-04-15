@@ -43,7 +43,7 @@ export class TelaVendaComponent implements OnInit {
     }
 
   }
-  tamanho = ""
+  tamanho = 0
   codigo = 0;
   lengthObjeto = 0;
   objeto = {}
@@ -52,5 +52,7 @@ export class TelaVendaComponent implements OnInit {
     this.usuarioService.buscarVendidoFalse(localStorage.getItem('ID')).then(result => {
       this.lista.push(result)
       this.lista = this.lista[0]
+      this.tamanho = this.lista.length
     })
+  }
 }

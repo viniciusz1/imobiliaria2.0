@@ -18,7 +18,7 @@
     <div class="imoveis-header" (click)="gotoListaClientes()">Proprietários: Listar</div>
 </div>
 <main>
-    <div class="titulo">Proprietários: listar</div>
+    <div class="titulo">Proprietários: Inserir</div>
     <div class="postitulo">
         <b>
             <div>Proprietários -> </div>
@@ -81,7 +81,7 @@
         <img *ngIf="imageURL != null" [src]="imageURL" alt="" width="300px" height="250px">
         <form action="">
             <div>
-                <input *ngIf="imageURL == null" type="file" name="arquivo" id="arquivo"
+                <input type="file" name="arquivo" id="arquivo"
                     (change)="mostrarImagem($event)">
             </div>
         </form>

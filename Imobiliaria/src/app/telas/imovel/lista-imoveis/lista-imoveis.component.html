@@ -13,7 +13,7 @@
     <div class="imoveis-header" (click)="gotoListaClientes()">Proprietários: Listar</div>
 </div>
 <main>
-    <div class="titulo">Imóveis: {{indice}}</div>
+    <div class="titulo">Imóveis: Listar</div>
     <div class="postitulo">
         <b>
             <div>Imóveis -> </div>
@@ -21,7 +21,7 @@
         <a (click)="gotoGerenciaImovel()">Incluir</a>
         <a (click)="gotoListaImoveis()">Listar</a>
     </div>
-    <div class="encontrados">Imóveis encontrados:0</div>
+    <div class="encontrados">Imóveis encontrados:{{tamanho}}</div>
     <div class="imoveis">
         <div class="imovel" *ngFor="let lista of objeto; let i = index">
             <img class="div-imagem" [src]="lista.IMAGEM">
