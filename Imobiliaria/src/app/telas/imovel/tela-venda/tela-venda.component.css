@@ -198,11 +198,15 @@ h1{
     padding: 40px;
     height: 100%;
 }
+.espacamento{
+    height: 100px;
+}
 .descricao{
     background-color: #5b5ea1;
     border-radius: 5px;
     box-shadow: 6px 6px 16px -1px;
     padding: 14px;
+    height: 17%;
 }
 .informacoes-imovel{
     display: flex;
