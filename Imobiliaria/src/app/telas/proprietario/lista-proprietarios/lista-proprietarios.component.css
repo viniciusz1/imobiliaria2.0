@@ -53,6 +53,10 @@ h1{
     border: 1px solid grey;
     border-radius: 4px;
 }
+.espacamento{
+    height: 50%;
+}
+
 #pos-header{
     display: flex;
     justify-content: center;

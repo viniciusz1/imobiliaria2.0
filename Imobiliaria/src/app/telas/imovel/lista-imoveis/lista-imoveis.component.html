@@ -23,7 +23,7 @@
     </div>
     <div class="encontrados">Imóveis encontrados:{{tamanho}}</div>
     <div class="imoveis">
-        <input  type="text" [(ngModel)]="filtroImovel" (keypress)="filtro()">
+        <input class="input-imoveis" placeholder= "Pesquise por código do imóvel" type="text" [(ngModel)]="filtroS" (keyup)="filtro()">
         <div class="imovel" *ngFor="let lista of listaImoveis; let i = index">
             <img class="div-imagem" [src]="lista.IMAGEM">
             <div style="padding-left: 10px;">
@@ -40,6 +40,9 @@
             </div>
 
         </div>
+
+        <div class="espacamento"></div>
+
         <div class="fundo" *ngIf="modal != 0" (click)="abrirModal(i)">
             <div id="modal">
                 <div class="segundo-modal">

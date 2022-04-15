@@ -175,6 +175,16 @@ a{
     padding: 40px;
     height: 100%;
 }
+.espacamento{
+    height: 100px;
+}
+
+.input-imoveis{
+    padding: 6px;
+    width: 24%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
 .descricao{
     background-color: #5b5ea1;
     border-radius: 5px;
