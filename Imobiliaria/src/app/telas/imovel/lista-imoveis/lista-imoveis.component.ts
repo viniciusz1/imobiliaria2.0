@@ -66,6 +66,7 @@ export class ListaImoveisComponent implements OnInit {
     console.log(this.filtroS)
     this.listaImoveis = this.listaImoveis2
     this.listaImoveis = this.listaImoveis.filter(element => element.INFOIMOVEL_CODIGO_REFERENCIA.toString().startsWith(this.filtroS))
+    this.tamanho = this.listaImoveis.length
   }
 
   ngOnInit(): void {
