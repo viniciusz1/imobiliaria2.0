@@ -33,65 +33,6 @@ function inserir(dados, resposta) {
     });
 })
 
-inserirRota('/deleta_cliente',
-function inserir(dados, resposta) {
-    console.log(dados)
-    database(`DELETE FROM CLIENTE WHERE CPF = "${dados.cpf}"`)
-        .then(result => {
-        console.log('infoimovel removido com sucesso!')
-        resposta({message: 'infoimovel  FOI removido com sucesso"'})
-    }).catch(erro => {
-        console.log('infoimovel NÃO FOI removido com sucesso!')
-        console.log(erro)
-        resposta({message: 'infoimovel NÃO FOI removido com sucesso"'})
-    });
-})
-
-
-
-inserirRota('/inserir_cliente',
-function inserir(dados, resposta) {
-    console.log(dados)
-    database(`INSERT INTO CLIENTE 
-    (
-        NOME, 
-        TELEFONE,
-        CPF,
-        EMAIL,
-        DATA,
-        IMAGEM
-        )
-        VALUES
-        (
-        "${dados.nome}", 
-        "${dados.telefone}", 
-        "${dados.cpf}",
-        "${dados.email}",
-        "${dados.data}",
-        "${dados.imagem}"
-        )`)
-        .then(result => {
-        console.log('CLiete inserido com sucesso!')
-        resposta({message: 'CLiete inserido com sucesso'})
-    }).catch(erro => {
-        console.log('CLiete NÃO FOI inserido com sucesso!')
-        console.log(erro)
-        resposta({message: 'Cliente NÃO FOI inserido com sucesso"'})
-    });
-})
-
-inserirRota('/buscar_clientes',
-    function (dados, resposta) {
-        console.log(dados, resposta);
-
-       
-    database(`SELECT * FROM CLIENTE`)
-        .then(result => {
-        resposta( result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
 
 inserirRota('/buscar_usuario',
     function (dados, resposta) {
@@ -106,8 +47,6 @@ inserirRota('/buscar_usuario',
     });
 })
 
-
-
 inserirRota('/testando',
     function (dados, resposta) {
         console.log(dados, resposta);       
@@ -121,113 +60,6 @@ inserirRota('/testando',
         resposta({erro: 'Erro ao buscar os usuários'})
     });
 })
-
-inserirRota('/buscar_vendido_true',
-    function (dados, resposta) {
-        console.log(dados, resposta);       
-    database(`SELECT INFOIMOVEL.*, CARACTERISTICAS.*, LOCALIZACAO.*, RESPONSAVEL.* FROM INFOIMOVEL
-    INNER JOIN CARACTERISTICAS ON CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA = INFOIMOVEL.CODIGO_REFERENCIA
-    INNER JOIN LOCALIZACAO ON LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA = CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA
-    INNER JOIN RESPONSAVEL ON RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA = LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA
-    WHERE INFOIMOVEL.VENDIDO = 0`)
-        .then(result => {
-        resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
-
-inserirRota('/buscar_vendido_false',
-    function (dados, resposta) {
-        console.log(dados, resposta);       
-    database(`SELECT VENDIDOS.*, INFOIMOVEL.*, CARACTERISTICAS.*, LOCALIZACAO.*, RESPONSAVEL.* FROM INFOIMOVEL
-    INNER JOIN CARACTERISTICAS ON CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA = INFOIMOVEL.CODIGO_REFERENCIA
-    INNER JOIN LOCALIZACAO ON LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA = CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA
-    INNER JOIN RESPONSAVEL ON RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA = LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA
-    INNER JOIN VENDIDOS ON VENDIDOS.CODIGO_IMOVEL = RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA 
-    WHERE VENDIDOS.CODIGO_USUARIO = ${dados.usuario}
-    `)
-        .then(result => {
-        resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
-
-
-inserirRota('/buscar_vendido',
-    function (dados, resposta) {
-        console.log(dados, resposta);       
-    database(`SELECT * FROM VENDIDOS`)
-        .then(result => {
-        resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
-
-inserirRota('/select_vendacompra',
-    function (dados, resposta) {
-        console.log(dados, resposta);
-
-       
-    database(`SELECT * FROM VENDA_COMPRA`)
-        .then(result => {
-        resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
-
-inserirRota('/compra',
-    function (dados, resposta) {
-        console.log(dados, resposta);
-
-       
-    database(`SELECT INFOIMOVEL.*, CARACTERISTICAS.*, LOCALIZACAO.*, RESPONSAVEL.* FROM INFOIMOVEL
-    INNER JOIN CARACTERISTICAS ON CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA = INFOIMOVEL.CODIGO_REFERENCIA
-    INNER JOIN LOCALIZACAO ON LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA = CARACTERISTICAS.INFOIMOVEL_CODIGO_REFERENCIA
-    INNER JOIN RESPONSAVEL ON RESPONSAVEL.INFOIMOVEL_CODIGO_REFERENCIA = LOCALIZACAO.INFOIMOVEL_CODIGO_REFERENCIA
-    INNER JOIN VENDA_COMPRA ON VENDA_COMPRA.CODIGO = INFOIMOVEL.CODIGO_REFERENCIA WHERE VENDA_COMPRA.TIPO == "compra"`)
-        .then(result => {
-        resposta(result)
-    }).catch(erro => {
-        resposta({erro: 'Erro ao buscar os usuários'})
-    });
-})
-
-// inserirRota('/criar_usuario',
-// function name(dados, resposta) {
-//     console.log(dados)
-
-//     if(!dados.nome){
-//         return resposta({erro: 'É necessário preencher o nome'})
-//     }
-//     if(!dados.nickname){
-//         return resposta({erro: 'É necessário preencher o nome'})
-//     }
-//     if(!dados.password){
-//         return resposta({erro: 'É necessário preencher senha '})
-//     }
-//     database(`INSERT INTO USER 
-//     (
-//         NOME, 
-//         PASSWORD
-//         )
-//         VALUES
-//         (
-//         "${dados.nome}", 
-//         "${dados.password}"
-//         )`)
-//         .then(result => {
-//         console.log('Usuario inserido com sucesso!')
-//         resposta({message: 'Usuario inserido com sucesso"'})
-//     }).catch(erro => {
-//         console.log('Usuario NÃO FOI inserido com sucesso!')
-//         resposta({message: 'Usuario NÃO FOI inserido com sucesso"'})
-//     });
-// })
-
 inserirRota('/criar_usuario', 
 function name(dados, resposta) {
     console.log(dados);

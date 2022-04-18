@@ -1,5 +1,10 @@
 require('./teste');
 require('./usuarios');
-require('./imovel');
+require('./caracteristicas');
+require('./cliente');
+require('./infoimovel');
+require('./localizacao');
+require('./responsavel');
+require('./vendidos');
 require('./criacao_database');
 require('./inserts');
