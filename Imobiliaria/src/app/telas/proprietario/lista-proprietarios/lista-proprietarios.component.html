@@ -22,22 +22,23 @@
         <a (click)="gotoListaClientes()">Listar</a>
     </div>
     
-    <div class="encontrados">Imóveis encontrados:0</div>
+    <div class="encontrados">Pessoas encontradas: {{listaTaman}}</div>
     <div class="imoveis">
-        <div class="imovel" *ngFor="let lista of lista; let i = index">
+        <input class="input-imoveis" placeholder= "Pesquise por nome do proprietario" type="text" [(ngModel)]="filtroS" (keyup)="filtro()">
+        <div class="imovel" *ngFor="let lista of listaProprietarios; let i = index">
             <div class="div-imagem">
-                <img width="100%" height="100%" [src]="lista.imagem" alt="">
+                <img width="100%" height="100%" [src]="lista.IMAGEM" alt="">
             </div>
             <div style="padding-left: 10px;">   
                 <div>
                     <div>
-                        Nome: {{lista.nome}}<br>
-                        CPF: {{lista.cpf}}
-                        Telefone: {{lista.telefone}}
+                        Nome: {{lista.NOME}}<br>
+                        CPF: {{lista.CPF}}
+                        Telefone: {{lista.TELEFONE}}
                     </div>
                     <div>
-                        Data de Nascimento: {{lista.data}}<br>
-                        Email: {{lista.email}}
+                        Data de Nascimento: {{lista.DATA}}<br>
+                        Email: {{lista.EMAIL}}
                     </div>
                 </div>
             </div>

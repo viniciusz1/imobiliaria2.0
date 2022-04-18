@@ -55,27 +55,31 @@ export class ListaProprietariosComponent implements OnInit {
   imageURL = ""
   lista=[]
   objeto={}
+  objeto2={}
+  filtroS = ""
+  listaProprietarios2 = []
+  filtro(){
+    console.log(this.filtroS)
+    this.listaProprietarios = this.listaProprietarios2
+    this.listaProprietarios = this.listaProprietarios.filter(element => element.NOME.toString().toUpperCase().startsWith(this.filtroS.toUpperCase()))
+    this.listaTaman = this.listaProprietarios.length
+  }
+  listaTaman = 0
   ngOnInit(): void {
     this.usuarioService.buscarClientes()
-    .then((resultado: Cliente[])=> {
-      for(let i = 0; i < resultado.length; i++){
-        this.objeto = {
-          nome: resultado[i].NOME,
-          telefone: resultado[i].TELEFONE,
-          cpf: resultado[i].CPF,
-          email: resultado[i].EMAIL,
-          data: resultado[i].DATA,
-          imagem: resultado[i].IMAGEM
-        }
-        console.log(this.lista)
-        this.lista.push(this.objeto)
-      }
+    .then(resultado => {
+      this.listaProprietarios.push(resultado);
+      this.listaProprietarios = this.listaProprietarios[0]
+      this.listaProprietarios2 = this.listaProprietarios
+      this.listaTaman = this.listaProprietarios.length
+    console.log(this.listaProprietarios)
     }).catch(erro => {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
+    
   }
+  listaProprietarios = [];
 }
-
 
 interface Cliente {
 
