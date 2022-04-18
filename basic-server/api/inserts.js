@@ -185,8 +185,6 @@ database(`INSERT INTO CLIENTE VALUES(
 }).catch(erro => {
     console.log('inserção cliente deu ruim')
 });
-
-
 database(`INSERT INTO CARACTERISTICAS VALUES(
     1,
     "1",
