@@ -50,7 +50,6 @@ export class TelaCompraComponent implements OnInit {
       this.modal = 1;
     }
   }
-  tamanho = ""
   codigo = 0;
   lengthObjeto = 0;
   objeto = {}
