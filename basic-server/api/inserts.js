@@ -40,6 +40,153 @@ database(`INSERT INTO INFOIMOVEL VALUES(
     console.log('inserção infoimovel deu ruim')
 });
 
+database(`INSERT INTO CLIENTE VALUES(
+    "Vinícius",
+    "95355-5489",
+    "108.423.265-37",
+    "vinicius@gmail.com",
+    null,
+    2019-05-05
+),(
+    "Thiago",
+    "95355-5489",
+    "302.323.245-87",
+    "thiago@gmail.com",
+    null,
+    2019-05-05
+),(
+    "Henrique",
+    "95355-5489",
+    "133.423.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "João",
+    "95355-5489",
+    "203.333.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Otávio Augusto",
+    "95355-5489",
+    "303.323.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Otávio Neves",
+    "95355-5489",
+    "133.223.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Camilly Pessoty",
+    "95355-5489",
+    "104.423.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Camilly Vitória",
+    "95355-5489",
+    "123.443.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Vytor",
+    "95355-5489",
+    "203.423.244-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Leonardo",
+    "95355-5489",
+    "103.423.255-81",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Kenzo",
+    "95355-5489",
+    "103.423.255-17",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Matheus",
+    "95355-5489",
+    "103.423.241-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Eduarda",
+    "95355-5489",
+    "103.426.215-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Ester",
+    "95355-5489",
+    "103.423.145-77",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Bruna",
+    "95355-5489",
+    "103.421.275-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Felipe",
+    "95355-5489",
+    "103.413.745-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Leonardo Rafaelli",
+    "95355-5489",
+    "103.127.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Leonardo Poglia",
+    "95355-5489",
+    "101.473.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Gustavo",
+    "95355-5489",
+    "117.423.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+),(
+    "Bruno Henrique",
+    "95355-5489",
+    "113.427.245-87",
+    "henrique@gmail.com",
+    null,
+    2019-05-05  
+)`).then(result => {
+    console.log('insert cliente deu boa!')
+}).catch(erro => {
+    console.log('inserção cliente deu ruim')
+});
+
+
 database(`INSERT INTO CARACTERISTICAS VALUES(
     1,
     "1",
