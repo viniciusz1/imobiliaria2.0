@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
+import swal from 'sweetalert'
 @Component({
   selector: 'app-tela-venda',
   templateUrl: './tela-venda.component.html',
@@ -23,11 +24,33 @@ export class TelaVendaComponent implements OnInit {
 
   }
   alteraVendido(indice) {
-    this.usuarioService.buscarVendidoFalse(localStorage.getItem('ID')).then(imovel => {
-      this.usuarioService.updateInfoimovelVendido(imovel[indice].CODIGO_REFERENCIA, 0)
-      this.usuarioService.deletaVendido(imovel[indice].CODIGO_REFERENCIA)
-      document.location.reload()
+    swal({
+      title: "Você tem certeza que deseja vender esse imóvel?",
+      text: "Valor: "+ this.lista[indice].VALOR_IMOVEL,
+      icon: "info",
+      buttons: ["Cancelar", true],
     })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal({
+            icon: "success",
+            title: "Imóvel vendido!",
+            text: "Volte sempre!"
+          })
+            .then((value) => {
+              if (value) {
+                this.usuarioService.buscarVendidoFalse(localStorage.getItem('ID')).then(imovel => {
+                  this.usuarioService.updateInfoimovelVendido(imovel[indice].CODIGO_REFERENCIA, 0)
+                  this.usuarioService.deletaVendido(imovel[indice].CODIGO_REFERENCIA)
+                  document.location.reload()
+                })
+              }
+            })
+        } else {
+     
+          swal({ title: "Imóvel não vendido!", text: "É uma pena!", icon: "error", dangerMode: true, });
+        }
+      });    
   }
   lista = []
   user = localStorage.getItem('USER')
