@@ -45,7 +45,7 @@ export class ListaProprietariosComponent implements OnInit {
       title: "Você tem certeza?",
       text: "Uma vez deletado, seu proprietário não voltará nunca mais! ;( ",
       icon: "warning",
-      buttons: true,
+      buttons: ["Cancel",true],
       dangerMode: true,
     })
     .then((willDelete) => {

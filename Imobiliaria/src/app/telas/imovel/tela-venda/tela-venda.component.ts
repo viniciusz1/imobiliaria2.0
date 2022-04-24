@@ -46,8 +46,7 @@ export class TelaVendaComponent implements OnInit {
                 })
               }
             })
-        } else {
-     
+        } else {     
           swal({ title: "Imóvel não vendido!", text: "É uma pena!", icon: "error", dangerMode: true, });
         }
       });    

@@ -50,7 +50,7 @@ export class ListaImoveisComponent implements OnInit {
       title: "Você tem certeza?",
       text: "Uma vez deletado, seu imóvel não voltará nunca mais! ;( ",
       icon: "warning",
-      buttons: true,
+      buttons: ["Cancel",true],
       dangerMode: true,
     })
       .then((willDelete) => {
