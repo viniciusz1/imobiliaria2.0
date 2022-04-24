@@ -46,20 +46,31 @@ export class ListaImoveisComponent implements OnInit {
   tamanho = 0
   codigo = 0;
   removeImovel(indice) {
-
-
     swal({
-      title: "Item removido com sucesso!",
-      icon: "success"
+      title: "Você tem certeza?",
+      text: "Uma vez deletado, seu imóvel não voltará nunca mais! ;( ",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
     })
-      .then((value) => {
-        if (value) {
-          this.codigo = this.listaImoveis[indice].INFOIMOVEL_CODIGO_REFERENCIA
-          this.usuarioService.deletaInfoimovel(this.codigo)
-          this.usuarioService.deletaCaracteristicas(this.codigo)
-          this.usuarioService.deletaLocalizacao(this.codigo)
-          this.usuarioService.deletaResponsavel(this.codigo)
-          document.location.reload();
+      .then((willDelete) => {
+        if (willDelete) {
+          swal({
+            icon: "success",
+            title: "Imóvel deletado!",
+          })
+            .then((value) => {
+              if (value) {
+                this.codigo = this.listaImoveis[indice].INFOIMOVEL_CODIGO_REFERENCIA
+                this.usuarioService.deletaInfoimovel(this.codigo)
+                this.usuarioService.deletaCaracteristicas(this.codigo)
+                this.usuarioService.deletaLocalizacao(this.codigo)
+                this.usuarioService.deletaResponsavel(this.codigo)
+                document.location.reload();
+              }
+            })
+        } else {
+          swal({ title: "Imóvel não deletado!", icon: "success" });
         }
       });
 

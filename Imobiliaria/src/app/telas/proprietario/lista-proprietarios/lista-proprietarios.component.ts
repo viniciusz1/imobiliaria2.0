@@ -42,19 +42,30 @@ export class ListaProprietariosComponent implements OnInit {
   }
   removeCliente(indice) {
     swal({
-      title: "Item removido com sucesso!",
-      icon: "success"
+      title: "Você tem certeza?",
+      text: "Uma vez deletado, seu proprietário não voltará nunca mais! ;( ",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
     })
-      .then((value) => {
-        if (value) {
-          const rmCPF = this.listaProprietarios[indice].CPF
-          console.log(rmCPF)
-          this.usuarioService.deletaProprietario(rmCPF)
-          document.location.reload();
-        }
-      });
-
-
+    .then((willDelete) => {
+      if (willDelete) {
+        swal({
+          icon: "success",
+          title:"Proprietário deletado!", 
+        })
+        .then((value) =>{
+          if(value){
+            const rmCPF = this.listaProprietarios[indice].CPF
+             console.log(rmCPF)
+             this.usuarioService.deletaProprietario(rmCPF)
+             document.location.reload();
+          }
+        })
+      } else {
+        swal({title: "Proprietário não deletado!", icon: "success"});
+      }
+    });
   }
 
   imageURL = ""
