@@ -132,7 +132,7 @@ export class GerenciaImovelComponent implements OnInit {
   }
 
   jogaDB() {
-    if (this.codigoImovel != "" && this.proprietario != "" && this.corretor != "" && this.valorImovel && this.finalidadeImovel != "" && this.tipoImovel != "") {
+    if (this.codigoImovel != "" && this.proprietario != "" && this.valorImovel && this.finalidadeImovel != "" && this.tipoImovel != "") {
       if (this.idRota != 'novo') {
         this.usuarioService.updateInfoimovel(this.oldCodigoImovel, this.codigoImovel, this.valorImovel, this.finalidadeImovel, this.tipoImovel, this.descricaoImovel, this.imageURL)
         this.usuarioService.updateLocalizacao(this.bairroImovel, this.logradouroImovel, this.numeroImovel, this.complementoImovel, this.regiaoImovel, this.estadoImovel, this.zonaImovel, this.codigoImovel, this.cidadeImovel, this.cepImovel)

@@ -13,52 +13,54 @@ export class ListaProprietariosComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private usuarioService: UsuarioService
-    ) {
-      const id = this.route.snapshot.paramMap.get('id');
-   }
- 
+  ) {
+    const id = this.route.snapshot.paramMap.get('id');
+  }
+
   listasClientes = JSON.parse(localStorage.getItem('lista'))
   user = localStorage.getItem('USER')
 
 
 
-  gotoGerenciaImovel(){
+  gotoGerenciaImovel() {
     this.router.navigate(['/gerencia-imovel/novo'])
   }
-  gotoListaImoveis(){
+  gotoListaImoveis() {
     this.router.navigate(['/lista-imoveis'])
   }
-  gotoGerenciaCliente(){
+  gotoGerenciaCliente() {
     this.router.navigate(['/gerencia-proprietario/novo'])
   }
-  gotoListaClientes(){
+  gotoListaClientes() {
     this.router.navigate(['/lista-proprietarios'])
   }
-  gotoTelaPrincipal(){
+  gotoTelaPrincipal() {
     this.router.navigate(['/tela-principal'])
   }
-  gotoGerenciaCliente2(indice){
+  gotoGerenciaCliente2(indice) {
     this.router.navigate(['/gerencia-proprietario/' + indice])
   }
-  removeCliente(indice){
-      const rmCPF = this.lista[indice].cpf
-      this.usuarioService.deletaProprietario(rmCPF)
-      swal({
-        title: "Imóvel editado com sucesso!",
-        icon: "success"
-    });
-    
-    window.clearInterval(1000000)
-    document.location.reload();
+  removeCliente(indice) {
+    swal({
+      title: "Item removido com sucesso!",
+      icon: "success"
+    })
+      .then((value) => {
+        if (value) {
+          const rmCPF = this.listaProprietarios2[indice].cpf
+          this.usuarioService.deletaProprietario(rmCPF)
+          document.location.reload();
+        }
+      });
+
+
   }
 
   imageURL = ""
-  lista=[]
-  objeto={}
-  objeto2={}
+  lista = []
   filtroS = ""
   listaProprietarios2 = []
-  filtro(){
+  filtro() {
     console.log(this.filtroS)
     this.listaProprietarios = this.listaProprietarios2
     this.listaProprietarios = this.listaProprietarios.filter(element => element.NOME.toString().toUpperCase().startsWith(this.filtroS.toUpperCase()))
@@ -67,16 +69,16 @@ export class ListaProprietariosComponent implements OnInit {
   listaTaman = 0
   ngOnInit(): void {
     this.usuarioService.buscarClientes()
-    .then(resultado => {
-      this.listaProprietarios.push(resultado);
-      this.listaProprietarios = this.listaProprietarios[0]
-      this.listaProprietarios2 = this.listaProprietarios
-      this.listaTaman = this.listaProprietarios.length
-    console.log(this.listaProprietarios)
-    }).catch(erro => {
-      console.log("ERRO AO BUSCAR USUÁRIO:", erro)
-    })
-    
+      .then(resultado => {
+        this.listaProprietarios.push(resultado);
+        this.listaProprietarios = this.listaProprietarios[0]
+        this.listaProprietarios2 = this.listaProprietarios
+        this.listaTaman = this.listaProprietarios.length
+        console.log(this.listaProprietarios)
+      }).catch(erro => {
+        console.log("ERRO AO BUSCAR USUÁRIO:", erro)
+      })
+
   }
   listaProprietarios = [];
 }
