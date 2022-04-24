@@ -47,7 +47,8 @@ export class ListaProprietariosComponent implements OnInit {
     })
       .then((value) => {
         if (value) {
-          const rmCPF = this.listaProprietarios2[indice].cpf
+          const rmCPF = this.listaProprietarios[indice].CPF
+          console.log(rmCPF)
           this.usuarioService.deletaProprietario(rmCPF)
           document.location.reload();
         }
