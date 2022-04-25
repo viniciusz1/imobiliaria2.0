@@ -13,7 +13,6 @@ export class TelaCompraComponent implements OnInit {
     private usuarioService: UsuarioService) {
 
 
-    console.log("sdofjapsodi")
     this.usuarioService.buscarVEndidoTrue().then(result => {
       this.lista.push(result);
       this.lista = this.lista[0]
@@ -32,7 +31,7 @@ export class TelaCompraComponent implements OnInit {
   alteraVendido(indice) {
     swal({
       title: "Você tem certeza que deseja comprar esse imóvel?",
-      text: "Valor: "+ this.lista[indice].VALOR_IMOVEL,
+      text: "Valor: " + this.lista[indice].VALOR_IMOVEL,
       icon: "info",
       buttons: ["Cancelar", true],
     })
@@ -54,10 +53,35 @@ export class TelaCompraComponent implements OnInit {
               }
             })
         } else {
-     
+
           swal({ title: "Imóvel não comprado!", text: "É uma pena!", icon: "error", dangerMode: true, });
         }
       });
+  }
+  selectValue = ""
+  ordenar() {
+    console.log(this.selectValue)
+    if (this.selectValue == "Maior valor para menor") {
+      for (let i = 0; i < this.lista.length; i++) {
+        for (let j = 0; j < this.lista.length; j++) {
+          if (parseInt(this.lista[i].VALOR_IMOVEL) > parseInt(this.lista[j].VALOR_IMOVEL)) {
+            let temp = this.lista[i]
+            this.lista[i] = this.lista[j]
+            this.lista[j] = temp
+          }
+        }
+      }
+    }else if(this.selectValue == "Menor valor para maior"){
+      for (let i = 0; i < this.lista.length; i++) {
+        for (let j = 0; j < this.lista.length; j++) {
+          if (parseInt(this.lista[i].VALOR_IMOVEL) < parseInt(this.lista[j].VALOR_IMOVEL)) {
+            let temp = this.lista[i]
+            this.lista[i] = this.lista[j]
+            this.lista[j] = temp
+          }
+        }
+      }
+    }
   }
   lista = []
   user = localStorage.getItem('USER')
@@ -71,11 +95,14 @@ export class TelaCompraComponent implements OnInit {
     } else {
       this.modal = 1;
     }
+
+
+    console.log(this.lista)
   }
   codigo = 0;
   lengthObjeto = 0;
   objeto = {}
   ngOnInit(): void {
-
+    console.log(this.lista)
   }
 }

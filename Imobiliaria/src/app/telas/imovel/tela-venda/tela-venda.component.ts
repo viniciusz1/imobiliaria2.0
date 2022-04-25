@@ -51,6 +51,32 @@ export class TelaVendaComponent implements OnInit {
         }
       });    
   }
+  selectValue = ""
+  ordenar() {
+    console.log(this.selectValue)
+    if (this.selectValue == "Maior valor para menor") {
+      for (let i = 0; i < this.lista.length; i++) {
+        for (let j = 0; j < this.lista.length; j++) {
+          if (parseInt(this.lista[i].VALOR_IMOVEL) > parseInt(this.lista[j].VALOR_IMOVEL)) {
+            let temp = this.lista[i]
+            this.lista[i] = this.lista[j]
+            this.lista[j] = temp
+          }
+        }
+      }
+    }else if(this.selectValue == "Menor valor para maior"){
+      for (let i = 0; i < this.lista.length; i++) {
+        for (let j = 0; j < this.lista.length; j++) {
+          if (parseInt(this.lista[i].VALOR_IMOVEL) < parseInt(this.lista[j].VALOR_IMOVEL)) {
+            let temp = this.lista[i]
+            this.lista[i] = this.lista[j]
+            this.lista[j] = temp
+          }
+        }
+      }
+    }
+  }
+
   lista = []
   user = localStorage.getItem('USER')
   modal = 0
@@ -70,7 +96,7 @@ export class TelaVendaComponent implements OnInit {
   lengthObjeto = 0;
   objeto = {}
   ngOnInit(): void {
-
+    
     this.usuarioService.buscarVendidoFalse(localStorage.getItem('ID')).then(result => {
       this.lista.push(result)
       this.lista = this.lista[0]

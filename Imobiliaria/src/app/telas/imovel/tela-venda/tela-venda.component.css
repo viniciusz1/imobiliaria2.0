@@ -201,6 +201,15 @@ h1{
 .espacamento{
     height: 100px;
 }
+.titulo-secundario {
+    font-size: 12px;
+    padding-left: 8%;
+    margin-bottom: 2%;
+}
+#ordenar{
+    padding: 5px;
+    outline: none;
+}
 .descricao{
     background-color: #5b5ea1;
     border-radius: 5px;
